@@ -21,6 +21,8 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = playerOrientation.position;
+
         Vector2 lookValue = lookAct.ReadValue<Vector2>() * Time.deltaTime * mouseSens; 
 
         yRotation += lookValue.x;

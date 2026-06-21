@@ -230,7 +230,6 @@ GameObject:
   - component: {fileID: 607719159}
   - component: {fileID: 607719158}
   - component: {fileID: 607719163}
-  - component: {fileID: 607719164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -262,9 +261,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!136 &607719159
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -358,8 +357,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2031398821}
   - {fileID: 1616956434}
+  - {fileID: 2031398821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607719163
@@ -374,22 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f28206a9819440aca87074ead84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 10
-  playerOrientation: {fileID: 1616956434}
-  playerCamera: {fileID: 2031398820}
---- !u!114 &607719164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607719157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5031d11dfed2a44afb696fd8bb187d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSens: 67
+  moveSpeed: 25
   playerOrientation: {fileID: 1616956434}
   playerCamera: {fileID: 2031398820}
 --- !u!1 &936414281
@@ -547,6 +531,7 @@ GameObject:
   - component: {fileID: 2031398821}
   - component: {fileID: 2031398820}
   - component: {fileID: 2031398819}
+  - component: {fileID: 2031398822}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -628,6 +613,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 607719162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031398822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031398818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5031d11dfed2a44afb696fd8bb187d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
+  mouseSens: 67
+  playerOrientation: {fileID: 1616956434}
+  playerCamera: {fileID: 2031398820}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
