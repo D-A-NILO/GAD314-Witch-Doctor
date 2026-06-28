@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
         moveAct = InputSystem.actions.FindAction("Move");
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
         Vector2 moveValue = moveAct.ReadValue<Vector2>();
         xMove = moveValue.x;
@@ -31,6 +31,5 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveDirection = playerOrientation.forward * moveValue.y + playerOrientation.right * moveValue.x;
 
         rb.AddForce(moveDirection * moveSpeed, ForceMode.Force);
-
     }
 }

@@ -7,11 +7,6 @@ public class HotBarUI : MonoBehaviour
     public Image[] slotImages;
     public Color activeColor = Color.yellow;
     public Color inactiveColor = Color.white;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
