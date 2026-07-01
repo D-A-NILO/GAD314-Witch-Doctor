@@ -51,7 +51,6 @@ public class EquipItem : MonoBehaviour
 
         GameObject item = hit.transform.gameObject;
 
-        foreach (var c in item.GetComponentsInChildren<Collider>()) if (c != null) c.enabled = false;
         foreach (var r in item.GetComponentsInChildren<Rigidbody>()) if (r != null) r.isKinematic = true;
 
         hotbar[emptySlot] = new Item(item);
@@ -105,5 +104,63 @@ public class EquipItem : MonoBehaviour
             item.transform.position = hitDown.point;
 
         hotbar[slot] = null;
+    }
+
+    public GameObject GetActiveItem()
+    {
+        if (hotbar[activeSlot] == null)
+            return null;
+
+        return hotbar[activeSlot].itemObject;
+    }
+
+    public void RemoveActiveItem()
+    {
+        if (hotbar[activeSlot] == null)
+            return;
+
+        GameObject item = hotbar[activeSlot].itemObject;
+
+        hotbar[activeSlot] = null;
+
+        // make sure it's detached properly
+        item.transform.parent = null;
+    }
+
+    public void AddToHotbar(GameObject item)
+    {
+        int emptySlot = -1;
+
+        for (int i = 0; i < hotbar.Length; i++)
+        {
+            if (hotbar[i] == null)
+            {
+                emptySlot = i;
+                break;
+            }
+        }
+
+        if (emptySlot == -1)
+        {
+            Debug.Log("Hotbar full!");
+            return;
+        }
+
+        hotbar[emptySlot] = new Item(item);
+
+        foreach (var c in item.GetComponentsInChildren<Collider>())
+            if (c != null) c.enabled = true;
+
+        foreach (var r in item.GetComponentsInChildren<Rigidbody>())
+            if (r != null) r.isKinematic = true;
+
+        if (emptySlot == activeSlot)
+        {
+            AttachToCamera(item);
+        }
+        else
+        {
+            item.SetActive(false);
+        }
     }
 }
