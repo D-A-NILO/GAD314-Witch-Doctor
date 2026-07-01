@@ -20,8 +20,5 @@ public class Knife : MonoBehaviour
         {
             cutArea.RegisterCut();
         }
-
-       
-
     }
 }

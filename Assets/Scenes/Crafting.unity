@@ -2461,7 +2461,7 @@ PrefabInstance:
     - target: {fileID: 3696124936421243206, guid: 4ffbc568e349f8f43911c3e6628c3b01, type: 3}
       propertyPath: equipItem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 305774192}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

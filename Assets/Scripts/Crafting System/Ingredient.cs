@@ -4,8 +4,9 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour
 {
     public IngredientData ingredientData;
-    public IngredientState ingredientState = IngredientState.Raw;
+    public IngredientState ingredientState;
     public GameObject currentModel;
+    private IngredientState lastAppliedState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,44 +22,60 @@ public class Ingredient : MonoBehaviour
 
     public void ProcessIngredientState(IngredientState state)
     {
-        
+        if (state == lastAppliedState)
+            return;
+
+        lastAppliedState = state;
         ingredientState = state;
         UpdateModel();
     }
 
     private void UpdateModel()
     {
-        Debug.Log($"{gameObject.name} using {ingredientData.ingredientName} | " + $"Raw:{ingredientData.rawPrefab}");
+        Debug.Log($"{gameObject.name} using {ingredientData.ingredientName}");
+        Debug.Log("BEFORE DESTROY: " + (currentModel ? currentModel.name : "NULL"));
+
         if (currentModel != null)
         {
             Destroy(currentModel);
             currentModel = null;
         }
 
-        GameObject prefab = null;
+        Debug.Log("AFTER DESTROY CALL");
 
-        switch (ingredientState)
-        { 
-            case IngredientState.Raw:
-                currentModel = Instantiate(ingredientData.rawPrefab, transform);
-                break;
-            case IngredientState.Chopped:
-                currentModel = Instantiate(ingredientData.choppedPrefab, transform);
-                break;
-            case IngredientState.Grinded:
-                currentModel = Instantiate(ingredientData.grindedPrefab, transform);
-                break;
-        }
+        GameObject prefabToSpawn = GetPrefab();
 
-        if (prefab == null)
+        Debug.Log("SPAWNING: " + prefabToSpawn.name);
+
+        if (prefabToSpawn == null)
         {
-            Debug.LogWarning("Missing prefab for state: " + ingredientState);
+            Debug.LogError($"Missing prefab for {ingredientState} on {name}");
             return;
         }
 
-        currentModel = Instantiate(prefab, transform);
+        // ALWAYS instantiate — no conditions
+        currentModel = Instantiate(prefabToSpawn, transform);
+
+        Debug.Log("NEW MODEL: " + currentModel.name);
 
         currentModel.transform.localPosition = Vector3.zero;
         currentModel.transform.localRotation = Quaternion.identity;
+    }
+
+    private GameObject GetPrefab()
+    {
+        switch (ingredientState)
+        {
+            case IngredientState.Raw:
+                return ingredientData.rawPrefab;
+
+            case IngredientState.Chopped:
+                return ingredientData.choppedPrefab;
+
+            case IngredientState.Grinded:
+                return ingredientData.grindedPrefab;
+        }
+
+        return null;
     }
 }
