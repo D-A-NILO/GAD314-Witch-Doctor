@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
+  m_Name: Aloe Vera
+  m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  ingredientName: AloeVera
+  rawPrefab: {fileID: 655195338748523400, guid: 4ffbc568e349f8f43911c3e6628c3b01, type: 3}
+  choppedPrefab: {fileID: 4151604952807342182, guid: 465a1fc0a1be1e74ba4482d1549ec0c7, type: 3}
+  grindedPrefab: {fileID: 1243386419413056374, guid: ddd41784b4a5cb14a9eb18ff53f71078, type: 3}

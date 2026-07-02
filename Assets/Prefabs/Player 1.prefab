@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f28206a9819440aca87074ead84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 30
+  moveSpeed: 50
   playerOrientation: {fileID: 8712314769594859987}
   playerCamera: {fileID: 224908043562226503}
 --- !u!114 &7555797927877417153
