@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4103056549318142881}
   - component: {fileID: 3696124936421243206}
   m_Layer: 0
-  m_Name: raw
+  m_Name: 2_Test_Ingredient_Raw
   m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

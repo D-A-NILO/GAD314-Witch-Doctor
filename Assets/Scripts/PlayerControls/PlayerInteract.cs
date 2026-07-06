@@ -26,16 +26,17 @@ public class PlayerInteract : MonoBehaviour
         Debug.Log("pressed");
         Ray r = new Ray(interactorSource.position, interactorSource.forward);
         Debug.DrawRay(interactorSource.position, interactorSource.forward * interactRange, Color.red, 2f);
-        if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange))
+        RaycastHit[] hits = Physics.RaycastAll(r, interactRange);
+
+        foreach (RaycastHit hitInfo in hits)
         {
+            if (hitInfo.collider.transform.IsChildOf(transform))
+                continue;
+
             if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactable))
             {
-                Debug.Log(hitInfo.collider.name);
                 interactable.OnInteract();
-            }
-            else
-            {
-                Debug.Log("no hit");
+                break;
             }
         }
     }

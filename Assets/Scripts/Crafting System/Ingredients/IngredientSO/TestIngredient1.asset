@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
-  m_Name: Aloe Vera
+  m_Name: TestIngredient1
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
-  ingredientName: AloeVera
-  rawPrefab: {fileID: 655195338748523400, guid: 4ffbc568e349f8f43911c3e6628c3b01, type: 3}
-  choppedPrefab: {fileID: 4151604952807342182, guid: 465a1fc0a1be1e74ba4482d1549ec0c7, type: 3}
-  grindedPrefab: {fileID: 1243386419413056374, guid: ddd41784b4a5cb14a9eb18ff53f71078, type: 3}
+  ingredientName: TestIngredient1
+  rawPrefab: {fileID: 1629419781899695268, guid: 7b780fe6c74c8ea46a6ed74e7887dc40, type: 3}
+  choppedPrefab: {fileID: 2240191689485508745, guid: 3c1fca559d3e2944bb7721e96c20dd53, type: 3}
+  grindedPrefab: {fileID: 6868804908138429155, guid: cdcf4043faaaadd4794300751a12315d, type: 3}

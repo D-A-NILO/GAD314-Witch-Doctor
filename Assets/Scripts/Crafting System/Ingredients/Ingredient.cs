@@ -45,13 +45,14 @@ public class Ingredient : MonoBehaviour
 
         GameObject prefabToSpawn = GetPrefab();
 
-        Debug.Log("SPAWNING: " + prefabToSpawn.name);
 
         if (prefabToSpawn == null)
         {
             Debug.LogError($"Missing prefab for {ingredientState} on {name}");
             return;
         }
+
+        Debug.Log("SPAWNING: " + prefabToSpawn.name);
 
         // ALWAYS instantiate — no conditions
         currentModel = Instantiate(prefabToSpawn, transform);
