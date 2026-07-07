@@ -5,7 +5,6 @@ public class PlayerCam : MonoBehaviour
 {
     public float mouseSens;
     public Transform playerOrientation;
-    public Camera playerCamera;
     InputAction lookAct;
 
     private float xRotation;

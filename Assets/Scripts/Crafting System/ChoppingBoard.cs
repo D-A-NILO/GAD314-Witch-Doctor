@@ -8,7 +8,7 @@ public class ChoppingBoard : MonoBehaviour, IInteractable
     private int currentCuts;
     public EquipItem playerEquip;
 
-    public void OnInteract()
+    public void OnInteract(PlayerInteract interactor)
     {
         GameObject heldItem = playerEquip.GetActiveItem();
         Debug.Log($"held item: {heldItem}");
