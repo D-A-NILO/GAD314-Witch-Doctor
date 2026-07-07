@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -39,8 +40,7 @@ public class PlayerInteract : MonoBehaviour
             visibleInteractible?.OnInteract(this);
         }else
         { // drop interactible
-            holdingInteractible = null;
-            itemHolder.ReleaseHeldRB();
+            DropItem();
         }
     }
 
@@ -55,6 +55,13 @@ public class PlayerInteract : MonoBehaviour
         holdingInteractible = interactable;
         
         itemHolder.GrabRB(rb, (interactable as Grabbable).lockRotation);
+    }
+
+    public void DropItem()
+    {
+        (holdingInteractible as Grabbable).OnDrop();
+        holdingInteractible = null;
+        itemHolder.ReleaseHeldRB();
     }
 
     void FixedUpdate()
