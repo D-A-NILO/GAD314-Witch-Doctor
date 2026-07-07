@@ -17,7 +17,6 @@ public abstract class CraftingTable : MonoBehaviour
         //Debug.Log(other.name);
         if(other.TryGetComponent(out Ingredient ingredient))
         {
-            Debug.Log(cooldown);
             if(cooldown <= 0) // not on cooldown
             {
                 PlaceIngredient(ingredient);

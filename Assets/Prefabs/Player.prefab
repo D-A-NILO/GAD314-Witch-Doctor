@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5031d11dfed2a44afb696fd8bb187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSens: 10
+  mouseSens: 30
   playerOrientation: {fileID: 8712314769594859987}
 --- !u!1 &7673134068713723219
 GameObject:
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f28206a9819440aca87074ead84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 50
+  moveSpeed: 67
   playerOrientation: {fileID: 8712314769594859987}
   playerCamera: {fileID: 0}
 --- !u!114 &7555797927877417153
@@ -311,7 +311,7 @@ MonoBehaviour:
   interactActionRef: {fileID: 1781555164194001046, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
   includeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   itemHolder: {fileID: 8269756013633276693}
 --- !u!114 &5706966143455628951
 MonoBehaviour:
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392e5c4f5753a648797d7e86257cdddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  holdForce: 50
+  holdForce: 75
   rotationLockFactor: 10
   holdLinearDamp: 5
   holdAngularDamp: 3

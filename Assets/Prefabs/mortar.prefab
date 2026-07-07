@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MortarPestle
   holdPoint: {fileID: 8676583727849640770}
-  removeCooldownTime: 0
+  removeCooldownTime: 1
   requiredUtensil: {fileID: 0}
 --- !u!65 &3352677066731124456
 BoxCollider:

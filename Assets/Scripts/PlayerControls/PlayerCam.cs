@@ -33,4 +33,9 @@ public class PlayerCam : MonoBehaviour
         playerOrientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
     }
+
+    public void SetSesitivity(float value)
+    {
+        mouseSens = value;
+    }
 }
