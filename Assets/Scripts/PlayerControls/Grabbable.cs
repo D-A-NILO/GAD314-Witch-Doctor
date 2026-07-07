@@ -14,7 +14,6 @@ public class Grabbable : MonoBehaviour, IInteractable
     {
         if(TryGetComponent(out Ingredient ingredient))
             ingredient.heldInTable?.RemoveHeldIngredient();
-        Debug.Log("bub");
         holder = interactor;
         UnFreeze();
 
@@ -23,9 +22,11 @@ public class Grabbable : MonoBehaviour, IInteractable
 
     public void Freeze()
     {
+        if(!rb) return;
+
+        // rb.linearVelocity = Vector3.zero;
+        // rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
     }
 
     public void UnFreeze()

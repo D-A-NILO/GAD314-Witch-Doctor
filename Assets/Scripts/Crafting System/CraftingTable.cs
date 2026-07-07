@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class CraftingTable : MonoBehaviour
 {
     public Transform holdPoint;
-    [SerializeField] private float removeCooldownTime;
+    [SerializeField] private float removeCooldownTime = 1f;
     protected Ingredient heldIngredient;
 
 
@@ -14,7 +14,7 @@ public abstract class CraftingTable : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if(other.TryGetComponent(out Ingredient ingredient))
         {
             Debug.Log(cooldown);
@@ -34,6 +34,7 @@ public abstract class CraftingTable : MonoBehaviour
         
         grabbable.Freeze();
         grabbable.transform.position = holdPoint.position;
+        grabbable.transform.rotation = holdPoint.rotation;
         heldIngredient = ingredient;
         heldIngredient.heldInTable = this;
         craftingInteractionCount = 0;

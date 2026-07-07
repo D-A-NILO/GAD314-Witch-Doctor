@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4299154152418595099}
   - component: {fileID: 4103056549318142881}
   - component: {fileID: 3696124936421243206}
+  - component: {fileID: 8667916015370430163}
+  - component: {fileID: 4904931329147493052}
   m_Layer: 0
   m_Name: raw
   m_TagString: Pickupable
@@ -30,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,7 +111,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -125,4 +127,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e0f188aec8b8a4893dd3ac66e4c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionTest
-  equipItem: {fileID: 0}
+  lockRotation: 1
+--- !u!114 &8667916015370430163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655195338748523400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4538cabc7adae4d90e8f75341abe7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ingredient
+  name: Aloe Vera
+  choppedPrefab: {fileID: 4151604952807342182, guid: 465a1fc0a1be1e74ba4482d1549ec0c7, type: 3}
+  crushedPrefab: {fileID: 1243386419413056374, guid: ddd41784b4a5cb14a9eb18ff53f71078, type: 3}
+  craftInteractionsRequired: 5
+  heldInTable: {fileID: 0}
+--- !u!54 &4904931329147493052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655195338748523400}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

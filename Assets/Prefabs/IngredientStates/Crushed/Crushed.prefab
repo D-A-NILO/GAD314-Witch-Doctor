@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 920488303042308657}
   - component: {fileID: 7613680597819249676}
   m_Layer: 0
-  m_Name: grinded
+  m_Name: Crushed
   m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   name: 
-  cutPrefab: {fileID: 0}
-  crushPrefab: {fileID: 0}
-  craftInteractionsRequired: 0
+  choppedPrefab: {fileID: 4151604952807342182, guid: 80fa4a9ec86f8e565aa80cb9180b6b34, type: 3}
+  crushedPrefab: {fileID: 4151604952807342182, guid: 80fa4a9ec86f8e565aa80cb9180b6b34, type: 3}
+  craftInteractionsRequired: 6
   heldInTable: {fileID: 0}
 --- !u!54 &7613680597819249676
 Rigidbody:

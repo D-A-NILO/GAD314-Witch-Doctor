@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 8608720664604440206}
   - component: {fileID: 8243921927499577937}
   - component: {fileID: 5650035298721608524}
-  - component: {fileID: 2882547174232995896}
-  - component: {fileID: 5447281446132486537}
+  - component: {fileID: -4840593599870236863}
   m_Layer: 0
-  m_Name: chopped
+  m_Name: Destroyed
   m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4151604952807342182}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 1715ae5ba3dc1114aa152df0dff9b4e1, type: 3}
 --- !u!23 &8608720664604440206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24eff255d950c534db36b63065663544, type: 2}
+  - {fileID: 2100000, guid: ea545e744c05f8f769a75d011fa83c58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,24 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionTest
   lockRotation: 0
---- !u!114 &2882547174232995896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4151604952807342182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf4538cabc7adae4d90e8f75341abe7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  name: Chopped Aloe
-  choppedPrefab: {fileID: 4151604952807342182, guid: 80fa4a9ec86f8e565aa80cb9180b6b34, type: 3}
-  crushedPrefab: {fileID: 1243386419413056374, guid: ddd41784b4a5cb14a9eb18ff53f71078, type: 3}
-  craftInteractionsRequired: 5
-  heldInTable: {fileID: 0}
---- !u!54 &5447281446132486537
+--- !u!54 &-4840593599870236863
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

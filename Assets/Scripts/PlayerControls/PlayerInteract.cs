@@ -33,7 +33,6 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnInteractPressed(InputAction.CallbackContext cxt)
     {
-        Debug.Log("pressed");
         // if somthing to pickup
         if(holdingInteractible == null)
         {   //execute interactible

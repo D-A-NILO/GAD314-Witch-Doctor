@@ -6,7 +6,7 @@ public class ChoppingBoard : CraftingTable
     protected override Ingredient CraftIngredient()
     {
         
-        GameObject obj = Instantiate(heldIngredient.choppedPrefab, transform.position, transform.rotation);
+        GameObject obj = Instantiate(heldIngredient.choppedPrefab, holdPoint.position, holdPoint.rotation);
         
         Destroy(heldIngredient.gameObject);
 
