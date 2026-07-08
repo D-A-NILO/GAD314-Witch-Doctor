@@ -1,60 +1,68 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Cauldron : MonoBehaviour, IInteractable
+public class Cauldron : MonoBehaviour
 {
-    public List<Recipe> allRecipes;
-    public List<IngredientInfo> ingredients = new List<IngredientInfo>();
+    [SerializeField] private  List<Recipe> allRecipes;
+    [SerializeField] private  List<IngredientData> ingredients = new List<IngredientData>();
+    [SerializeField] private  Renderer mixingRenderer;
+    [SerializeField] private Color mixingColor = Color.purple;
+    [SerializeField] private  Color SuccessColor = Color.green;
+    [SerializeField] private  Color FailedColor = Color.red;
 
-    public float stirProgress = 0f;
+    private float stirProgress = 0f;
     public float stirRequired = 100f;
 
-    public bool isCrafted = false;
-    public Recipe matchedRecipe;
+    private bool isCrafted = false;
+    private Recipe matchedRecipe;
 
-    private Ingredient currentIngredient;
+    private MixState resultType = MixState.EMPTY;
 
-    public EquipItem playerEquip;
-
-    public PotionResultType resultType = PotionResultType.Unknown;
-    public Recipe resultRecipe;
-
-    public void OnInteract(PlayerInteract playerInteract)
+    void Start()
     {
-        GameObject heldItem = playerEquip.GetActiveItem();
+        ClearCauldron();
+    }
 
-        Debug.Log($"Held item: {heldItem}");
+    void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log($"item entered cauldron: {other.name}");
+
+        if(other.tag == "Sponge")
+            ClearCauldron();
 
         //place ingredient into cauldron
-        if (heldItem != null && heldItem.TryGetComponent(out Ingredient ingredient))
+        if (other.TryGetComponent(out Ingredient ingredient))
         {
-            //AddIngredient(ingredient);
+
+            mixingRenderer.enabled = true; // show mixing
+            mixingRenderer.material.SetColor("_Color", mixingColor);
+            AddIngredient(ingredient);
             return;
         }
         //try fill bottle
-        if (heldItem != null && heldItem.TryGetComponent(out FillingThePotion bottle))
+        if (other.TryGetComponent(out Bottle bottle))
         { 
             TryFillBottle(bottle);
             return;
         }
         
-        Debug.Log("cauldron interacted but nothing happened");
+        Debug.Log("somthing entered but nothing happened");
     }
 
-    //public void AddIngredient(Ingredient ingredient)
-   // {
-       // ingredients.Add(new IngredientInfo(
-            //ingredient.ingredientData,
-            //ingredient.ingredientState
-       // ));
+    public void AddIngredient(Ingredient ingredient)
+    {
+        ingredients.Add(ingredient.data);
+        PlayerInteract interactor = ingredient.GetComponent<Grabbable>().GetHoldingInteractor();
+        if(interactor)
+            interactor.DropItem();
 
-      //  playerEquip.RemoveActiveItem();
+        Destroy(ingredient.gameObject);
 
-      //  Destroy(ingredient.gameObject);
-
-      //  Debug.Log("ingredient added to cauldron");
-    //}
+        Debug.Log($"{ingredient.data.name} added to cauldron");
+    }
 
     public void AddStir(float amount)
     {
@@ -62,6 +70,7 @@ public class Cauldron : MonoBehaviour, IInteractable
             return;
 
         stirProgress += amount;
+        Debug.Log(stirProgress);
 
         if (stirProgress >= stirRequired)
         {
@@ -75,21 +84,22 @@ public class Cauldron : MonoBehaviour, IInteractable
 
         if (matchedRecipe != null)
         {
-            resultType = PotionResultType.SuccessfulMix;
-            resultRecipe = matchedRecipe;
-            Debug.Log($"craft success: {matchedRecipe.recipeName}");
+            resultType = MixState.SUCEEDED;
+            Debug.Log($"craft success: {matchedRecipe.name}");
             isCrafted = true;
+            mixingRenderer.material.SetColor("_Color", SuccessColor);
         }
         else
         {
-            resultType = PotionResultType.FailedMix;
-            resultRecipe = null;
+            resultType = MixState.FAILED;
             Debug.Log("craft failed");
+            mixingRenderer.material.SetColor("_Color", FailedColor);
         }
 
         
         stirProgress = 0f;
     }
+
 
     private Recipe FindMatchingRecipe()
     { 
@@ -107,15 +117,20 @@ public class Cauldron : MonoBehaviour, IInteractable
         if (recipe.requiredIngredients.Count != ingredients.Count)
             return false;
 
-        foreach (IngredientInfo required in recipe.requiredIngredients)
+        List<IngredientData> actualIngredients = ingredients.ToList();
+
+        foreach (IngredientData required in recipe.requiredIngredients)
         { 
             bool found = false;
 
-            foreach (IngredientInfo actual in ingredients)
+            foreach (IngredientData actual in actualIngredients)
             {
-                if (required.ingredientData == actual.ingredientData && required.ingredientState == actual.ingredientState)
+                if (required == actual)
                 {
                     found = true;
+                    //reduce list 
+                    /// allows for matching multiple count of same ingredients and reduces search time
+                    actualIngredients.Remove(actual);
                     break;
                 }
             }
@@ -127,15 +142,16 @@ public class Cauldron : MonoBehaviour, IInteractable
         return true;
     }
 
-    public void TryFillBottle(FillingThePotion bottle)
+    public void TryFillBottle(Bottle bottle)
     {
-        if (resultType == PotionResultType.Unknown)
+        if (resultType == MixState.EMPTY)
         {
             Debug.Log("nothing to bottle");
+            //can replace with doodoo potion or smth
             return;
         }
 
-        bottle.FillFromCauldron(this);
+        bottle.Fill(matchedRecipe.result);
 
         Debug.Log("bottle filled successfully");
 
@@ -148,5 +164,6 @@ public class Cauldron : MonoBehaviour, IInteractable
         stirProgress = 0f;
         isCrafted = false;
         matchedRecipe = null;
+        mixingRenderer.enabled = false;
     }
 }

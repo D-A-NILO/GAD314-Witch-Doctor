@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class MortarPestle : CraftingTable
 {
+     [SerializeField] private GameObject defaultIfNull;
     protected override Ingredient CraftIngredient()
     {
-        GameObject obj = Instantiate(heldIngredient.crushedPrefab, holdPoint.position, holdPoint.rotation);
+        GameObject prefab = heldIngredient.data.crushedPrefab;
+        if(!prefab)
+            prefab = defaultIfNull;
+            
+        GameObject obj = Instantiate(prefab, holdPoint.position, holdPoint.rotation);
         
         Destroy(heldIngredient.gameObject);
 

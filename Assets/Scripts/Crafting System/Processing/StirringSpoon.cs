@@ -5,46 +5,35 @@ public class StirringSpoon : MonoBehaviour
     public Camera playerCamera;
     public float stirSens = 0.2f;
     private Vector3 lastMousePos;
-    private Cauldron currentCauldron;
+    private Rigidbody rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other) 
     {
-        if (Input.GetMouseButtonDown(0))
-        { 
-            lastMousePos = Input.mousePosition;
-        }
 
-        if (Input.GetMouseButton(0))
-        { 
-            Vector3 mouseDelta = Input.mousePosition - lastMousePos;
-            lastMousePos = Input.mousePosition;
+        Cauldron currentCauldron = other.GetComponent<Cauldron>();
 
-            float stirAmount = mouseDelta.magnitude * stirSens;
+        // if (Input.GetMouseButtonDown(0))
+        // { 
+        //     lastMousePos = Input.mousePosition;
+        // }
 
-            if (currentCauldron != null)
-            {
-                currentCauldron.AddStir(stirAmount);
-            }
-        }
-    }
+        
+        // Vector3 mouseDelta = Input.mousePosition - lastMousePos;
+        // lastMousePos = Input.mousePosition;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Cauldron cauldron))
-        { 
-            currentCauldron = cauldron;
-        }
-    }
+        float stirAmount = rb.linearVelocity.magnitude * stirSens;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out Cauldron cauldron))
+        if (currentCauldron != null)
         {
-            if (currentCauldron == cauldron)
-            {
-                currentCauldron = null;
-            }
+            currentCauldron.AddStir(stirAmount);
+            Debug.Log("Mixxing cauldron: " + stirAmount);
         }
     }
+
 }

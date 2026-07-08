@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public enum PotionResultType
+public enum MixState
 {
-    Unknown,
-    FailedMix,
-    SuccessfulMix
+    EMPTY,
+    FAILED,
+    SUCEEDED
 }
