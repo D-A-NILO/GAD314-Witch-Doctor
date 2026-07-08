@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4538cabc7adae4d90e8f75341abe7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  name: 
+  name: Aloe Vera
   choppedPrefab: {fileID: 4151604952807342182, guid: 80fa4a9ec86f8e565aa80cb9180b6b34, type: 3}
   crushedPrefab: {fileID: 4151604952807342182, guid: 80fa4a9ec86f8e565aa80cb9180b6b34, type: 3}
   craftInteractionsRequired: 6
