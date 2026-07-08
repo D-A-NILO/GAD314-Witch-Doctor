@@ -48,4 +48,26 @@ public class NPCMovement : MonoBehaviour
             Debug.Log($"reached current destination point: {currentPoint}");
         }
     }
+
+    public void ContinueToNextPoint()
+    {
+        if (pathFinished)
+            return;
+
+        currentPoint++;
+
+        if (currentPoint >= destinationPoints.Length)
+        {
+            pathFinished = true;
+            Debug.Log("NPC finished all waypoints.");
+            return;
+        }
+
+        isMoving = true;
+    }
+
+    public int CurrentPoint
+    {
+        get { return currentPoint; }
+    }
 }
