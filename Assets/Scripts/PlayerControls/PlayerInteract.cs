@@ -54,6 +54,7 @@ public class PlayerInteract : MonoBehaviour
         holdingInteractible = interactable;
         
         itemHolder.GrabRB(rb, (interactable as Grabbable).lockRotation);
+        indicator.SetIndicatorStatus("Holding");
     }
 
     public void DropItem()
@@ -61,6 +62,7 @@ public class PlayerInteract : MonoBehaviour
         (holdingInteractible as Grabbable).OnDrop();
         holdingInteractible = null;
         itemHolder.ReleaseHeldRB();
+        indicator.SetIndicatorStatus("None");
     }
 
     void FixedUpdate()
@@ -81,10 +83,13 @@ public class PlayerInteract : MonoBehaviour
 
     private void OnInteractableUpdate(IInteractable newInteractible)
     {
-        if(newInteractible == null)
-            indicator.SetIndicatorStatus("None");
-        else
-            indicator.SetIndicatorStatus("Interact");
+        if(holdingInteractible == null)
+        {
+            if(newInteractible == null)
+                indicator.SetIndicatorStatus("None");
+            else
+                indicator.SetIndicatorStatus("Interact");
+        }
         
 
         visibleInteractible = newInteractible;  
