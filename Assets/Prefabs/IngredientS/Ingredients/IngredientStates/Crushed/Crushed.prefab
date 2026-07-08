@@ -16,7 +16,11 @@ GameObject:
   - component: {fileID: 920488303042308657}
   - component: {fileID: 7613680597819249676}
   m_Layer: 0
+<<<<<<<< HEAD:Assets/Prefabs/IngredientS/Ingredients/IngredientStates/Crushed/Crushed.prefab
   m_Name: Crushed
+========
+  m_Name: 2_Test_Ingredient_Grinded
+>>>>>>>> Crafting:Assets/Danilo's Stuff/2_Test_Ingredient_Grinded.prefab
   m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
