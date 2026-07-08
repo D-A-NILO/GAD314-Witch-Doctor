@@ -20,7 +20,7 @@ public class Cauldron : MonoBehaviour, IInteractable
     public PotionResultType resultType = PotionResultType.Unknown;
     public Recipe resultRecipe;
 
-    public void OnInteract()
+    public void OnInteract(PlayerInteract playerInteract)
     {
         GameObject heldItem = playerEquip.GetActiveItem();
 
@@ -29,7 +29,7 @@ public class Cauldron : MonoBehaviour, IInteractable
         //place ingredient into cauldron
         if (heldItem != null && heldItem.TryGetComponent(out Ingredient ingredient))
         {
-            AddIngredient(ingredient);
+            //AddIngredient(ingredient);
             return;
         }
         //try fill bottle
@@ -42,19 +42,19 @@ public class Cauldron : MonoBehaviour, IInteractable
         Debug.Log("cauldron interacted but nothing happened");
     }
 
-    public void AddIngredient(Ingredient ingredient)
-    {
-        ingredients.Add(new IngredientInfo(
-            ingredient.ingredientData,
-            ingredient.ingredientState
-        ));
+    //public void AddIngredient(Ingredient ingredient)
+   // {
+       // ingredients.Add(new IngredientInfo(
+            //ingredient.ingredientData,
+            //ingredient.ingredientState
+       // ));
 
-        playerEquip.RemoveActiveItem();
+      //  playerEquip.RemoveActiveItem();
 
-        Destroy(ingredient.gameObject);
+      //  Destroy(ingredient.gameObject);
 
-        Debug.Log("ingredient added to cauldron");
-    }
+      //  Debug.Log("ingredient added to cauldron");
+    //}
 
     public void AddStir(float amount)
     {

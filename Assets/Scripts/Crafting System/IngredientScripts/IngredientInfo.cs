@@ -9,8 +9,8 @@ public class IngredientInfo
 
     public IngredientInfo(Ingredient ingredient)
     {
-        ingredientData = ingredient.ingredientData;
-        ingredientState = ingredient.ingredientState;
+       // ingredientData = ingredient.ingredientData;
+       // ingredientState = ingredient.ingredientState;
     }
 
     public IngredientInfo(IngredientData data, IngredientState state)
