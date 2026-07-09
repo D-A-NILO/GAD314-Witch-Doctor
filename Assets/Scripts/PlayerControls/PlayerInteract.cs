@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.UIElements;
 
 public class PlayerInteract : MonoBehaviour
@@ -15,7 +16,7 @@ public class PlayerInteract : MonoBehaviour
     //private IInteractable[] interactables;
     
     private IInteractable visibleInteractible;
-    private IInteractable holdingInteractible;
+    public IInteractable holdingInteractible;
     private CrosshairIndicator indicator;
 
     private void OnEnable()
@@ -24,6 +25,7 @@ public class PlayerInteract : MonoBehaviour
         interactActionRef.action.performed += OnInteractPressed;
 
         indicator = GetComponent<CrosshairIndicator>();
+
 
     }
     private void OnDisable()
@@ -37,7 +39,8 @@ public class PlayerInteract : MonoBehaviour
         if(holdingInteractible == null)
         {   //execute interactible
             visibleInteractible?.OnInteract(this);
-        }else
+        }
+        else if(holdingInteractible != null)
         { // drop interactible
             DropItem();
         }
@@ -95,4 +98,11 @@ public class PlayerInteract : MonoBehaviour
         visibleInteractible = newInteractible;  
     }
 
+    public Grabbable GetHeldItem()
+    {
+        return holdingInteractible as Grabbable;
+    }
+
+
 }
+

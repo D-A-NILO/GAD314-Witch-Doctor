@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd53edc2b341d6aa83c314d90a41d3d, type: 3}
   m_Name: TestPotion
   m_EditorClassIdentifier: Assembly-CSharp::PotionData
+  potionID: 1
   color: {r: 1, g: 0, b: 0.9735141, a: 1}

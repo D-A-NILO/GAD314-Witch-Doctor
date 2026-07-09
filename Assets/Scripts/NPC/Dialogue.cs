@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
-    void NextLine()
+    public void NextLine()
     {
         if (textIndex < lines.Length - 1)
         {

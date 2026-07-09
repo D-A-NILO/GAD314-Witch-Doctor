@@ -3,6 +3,7 @@ using UnityEngine;
 public enum PotionID
 {
     None,
+    TestingPotion,
     PricklingPlaguePotion,
     SlimeConsumptionPotion,
     LevitationBloatPotion,
