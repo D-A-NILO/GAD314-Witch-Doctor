@@ -144,7 +144,7 @@ public class Cauldron : MonoBehaviour
 
     public void TryFillBottle(Bottle bottle)
     {
-        if (resultType == MixState.EMPTY)
+        if (resultType == MixState.EMPTY || matchedRecipe == null)
         {
             Debug.Log("nothing to bottle");
             //can replace with doodoo potion or smth
