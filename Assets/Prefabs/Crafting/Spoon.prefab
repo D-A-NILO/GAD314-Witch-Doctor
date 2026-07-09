@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StirringSpoon
   playerCamera: {fileID: 0}
-  stirSens: 0.05
+  stirSens: 0.08
 --- !u!65 &5536032800666847545
 BoxCollider:
   m_ObjectHideFlags: 0

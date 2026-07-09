@@ -66,6 +66,7 @@ Transform:
   m_Children:
   - {fileID: 7059857852579064487}
   - {fileID: 8763079194944369156}
+  - {fileID: 7361649206148469492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7504562784869042184
@@ -138,8 +139,93 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChoppingBoard
   holdPoint: {fileID: 7059857852579064487}
   removeCooldownTime: 1
-  requiredUtensil: {fileID: 0}
+  requiredUtensil: {fileID: 8531520148218741549}
   defaultIfNull: {fileID: 0}
+--- !u!1001 &7862151103865259299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4596540605152479378}
+    m_Modifications:
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.89958334
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8995832
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.89958334
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.177
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.43045992
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5609851
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5609849
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4304601
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657282480139014443, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+      propertyPath: m_Name
+      value: knife
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+--- !u!4 &7361649206148469492 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 806755889428142039, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+  m_PrefabInstance: {fileID: 7862151103865259299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8531520148218741549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1981008350975821326, guid: e3a30b91223aafb42943da685a7b53e9, type: 3}
+  m_PrefabInstance: {fileID: 7862151103865259299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad4bf2980b4c4a3dbc44c8284389fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CraftingUtensil
 --- !u!1001 &9085466221108467183
 PrefabInstance:
   m_ObjectHideFlags: 0
