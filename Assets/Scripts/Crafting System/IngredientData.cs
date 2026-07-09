@@ -1,12 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Crafting", menuName ="Ingredient")]
+[CreateAssetMenu(fileName = "Ingredient", menuName ="Crafting/Ingredient")]
 public class IngredientData : ScriptableObject
 {
-    public string ingredientName;
-
-    public GameObject rawPrefab;
     public GameObject choppedPrefab;
-    public GameObject grindedPrefab;
+    public GameObject crushedPrefab;
 }
 

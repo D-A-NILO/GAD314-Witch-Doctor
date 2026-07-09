@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5031d11dfed2a44afb696fd8bb187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSens: 30
+  mouseSens: 25
   playerOrientation: {fileID: 8712314769594859987}
 --- !u!1 &7673134068713723219
 GameObject:
@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 7555797927877417153}
   - component: {fileID: 5706966143455628951}
   - component: {fileID: 270178319818259726}
+  - component: {fileID: 3021487100959442549}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -362,10 +363,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   statusArray:
   - name: None
-    displayColor: {r: 1, g: 1, b: 1, a: 0}
+    displayColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+    displaySprite: {fileID: 21300000, guid: b4748c851c4710cafb82453cf8533985, type: 3}
   - name: Interact
-    displayColor: {r: 1, g: 0.0489275, b: 0, a: 0}
-  indicatorRend: {fileID: 2638884018202980586}
+    displayColor: {r: 1, g: 1, b: 1, a: 1}
+    displaySprite: {fileID: 21300000, guid: 9c3db724b300b75ebbbde078819b0f64, type: 3}
+  - name: Holding
+    displayColor: {r: 1, g: 0.9333358, b: 0.051886797, a: 1}
+    displaySprite: {fileID: 21300000, guid: 9c3db724b300b75ebbbde078819b0f64, type: 3}
+  crosshair: {fileID: 0}
+--- !u!114 &3021487100959442549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673134068713723219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6fc26cfc67f6f0dae71fdf43912141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &8123197920175343527
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +493,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8123197920175343527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

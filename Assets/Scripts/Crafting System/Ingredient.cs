@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    public new string name;
-    public GameObject choppedPrefab;
-    public GameObject crushedPrefab;
+    public IngredientData data;
     public int craftInteractionsRequired;
     
     public CraftingTable heldInTable = null;

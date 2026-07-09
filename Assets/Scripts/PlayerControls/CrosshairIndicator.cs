@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrosshairIndicator : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class CrosshairIndicator : MonoBehaviour
     public class Status
     {
         public string name;
-        public Color displayColor;
+        public Color displayColor = Color.white;
+        public Sprite displaySprite;
     }
     [SerializeField] private Status[] statusArray;
     private Dictionary<string, Status> statusDict;
@@ -29,7 +31,7 @@ public class CrosshairIndicator : MonoBehaviour
     /// temporary Indicator solution!!
     /// Replace later
 
-    public Renderer indicatorRend;
+    public Image crosshair;
 
     public void SetIndicatorStatus(string status)
     {
@@ -37,7 +39,7 @@ public class CrosshairIndicator : MonoBehaviour
         {
             Debug.Log("Cannot Set indicator Status: " + status + "\nDoes not exist");
         }
-        indicatorRend.material.color = statusDict[status].displayColor;
+        SetIndicatorDisplay(statusDict[status].displayColor, statusDict[status].displaySprite);
     }
     public void SetIndicatorStatus(int statusIndex)
     {
@@ -45,6 +47,13 @@ public class CrosshairIndicator : MonoBehaviour
         {
             Debug.Log("Cannot Set indicator Status Index: " + statusIndex + "\nDoes not exist");
         }
-        indicatorRend.material.color = statusArray[statusIndex].displayColor;
+    }
+
+    private void SetIndicatorDisplay(Color color, Sprite sprite)
+    {
+        crosshair.color = color;
+        Debug.Log(sprite.name);
+        if(sprite != null)
+            crosshair.sprite = sprite;
     }
 }
