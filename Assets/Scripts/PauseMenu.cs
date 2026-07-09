@@ -31,11 +31,16 @@ public class PauseMenu : MonoBehaviour
 
         pauseMenu.SetActive(paused);
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = paused;
 
         if(paused)
+        {
             OnPauseAction?.Invoke();
+        }
         else
+        {
             OnUnPauseAction?.Invoke();
+        }
     }
 
     public void Quit()
