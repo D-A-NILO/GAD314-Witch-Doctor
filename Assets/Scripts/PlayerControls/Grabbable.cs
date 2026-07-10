@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour, IInteractable
 {
+
+    public string displayName;
     public bool lockRotation = false;
     private Rigidbody rb;
     private PlayerInteract holder;
