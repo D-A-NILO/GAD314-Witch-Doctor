@@ -6,6 +6,7 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     [SerializeField] private  List<Recipe> allRecipes;
+    [SerializeField] private Recipe failedRecipe;
     [SerializeField] private  List<IngredientData> ingredients = new List<IngredientData>();
     [SerializeField] private  Renderer mixingRenderer;
     [SerializeField] private Color mixingColor = Color.purple;
@@ -86,17 +87,17 @@ public class Cauldron : MonoBehaviour
         {
             resultType = MixState.SUCEEDED;
             Debug.Log($"craft success: {matchedRecipe.name}");
-            isCrafted = true;
             mixingRenderer.material.SetColor("_Color", SuccessColor);
         }
         else
         {
+            matchedRecipe = failedRecipe;
             resultType = MixState.FAILED;
             Debug.Log("craft failed");
             mixingRenderer.material.SetColor("_Color", FailedColor);
         }
 
-        
+        isCrafted = true;
         stirProgress = 0f;
     }
 
@@ -144,16 +145,14 @@ public class Cauldron : MonoBehaviour
 
     public void TryFillBottle(Bottle bottle)
     {
-        if (resultType == MixState.EMPTY || matchedRecipe == null)
+        if (resultType == MixState.EMPTY)
         {
-            Debug.Log("nothing to bottle");
-            //can replace with doodoo potion or smth
+            Debug.Log("Nothing to bottle");
             return;
         }
 
         bottle.Fill(matchedRecipe.result);
-
-        Debug.Log("bottle filled successfully");
+        Debug.Log($"bottle filled with {matchedRecipe.result.name}");
 
         ClearCauldron();
     }

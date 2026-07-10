@@ -1,11 +1,25 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour, IInteractable
 {
-    public Dialogue dialogue;
+    [SerializeField] private Dialogue dialogue;
     public NPCMovement npcMovement;
+    public InteractText interactText;
+
+
+    private void Start()
+    {
+        Debug.Log($"is dialogue assigned: {dialogue}");
+    }
     public void OnInteract(PlayerInteract playerInteract)
     {
         dialogue.StartDialogue(npcMovement.CurrentPoint);
+        interactText.text.SetActive(false);
+    }
+
+    public void SetDialogue(Dialogue dialogueRef)
+    {
+        dialogue = dialogueRef;
     }
 }

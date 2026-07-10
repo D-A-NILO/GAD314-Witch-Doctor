@@ -7,6 +7,7 @@ public class Dialogue : MonoBehaviour
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
     public DialogueSet[] dialogueSets;
+    public NPCIllness illness;
     public float textSpeed;
 
     public NPCMovement npcMovement;
@@ -15,9 +16,19 @@ public class Dialogue : MonoBehaviour
     private string[] lines;
     private int textIndex;
     private bool dialogueActive;
+    private bool waitingToFinish;
+    public System.Action onDialogueEnd;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (dialogueBox == null)
+        {
+            dialogueBox = GameObject.Find("DialogueBox");
+        }
+        if (dialogueText == null)
+        {
+            dialogueText = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+        }
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
     }
@@ -25,8 +36,12 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dialogueActive)
+        if (waitingToFinish)
+        {
+            EndDialogue();
             return;
+        }
+            
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -54,6 +69,12 @@ public class Dialogue : MonoBehaviour
 
     public void NextLine()
     {
+        if (!illness.isCured && textIndex == 0)
+        {
+            EndDialogue();
+            return;
+        } 
+
         if (textIndex < lines.Length - 1)
         {
             textIndex++;
@@ -72,9 +93,12 @@ public class Dialogue : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
 
-        if (npcMovement != null)
+        onDialogueEnd?.Invoke();
+        onDialogueEnd = null;
+
+        //if (npcMovement != null)
         { 
-            npcMovement.ContinueToNextPoint();
+            //npcMovement.ContinueToNextPoint();
         }
     }
 

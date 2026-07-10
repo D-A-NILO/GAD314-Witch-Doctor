@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCMovement : MonoBehaviour
@@ -27,11 +29,19 @@ public class NPCMovement : MonoBehaviour
 
     private void MoveToCurrentPoint()
     {
+        if (currentPoint >= destinationPoints.Length)
+        {
+            Debug.Log("NPC has finished all destination points");
+            isMoving = false;
+            pathFinished = true;
+            return;
+        }
+
         Transform target = destinationPoints[currentPoint];
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-        Vector3 direction = target.position - transform.position;
+        Vector3 direction = transform.position - target.position;
         direction.y = 0;
 
         if (direction.sqrMagnitude > 0.001f)
@@ -42,7 +52,7 @@ public class NPCMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.position) <= stoppingDistance)
         {
-            transform.position = target.position;
+            transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
             isMoving = false;
 
             Debug.Log($"reached current destination point: {currentPoint}");
@@ -69,5 +79,14 @@ public class NPCMovement : MonoBehaviour
     public int CurrentPoint
     {
         get { return currentPoint; }
+    }
+
+    public void SetPath(Transform[] points)
+    {
+        destinationPoints = points;
+        Debug.Log($"assigned {destinationPoints.Length} destination points");
+
+        currentPoint = 0;
+        isMoving = true;
     }
 }

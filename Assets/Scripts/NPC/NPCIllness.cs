@@ -14,14 +14,15 @@ public class NPCIllness : MonoBehaviour
     public bool isCured;
 
     public Bottle bottle;
-
-    public PlayerInteract interact;
-
-    public Dialogue dialogue;
+    public InteractText interactText;
+    [SerializeField] private Dialogue dialogue;
+    public NPCMovement npcMove;
+    private NPCSpawner spawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         AssignRandomIllness();
     }
 
@@ -46,7 +47,7 @@ public class NPCIllness : MonoBehaviour
         if(isDead || isCured)
             return;
 
-        Debug.Log($"the severity of npc's Illness is: {illnessSeverity}");
+        interactText.text.SetActive(false);
 
         if (bottle.CurrentPotionID == currentIllness.cureID)
         {
@@ -59,8 +60,7 @@ public class NPCIllness : MonoBehaviour
                 Debug.Log("wrong potion");
         }
 
-        illnessSeverity = Mathf.Clamp(illnessSeverity, 0, 100);
-
+        Debug.Log($"the severity of npc's Illness is: {illnessSeverity}");
         bottle.Empty();
 
         CheckIllnessState();
@@ -85,6 +85,12 @@ public class NPCIllness : MonoBehaviour
     { 
         isCured =true;
         Debug.Log($"{gameObject.name} has been cured");
+
+        dialogue.onDialogueEnd += () =>
+        {
+            spawner.RemoveNPC(gameObject);
+        };
+
         dialogue.StartDialogue(1);
     }
 
@@ -92,5 +98,23 @@ public class NPCIllness : MonoBehaviour
     {
         isDead = true;
         Debug.Log($"{gameObject.name} is dead");
+        
+
+        dialogue.onDialogueEnd = () =>
+        {
+            spawner.RemoveNPC(gameObject);
+        };
+
+        dialogue.StartDialogue(2);
+    }
+
+    public void SetDialogue(Dialogue dialogueRef)
+    {
+        dialogue = dialogueRef;
+    }
+
+    public void SetSpawner(NPCSpawner npcSpawner)
+    {
+        spawner = npcSpawner;
     }
 }
