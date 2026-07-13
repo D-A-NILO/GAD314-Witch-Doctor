@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255c541eadf56d45bfd2d62da121e32, type: 3}
+  m_Name: Stone Foot
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeDescription: 
+  requiredIngredients:
+  - {fileID: 11400000, guid: 3c63992991f985bc1be73a92fb7b8e3f, type: 2}
+  - {fileID: 11400000, guid: a28fcac297712b498a9ebe2a0d7d8f47, type: 2}
+  result: {fileID: 11400000, guid: e5c482b4a9a47b3b287797c43a37562e, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255c541eadf56d45bfd2d62da121e32, type: 3}
+  m_Name: Backwards Bend
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeDescription: 
+  requiredIngredients:
+  - {fileID: 11400000, guid: 6a9552ea4c7c96f09a738808dd9dbce8, type: 2}
+  - {fileID: 11400000, guid: 7dd8c9ef0f25cb5b1ace7ac6fb637646, type: 2}
+  - {fileID: 11400000, guid: 09c538064eaba293a8b7626a3a52299f, type: 2}
+  - {fileID: 11400000, guid: 3c63992991f985bc1be73a92fb7b8e3f, type: 2}
+  result: {fileID: 11400000, guid: a5184362d61e513218d5be9328fae065, type: 2}

@@ -15,6 +15,9 @@ public class PlayerCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         lookAct = InputSystem.actions.FindAction("Look");
+        Vector3 rot = transform.rotation.eulerAngles;
+        xRotation = rot.x;
+        yRotation = rot.y;
     }
 
     // Update is called once per frame

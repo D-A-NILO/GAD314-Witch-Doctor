@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour
 {
     public IngredientData data;
-    public int craftInteractionsRequired;
+    //public int craftInteractionsRequired;
     
     public CraftingTable heldInTable = null;
 
@@ -16,7 +16,7 @@ public class Ingredient : MonoBehaviour
         }
         if(TryGetComponent(out Grabbable grabbable))
         {
-            grabbable.displayName = data.name;
+            grabbable.DisplayName = data.name;
         }
     }
     void OnCollisionEnter(Collision collision)

@@ -140,7 +140,7 @@ MonoBehaviour:
   holdPoint: {fileID: 7059857852579064487}
   removeCooldownTime: 1
   requiredUtensil: {fileID: 8531520148218741549}
-  defaultIfNull: {fileID: 0}
+  defaultIfNull: {fileID: 8846824592928337372, guid: 3484ff5c2363a9712ab5421721ec34e9, type: 3}
 --- !u!1001 &7862151103865259299
 PrefabInstance:
   m_ObjectHideFlags: 0

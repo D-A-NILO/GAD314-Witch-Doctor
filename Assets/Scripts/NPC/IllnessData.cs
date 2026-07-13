@@ -3,8 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new illness", menuName = "Illnesses")]
 public class IllnessData : ScriptableObject
 {
-    public string illnessName;
-    public PotionID cureID;
+    public PotionData curePotion;
 
     public int startingSeverity = 50;
 

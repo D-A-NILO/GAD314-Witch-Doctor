@@ -10,8 +10,8 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private  List<IngredientData> ingredients = new List<IngredientData>();
     [SerializeField] private  Renderer mixingRenderer;
     [SerializeField] private Color mixingColor = Color.purple;
-    [SerializeField] private  Color SuccessColor = Color.green;
-    [SerializeField] private  Color FailedColor = Color.red;
+    //[SerializeField] private  Color SuccessColor = Color.green;
+    //[SerializeField] private  Color FailedColor = Color.red;
 
     private float stirProgress = 0f;
     public float stirRequired = 100f;
@@ -87,15 +87,15 @@ public class Cauldron : MonoBehaviour
         {
             resultType = MixState.SUCEEDED;
             Debug.Log($"craft success: {matchedRecipe.name}");
-            mixingRenderer.material.SetColor("_Color", SuccessColor);
         }
         else
         {
             matchedRecipe = failedRecipe;
             resultType = MixState.FAILED;
             Debug.Log("craft failed");
-            mixingRenderer.material.SetColor("_Color", FailedColor);
         }
+
+        mixingRenderer.material.SetColor("_Color", matchedRecipe.result.color);
 
         isCrafted = true;
         stirProgress = 0f;
@@ -164,5 +164,6 @@ public class Cauldron : MonoBehaviour
         isCrafted = false;
         matchedRecipe = null;
         mixingRenderer.enabled = false;
+        resultType = MixState.EMPTY;
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class MortarPestle : CraftingTable
 {
      [SerializeField] private GameObject defaultIfNull;
+     [SerializeField] private int defaultCraftRequirement = 6;
     protected override Ingredient CraftIngredient()
     {
         GameObject prefab = heldIngredient.data.crushedPrefab;
@@ -14,5 +15,21 @@ public class MortarPestle : CraftingTable
         Destroy(heldIngredient.gameObject);
 
         return obj.GetComponent<Ingredient>();
+    }
+
+    public override void PlaceIngredient(Ingredient ingredient)
+    {
+        base.PlaceIngredient(ingredient);
+
+        GameObject prefab = heldIngredient.data.crushedPrefab;
+        if(!prefab)
+            prefab = defaultIfNull;
+        
+        if(prefab.TryGetComponent(out Ingredient result))
+        {
+            craftingInteractRequirement = result.data.craftInteractionsRequired;
+        }else
+            craftingInteractRequirement = defaultCraftRequirement;
+
     }
 }

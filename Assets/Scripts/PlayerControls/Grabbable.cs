@@ -3,7 +3,19 @@ using UnityEngine;
 public class Grabbable : MonoBehaviour, IInteractable
 {
 
-    public string displayName;
+    [SerializeField] private string displayName;
+
+    public string DisplayName
+    {
+        get {return displayName;}
+        set
+        {
+            displayName = value;
+            //update textDisplay if being held
+            if(holder != null) 
+                ItemTextManager.SetText(displayName);
+        }
+    }
     public bool lockRotation = false;
     private Rigidbody rb;
     private PlayerInteract holder;
@@ -12,7 +24,7 @@ public class Grabbable : MonoBehaviour, IInteractable
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void OnInteract(PlayerInteract interactor)
+    public void OnInteract(PlayerInteract interactor) // on grab...
     {
         if(TryGetComponent(out Ingredient ingredient))
             ingredient.heldInTable?.RemoveHeldIngredient();
@@ -20,6 +32,7 @@ public class Grabbable : MonoBehaviour, IInteractable
         UnFreeze();
 
         interactor.GrabRigidBody(GetComponent<Rigidbody>(), this);
+        ItemTextManager.SetText(displayName);
     }
 
     public void Freeze()
@@ -39,11 +52,13 @@ public class Grabbable : MonoBehaviour, IInteractable
     public void OnDrop()
     {
         holder = null;
+        ItemTextManager.SetText("");
     }
 
     public PlayerInteract GetHoldingInteractor()
     {
         return holder;
     }
+
 
 }

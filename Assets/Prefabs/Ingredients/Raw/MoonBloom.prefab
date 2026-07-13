@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5769800841398585927}
   - component: {fileID: 2981643187673721372}
   - component: {fileID: 5407372297002606944}
+  - component: {fileID: 662824923466987518}
+  - component: {fileID: 4193683008607774247}
   m_Layer: 0
   m_Name: MoonBloom
   m_TagString: Untagged
@@ -46,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e0f188aec8b8a4893dd3ac66e4c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grabbable
+  displayName: 
   lockRotation: 0
 --- !u!114 &5407372297002606944
 MonoBehaviour:
@@ -59,9 +62,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4538cabc7adae4d90e8f75341abe7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 68129a3bd29eed645984807339a5912a, type: 2}
   craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
+--- !u!65 &662824923466987518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586274142556580765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.422638, y: 0.22759327, z: 0.37512594}
+  m_Center: {x: 0, y: 0.117766574, z: 0}
+--- !u!54 &4193683008607774247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586274142556580765}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2666683837784624440
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class NPCIllness : MonoBehaviour
@@ -49,7 +48,7 @@ public class NPCIllness : MonoBehaviour
 
         interactText.text.SetActive(false);
 
-        if (bottle.CurrentPotionID == currentIllness.cureID)
+        if (bottle.PotionData == currentIllness.curePotion)
         {
             illnessSeverity -= currentIllness.cureAmount;
                 Debug.Log("correct potion");

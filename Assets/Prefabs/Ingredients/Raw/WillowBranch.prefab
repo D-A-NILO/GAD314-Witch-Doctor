@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8316626668275872919}
   - component: {fileID: 2932148988835628347}
   - component: {fileID: 8927239379140826125}
+  - component: {fileID: 3790419616445003036}
+  - component: {fileID: 4210291768989902578}
+  - component: {fileID: -7461862455212557291}
   m_Layer: 0
   m_Name: WillowBranch
   m_TagString: Untagged
@@ -46,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e0f188aec8b8a4893dd3ac66e4c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grabbable
+  displayName: 
   lockRotation: 0
 --- !u!114 &8927239379140826125
 MonoBehaviour:
@@ -59,9 +63,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4538cabc7adae4d90e8f75341abe7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 8bb40b22b4077f213b533591f0fa28cd, type: 2}
   craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
+--- !u!65 &3790419616445003036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258135931813687556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7175963, y: 0.11239191, z: 0.11666703}
+  m_Center: {x: -0.03283751, y: 0.01920699, z: 0.06074965}
+--- !u!65 &4210291768989902578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258135931813687556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12980199, y: 0.16592339, z: 0.08619028}
+  m_Center: {x: -0.17568147, y: 0.15105323, z: 0.06895909}
+--- !u!54 &-7461862455212557291
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258135931813687556}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3235672284953868971
 PrefabInstance:
   m_ObjectHideFlags: 0

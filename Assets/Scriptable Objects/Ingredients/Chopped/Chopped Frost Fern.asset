@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
+  m_Name: Chopped Frost Fern
+  m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 4
+  choppedPrefab: {fileID: 0}
+  crushedPrefab: {fileID: 8411515589019351350, guid: 4eeb3020421e97f83b8b8d498fbb5173, type: 3}

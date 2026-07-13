@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255c541eadf56d45bfd2d62da121e32, type: 3}
+  m_Name: Tongue Sprawl
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeDescription: 
+  requiredIngredients:
+  - {fileID: 11400000, guid: aa136678f01ac15c093f3cf5032105aa, type: 2}
+  - {fileID: 11400000, guid: 8bb40b22b4077f213b533591f0fa28cd, type: 2}
+  - {fileID: 11400000, guid: d2ad3daa71a159180984256bf5a87bcc, type: 2}
+  result: {fileID: 11400000, guid: d09962be96dfcc2e5934e856cacdfbca, type: 2}

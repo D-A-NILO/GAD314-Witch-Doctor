@@ -3,24 +3,28 @@ using UnityEngine;
 public class Bottle : MonoBehaviour
 {
     private PotionData potionData;
+    public PotionData PotionData
+    {
+        get { return potionData;}
+    }
     public Renderer liquidRenderer;
 
     public bool hasPotion => potionData != null;
 
     private Grabbable grabbable;
 
-    public PotionID CurrentPotionID
-    {
-        get
-        {
-            if (potionData == null)
-            {
-                return PotionID.None;
-            }
+    // public PotionID CurrentPotionID
+    // {
+    //     get
+    //     {
+    //         if (potionData == null)
+    //         {
+    //             return PotionID.None;
+    //         }
 
-            return potionData.potionID;
-        }
-    }
+    //         return potionData.potionID;
+    //     }
+    // }
 
     private void Awake()
     {
@@ -31,18 +35,21 @@ public class Bottle : MonoBehaviour
         Empty(); 
     }
 
+
     public void Fill(PotionData potion)
     {
         potionData = potion;
         
         liquidRenderer.material.SetColor("_Color", potion.color);
         liquidRenderer.enabled = true;
+        grabbable.DisplayName = potion.name;
     }
 
     public void Empty()
     {
         potionData = null;
         liquidRenderer.enabled = false;
+        grabbable.name = "Empty Bottle";
     }
 
     private void OnCollisionEnter(Collision collision)

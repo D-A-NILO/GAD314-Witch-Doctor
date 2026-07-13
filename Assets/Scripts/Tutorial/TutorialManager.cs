@@ -76,21 +76,21 @@ public class TutorialManager : MonoBehaviour
         {
             case TutorialState.GoToSpawnTable:
                 if (spawnTableMarker) spawnTableMarker.SetActive(true);
-                StartTypewriter("Welcome to the clinic! Please proceed to the table and press 'E' to pick up your ingredient.");
+                StartTypewriter("Welcome to the clinic! Please proceed to the table and press 'E' to pick up your ingredient. (scroll wheel to move closer / further)");
                 break;
 
             case TutorialState.GoToChoppingBoard:
                 if (choppingBoardMarker) choppingBoardMarker.SetActive(true);
-                StartTypewriter("Great! Now bring the ingredient to the Chopping Station. Pick up your knife and get to chopping, yalla quick");
+                StartTypewriter("Great! Now bring the ingredient to the Chopping board or Mortar. Pick up your knife or pestle respectively and hit the ingredient to start processing");
                 break;
 
             case TutorialState.GoToCauldron:
                 if (cauldronMarker) cauldronMarker.SetActive(true);
-                StartTypewriter("When you finish chopping, move your chopped items to the Cauldron to mix the potion.");
+                StartTypewriter("Move your processed item to the Cauldron and use the spoon to mix the potion");
                 break;
 
             case TutorialState.Complete:
-                StartTypewriter("Use the pestle (cylinder) to mash your ingredients well, congrats you're a licensed witch doctah. Rinse and repeat");
+                StartTypewriter("Bottle it up in a potion and your done!! For the full list of Potions press R. Good luck!");
                 break;
         }
     }

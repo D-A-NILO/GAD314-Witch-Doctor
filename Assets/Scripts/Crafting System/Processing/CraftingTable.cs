@@ -9,6 +9,7 @@ public abstract class CraftingTable : MonoBehaviour
 
 
     public CraftingUtensil requiredUtensil;
+    protected int craftingInteractRequirement = 1;
     int craftingInteractionCount;
 
 
@@ -53,14 +54,14 @@ public abstract class CraftingTable : MonoBehaviour
     public void IngredientInteracted(Ingredient ingredient, CraftingUtensil utensil)
     {
         if(utensil != requiredUtensil) return;
-        if(ingredient.craftInteractionsRequired <= 0)
+        if(craftingInteractRequirement <= 0)
         {
-            Debug.Log("item has 0 crafting requirments");
+            Debug.Log("item has 0 crafting interaction requirment [cannot be crafted]");
             return;
         }
 
         craftingInteractionCount++;
-        if(craftingInteractionCount >= heldIngredient.craftInteractionsRequired)
+        if(craftingInteractionCount >= craftingInteractRequirement)
         {
             Ingredient craftedItem = CraftIngredient();
             if(craftedItem)

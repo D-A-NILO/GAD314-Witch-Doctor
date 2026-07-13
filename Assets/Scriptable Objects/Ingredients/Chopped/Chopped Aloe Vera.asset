@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd53edc2b341d6aa83c314d90a41d3d, type: 3}
-  m_Name: TestFailurePotion
-  m_EditorClassIdentifier: Assembly-CSharp::PotionData
-  potionID: 0
-  color: {r: 1, g: 0, b: 0, a: 0}
+  m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
+  m_Name: Chopped Aloe Vera
+  m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 4
+  choppedPrefab: {fileID: 0}
+  crushedPrefab: {fileID: 0}

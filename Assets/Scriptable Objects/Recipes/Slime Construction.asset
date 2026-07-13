@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a255c541eadf56d45bfd2d62da121e32, type: 3}
+  m_Name: Slime Construction
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  recipeDescription: 
+  requiredIngredients:
+  - {fileID: 11400000, guid: aa136678f01ac15c093f3cf5032105aa, type: 2}
+  - {fileID: 11400000, guid: 3c63992991f985bc1be73a92fb7b8e3f, type: 2}
+  - {fileID: 11400000, guid: 7209948e78140d178b8fb43c02c53466, type: 2}
+  result: {fileID: 11400000, guid: c52140499c02161f4bab2eae1173a0ff, type: 2}
