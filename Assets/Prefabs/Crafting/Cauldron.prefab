@@ -109,7 +109,6 @@ MonoBehaviour:
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
   mixingColor: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
-  FailedColor: {r: 1, g: 0, b: 0, a: 1}
   stirRequired: 100
 --- !u!1 &8989276782278545851
 GameObject:
@@ -122,7 +121,7 @@ GameObject:
   - component: {fileID: 3005921597605953137}
   - component: {fileID: 3801050547307816999}
   - component: {fileID: 7775604425574975523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +173,6 @@ MonoBehaviour:
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
   mixingColor: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
-  FailedColor: {r: 1, g: 0, b: 0, a: 1}
   stirRequired: 100
 --- !u!135 &7775604425574975523
 SphereCollider:

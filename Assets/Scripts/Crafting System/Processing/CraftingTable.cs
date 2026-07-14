@@ -27,6 +27,8 @@ public abstract class CraftingTable : MonoBehaviour
 
     public virtual void PlaceIngredient(Ingredient ingredient)
     {
+        if (heldIngredient != null) return;
+        
         //snap to holdPoint
         Grabbable grabbable = ingredient.GetComponent<Grabbable>();
         if(grabbable.GetHoldingInteractor() != null)
