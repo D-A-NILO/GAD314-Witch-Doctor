@@ -82,11 +82,12 @@ public class NPCIllness : MonoBehaviour
 
     private void CurePatient()
     { 
-        isCured =true;
+        isCured = true;
         Debug.Log($"{gameObject.name} has been cured");
 
         dialogue.onDialogueEnd += () =>
         {
+            Destroy(gameObject);
             spawner.RemoveNPC(gameObject);
         };
 
@@ -101,6 +102,7 @@ public class NPCIllness : MonoBehaviour
 
         dialogue.onDialogueEnd = () =>
         {
+            Destroy(gameObject);
             spawner.RemoveNPC(gameObject);
         };
 

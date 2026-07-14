@@ -15,4 +15,4 @@ MonoBehaviour:
   curePotion: {fileID: 11400000, guid: a5184362d61e513218d5be9328fae065, type: 2}
   startingSeverity: 50
   cureAmount: 50
-  worsenAmount: 25
+  worsenAmount: 50
