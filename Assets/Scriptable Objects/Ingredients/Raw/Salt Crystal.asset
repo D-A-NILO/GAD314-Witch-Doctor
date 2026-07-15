@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Salt Crystal
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 0
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 1136661209325344493, guid: faae4ac3571ea28998985d299778fe6c, type: 3}
+  pricePerUnit: 5
+  worldPickupPrefab: {fileID: 7307054083287074573, guid: fe9c2c94be4e0fa7bb3f11acc2041793, type: 3}
