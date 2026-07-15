@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Crushed Moon Bloom
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 0.5752027, g: 0.22957456, b: 0.7264151, a: 1}
   craftInteractionsRequired: 4
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 0}

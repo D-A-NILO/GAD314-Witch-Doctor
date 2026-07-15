@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Salt Crystal
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 1, g: 0.2509804, b: 0.92941177, a: 1}
+  craftInteractionsRequired: 0
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 1136661209325344493, guid: faae4ac3571ea28998985d299778fe6c, type: 3}

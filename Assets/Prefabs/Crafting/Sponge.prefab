@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e0f188aec8b8a4893dd3ac66e4c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionTest
-  displayName: 
+  displayName: Sponge
   lockRotation: 1
 --- !u!54 &8085055825280520647
 Rigidbody:

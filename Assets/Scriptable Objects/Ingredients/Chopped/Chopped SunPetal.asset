@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Chopped SunPetal
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 1, g: 0.2870394, b: 0.24056602, a: 1}
   craftInteractionsRequired: 4
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 0}

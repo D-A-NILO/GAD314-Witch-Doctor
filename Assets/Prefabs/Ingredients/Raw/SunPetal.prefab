@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 89931151208726572}
+  - {fileID: 420078484185895105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2023923206600434694
@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   data: {fileID: 11400000, guid: 09c538064eaba293a8b7626a3a52299f, type: 2}
-  craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
 --- !u!65 &1673558373897669435
 BoxCollider:
@@ -113,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &483510902636980167
+--- !u!1001 &170805122644981546
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -123,15 +122,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7439297
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7439297
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7439297
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
       propertyPath: m_LocalPosition.x
@@ -173,17 +172,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
       propertyPath: m_Name
-      value: SunPetal
+      value: SunPetal (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
---- !u!4 &89931151208726572 stripped
+--- !u!4 &420078484185895105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19643bdcc697012bb8dc5775514d0980, type: 3}
-  m_PrefabInstance: {fileID: 483510902636980167}
+  m_PrefabInstance: {fileID: 170805122644981546}
   m_PrefabAsset: {fileID: 0}

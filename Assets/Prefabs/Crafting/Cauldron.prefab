@@ -106,9 +106,12 @@ MonoBehaviour:
   allRecipes:
   - {fileID: 11400000, guid: 8e3882089061754c4865f569e3da5953, type: 2}
   failedRecipe: {fileID: 0}
+  unmixedPotion: {fileID: 0}
+  overrideFailColor: 1
+  failedColorOverride: {r: 0, g: 0, b: 0, a: 1}
+  useAverageColor: 1
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
-  mixingColor: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
   stirRequired: 100
 --- !u!1 &8989276782278545851
 GameObject:
@@ -170,9 +173,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 09761d1b23a29fa33bf70e2184fe3cd1, type: 2}
   - {fileID: 11400000, guid: ef55f6fe66c3e702dae40c6c4bb20291, type: 2}
   failedRecipe: {fileID: 11400000, guid: 668db917996f4a643aeb87ebba2a23f9, type: 2}
+  unmixedPotion: {fileID: 11400000, guid: a9a156dc92518fbd592b541dddc3d0a1, type: 2}
+  overrideFailColor: 0
+  failedColorOverride: {r: 0, g: 0, b: 0, a: 1}
+  useAverageColor: 1
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
-  mixingColor: {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
   stirRequired: 100
 --- !u!135 &7775604425574975523
 SphereCollider:
