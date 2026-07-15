@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Willow Branch
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 0
   choppedPrefab: {fileID: 7119752464610833541, guid: 6ef44f8f1f94bd8d09e5f5c89bf909dc, type: 3}
   crushedPrefab: {fileID: 0}
+  pricePerUnit: 12
+  worldPickupPrefab: {fileID: 6258135931813687556, guid: d08038016218f33c3a4e5e832f86b0a6, type: 3}

@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Iron Bark
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 0
   choppedPrefab: {fileID: 1024873276369372689, guid: 1f943e51d94576bdaa61744a4350fec0, type: 3}
   crushedPrefab: {fileID: 0}
+  pricePerUnit: 8
+  worldPickupPrefab: {fileID: 7970860545140872269, guid: 93f5569d9093ebc139f2678ef4d68601, type: 3}

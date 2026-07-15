@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: SunPetal
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  craftInteractionsRequired: 0
   choppedPrefab: {fileID: 5329407629905309633, guid: 98df7ad69451802b5b8aa106f2fe4300, type: 3}
   crushedPrefab: {fileID: 0}
+  pricePerUnit: 15
+  worldPickupPrefab: {fileID: 233326832576681692, guid: b907618723fe477818a135fac0cbd179, type: 3}
