@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   data: {fileID: 11400000, guid: 49734be5c08585606b2f95287b49354e, type: 2}
-  craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
 --- !u!65 &3021027124567602476
 BoxCollider:
@@ -84,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.60384965, y: 0.050519496, z: 0.25355315}
-  m_Center: {x: -0.0013631582, y: 0.0081793815, z: 0}
+  m_Size: {x: 0.36714053, y: 0.043038208, z: 0.25355315}
+  m_Center: {x: -0.006346345, y: 0.0044387374, z: 0}
 --- !u!54 &4370827457915571197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -123,15 +122,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.50012195
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.50012195
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.50012195
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -172,6 +171,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f845cb6bb9e60403da31c13b58ec20f5, type: 3}
       propertyPath: m_Name
