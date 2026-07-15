@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - caw caw caw (ive turned into a bird)
+  curedDialogue:
+  - thanks for turning me back into a human
+  deathDialogue:
+  - CAW CAW CAW CAW

@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - i cant feel my limbs
+  curedDialogue:
+  - thank you i can feel my limbs now
+  deathDialogue:
+  - i cant feel myself anymore

@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - my feet feel like im dragging concrete
+  curedDialogue:
+  - thank you my feet feel like they're made of silk
+  deathDialogue:
+  - oh no my feet are straight up concrete now

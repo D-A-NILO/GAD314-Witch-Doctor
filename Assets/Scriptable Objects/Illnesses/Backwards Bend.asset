@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - i feel like my back is bending the wrong way
+  curedDialogue:
+  - thank you my back is in the right way now
+  deathDialogue:
+  - oh no i feel my back is going even more backwards

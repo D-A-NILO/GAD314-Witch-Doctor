@@ -14,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     }
     public void OnInteract(PlayerInteract playerInteract)
     {
-        dialogue.StartDialogue(npcMovement.CurrentPoint);
+        dialogue.StartDialogue();
         interactText.text.SetActive(false);
     }
 

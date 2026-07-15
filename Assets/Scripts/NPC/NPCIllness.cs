@@ -38,6 +38,8 @@ public class NPCIllness : MonoBehaviour
 
         currentIllness = illnesses[Random.Range(0, illnesses.Length)];
 
+        dialogue.SetDialogueSets(currentIllness.initialDialogue);
+
         illnessSeverity = currentIllness.startingSeverity;
     }
 
@@ -91,7 +93,8 @@ public class NPCIllness : MonoBehaviour
             spawner.RemoveNPC(gameObject);
         };
 
-        dialogue.StartDialogue(1);
+        dialogue.SetDialogueSets(currentIllness.curedDialogue);
+        dialogue.StartDialogue();
     }
 
     private void KillPatient()
@@ -106,7 +109,8 @@ public class NPCIllness : MonoBehaviour
             spawner.RemoveNPC(gameObject);
         };
 
-        dialogue.StartDialogue(2);
+        dialogue.SetDialogueSets(currentIllness.deathDialogue);
+        dialogue.StartDialogue();
     }
 
     public void SetDialogue(Dialogue dialogueRef)
