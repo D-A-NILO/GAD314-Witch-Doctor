@@ -49,7 +49,7 @@ public class Bottle : MonoBehaviour
     {
         potionData = null;
         liquidRenderer.enabled = false;
-        grabbable.name = "Empty Bottle";
+        grabbable.DisplayName = "Empty Bottle";
     }
 
     private void OnCollisionEnter(Collision collision)
