@@ -7,7 +7,7 @@ public class Bottle : MonoBehaviour
     {
         get { return potionData;}
     }
-    public Renderer liquidRenderer;
+    public PotionFX potionFX;
 
     public bool hasPotion => potionData != null;
 
@@ -29,10 +29,11 @@ public class Bottle : MonoBehaviour
     private void Awake()
     {
         grabbable = GetComponent<Grabbable>();
+        Empty();
     }
     void Start()
     {
-        Empty(); 
+        
     }
 
 
@@ -40,15 +41,15 @@ public class Bottle : MonoBehaviour
     {
         potionData = potion;
         
-        liquidRenderer.material.SetColor("_Color", potion.color);
-        liquidRenderer.enabled = true;
+        potionFX.SetColor(potion.color);
+        potionFX.Show(true);
         grabbable.DisplayName = potion.name;
     }
 
     public void Empty()
     {
         potionData = null;
-        liquidRenderer.enabled = false;
+        potionFX.Show(false);
         grabbable.DisplayName = "Empty Bottle";
     }
 

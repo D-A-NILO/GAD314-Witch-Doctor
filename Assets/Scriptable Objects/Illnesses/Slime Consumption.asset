@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - i feel like im being turned into a slime
+  curedDialogue:
+  - thanks for turning me back into a human
+  deathDialogue:
+  - slime noises

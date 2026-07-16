@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - i feel like a balloon (high pitch voice)
+  curedDialogue:
+  - thank you for deflating me
+  deathDialogue:
+  - oh no i feel like im gonna pop (high pitch voice)

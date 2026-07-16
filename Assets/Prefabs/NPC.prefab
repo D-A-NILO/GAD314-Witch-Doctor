@@ -201,7 +201,7 @@ MonoBehaviour:
   destinationPoints:
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 2
   stoppingDistance: 0.7
   currentPoint: 0
   isMoving: 1

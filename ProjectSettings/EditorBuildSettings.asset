@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Asset_Import.unity
     guid: 74e8f1da5db472f60b98463b3836e1fb
   - enabled: 0
-    path: Assets/Scenes/GreyBox.unity
+    path: Assets/Scenes/NPCTreatment.unity
     guid: 959cf0ee01b19a44a8ab928f179953bb
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity

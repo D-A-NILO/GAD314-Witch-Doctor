@@ -16,3 +16,5 @@ MonoBehaviour:
   craftInteractionsRequired: 0
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 6358322861669695200, guid: a495dec7a285b0ab78d73a7b3c3c3b6c, type: 3}
+  pricePerUnit: 12
+  worldPickupPrefab: {fileID: 2586274142556580765, guid: 12015bfe10c40cbb69b64c44b454b748, type: 3}

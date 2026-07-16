@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - incoherent noise (my tounge is going all over the place)
+  curedDialogue:
+  - thank you for fixing my tongue
+  deathDialogue:
+  - incoherent noise (my tounge is getting even longer)

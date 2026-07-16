@@ -6,13 +6,11 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
-    public DialogueSet[] dialogueSets;
     public NPCIllness illness;
     public float textSpeed;
 
     public NPCMovement npcMovement;
 
-    private int currentDialogueSet;
     private string[] lines;
     private int textIndex;
     private bool dialogueActive;
@@ -57,9 +55,9 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void StartDialogue(int index)
+    public void StartDialogue()
     {
-        lines = dialogueSets[index].lines;
+        
         dialogueActive = true;
         dialogueBox.SetActive(true);
         textIndex = 0;
@@ -102,12 +100,9 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void SetDialogueSet(int lineIndex)
+    public void SetDialogueSets(string[] newLines)
     {
-        if (lineIndex >= 0 && lineIndex < dialogueSets.Length)
-        { 
-            currentDialogueSet = lineIndex;
-        }
+        lines = newLines;
     }
 
     IEnumerator TypeLine()

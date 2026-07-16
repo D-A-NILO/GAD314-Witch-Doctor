@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   data: {fileID: 11400000, guid: a28fcac297712b498a9ebe2a0d7d8f47, type: 2}
-  craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
 --- !u!65 &8031092007230852901
 BoxCollider:
@@ -84,8 +83,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4824524, y: 0.5040496, z: 0.22637546}
-  m_Center: {x: 0.003862381, y: 0.16686699, z: 0.009343326}
+  m_Size: {x: 0.40771914, y: 0.46668306, z: 0.19097543}
+  m_Center: {x: 0.0038626194, y: 0.16195033, z: 0.013276696}
 --- !u!54 &-7139576143932326348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -123,15 +122,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 728ef69e2d15f3c7394a3cdcaad192f7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8100049
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 728ef69e2d15f3c7394a3cdcaad192f7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8100049
+      value: 0.79568404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 728ef69e2d15f3c7394a3cdcaad192f7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8100049
+      value: 0.79568404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 728ef69e2d15f3c7394a3cdcaad192f7, type: 3}
       propertyPath: m_LocalPosition.x

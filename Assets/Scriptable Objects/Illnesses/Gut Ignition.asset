@@ -16,3 +16,9 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  initialDialogue:
+  - help my belly feels is on fire
+  curedDialogue:
+  - thanks my belly doesnt feel like its being on fire
+  deathDialogue:
+  - oh no i can feel my stomach acid boiling
