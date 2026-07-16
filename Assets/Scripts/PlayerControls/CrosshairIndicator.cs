@@ -52,7 +52,6 @@ public class CrosshairIndicator : MonoBehaviour
     private void SetIndicatorDisplay(Color color, Sprite sprite)
     {
         crosshair.color = color;
-        Debug.Log(sprite.name);
         if(sprite != null)
             crosshair.sprite = sprite;
     }

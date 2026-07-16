@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Willow Branch
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 0.74509805, g: 0.14509805, b: 0.22745098, a: 1}
   craftInteractionsRequired: 0
   choppedPrefab: {fileID: 7119752464610833541, guid: 6ef44f8f1f94bd8d09e5f5c89bf909dc, type: 3}
   crushedPrefab: {fileID: 0}

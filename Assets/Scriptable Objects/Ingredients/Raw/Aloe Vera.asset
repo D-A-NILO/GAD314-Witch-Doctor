@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Aloe Vera
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 0.34901962, g: 0.8666667, b: 0.49411765, a: 1}
   craftInteractionsRequired: 0
   choppedPrefab: {fileID: 1795425988501660736, guid: f0070da6a1b3a98f58bf2139ed20daf1, type: 3}
   crushedPrefab: {fileID: 0}

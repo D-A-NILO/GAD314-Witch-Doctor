@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Ginger Root
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  potionAffectColor: {r: 1, g: 0.90588236, b: 0.2784314, a: 1}
   craftInteractionsRequired: 0
   choppedPrefab: {fileID: 1917556267794335919, guid: 71d72e88b87f2f7c49852bf610049263, type: 3}
   crushedPrefab: {fileID: 1568303899429602516, guid: 641f856410a14d94caa6d47242843ba4, type: 3}

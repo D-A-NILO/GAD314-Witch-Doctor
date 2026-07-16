@@ -7,11 +7,15 @@ public class Cauldron : MonoBehaviour
 {
     [SerializeField] private  List<Recipe> allRecipes;
     [SerializeField] private Recipe failedRecipe;
+    [SerializeField] private PotionData unmixedPotion;
+    [Tooltip("When enabled will overide potion color of failed potions with FailedOverideColor")]
+    [SerializeField] bool overrideFailColor = false;
+    [SerializeField] Color failedColorOverride = Color.black;
+    [Tooltip("When enabled will use average color, otherwise will use potionData Color")]
+    [SerializeField] bool useAverageColor = true;
     [SerializeField] private  List<IngredientData> ingredients = new List<IngredientData>();
     [SerializeField] private  Renderer mixingRenderer;
-    [SerializeField] private Color mixingColor = Color.purple;
-    //[SerializeField] private  Color SuccessColor = Color.green;
-    //[SerializeField] private  Color FailedColor = Color.red;
+    
 
     private float stirProgress = 0f;
     public float stirRequired = 100f;
@@ -38,8 +42,6 @@ public class Cauldron : MonoBehaviour
         if (other.TryGetComponent(out Ingredient ingredient))
         {
 
-            mixingRenderer.enabled = true; // show mixing
-            mixingRenderer.material.SetColor("_Color", mixingColor);
             AddIngredient(ingredient);
             return;
         }
@@ -62,6 +64,10 @@ public class Cauldron : MonoBehaviour
 
         Destroy(ingredient.gameObject);
 
+        resultType = MixState.UNMIXED;
+        mixingRenderer.enabled = true; // show mixing if not
+        mixingRenderer.material.SetColor("_Color", ingredient.data.potionAffectColor);
+
         Debug.Log($"{ingredient.data.name} added to cauldron");
     }
 
@@ -75,29 +81,46 @@ public class Cauldron : MonoBehaviour
 
         if (stirProgress >= stirRequired)
         {
-            CraftPotion();
+            CraftRecipe(FindMatchingRecipe());
         }
     }
 
-    private void CraftPotion()
+    private void CraftRecipe(Recipe recipeToCraft)
     {
-        matchedRecipe = FindMatchingRecipe();
+        //generate average ingredient color...
 
-        if (matchedRecipe != null)
+        //TODO: generate on Enable in recipe class
+
+
+        if (recipeToCraft != null)
         {
             resultType = MixState.SUCEEDED;
-            Debug.Log($"craft success: {matchedRecipe.name}");
+            Debug.Log($"craft success: {recipeToCraft.name}");
+
+            if(useAverageColor)
+                recipeToCraft.result.color = AverageIngredientColor;
         }
         else
         {
-            matchedRecipe = failedRecipe;
+            recipeToCraft = failedRecipe;
             resultType = MixState.FAILED;
             Debug.Log("craft failed");
-        }
 
-        mixingRenderer.material.SetColor("_Color", matchedRecipe.result.color);
+
+            if(overrideFailColor)
+            {
+                recipeToCraft.result.color = failedColorOverride;
+            }else
+                if(useAverageColor)
+                    recipeToCraft.result.color = AverageIngredientColor;
+                    
+        }
+        
+        
+        mixingRenderer.material.SetColor("_Color", recipeToCraft.result.color);
 
         isCrafted = true;
+        matchedRecipe = recipeToCraft;
         stirProgress = 0f;
     }
 
@@ -145,14 +168,28 @@ public class Cauldron : MonoBehaviour
 
     public void TryFillBottle(Bottle bottle)
     {
+        if(bottle.PotionData != null) // already filled
+        {
+            Debug.Log("Bottle is already filled");
+            return;
+        }
         if (resultType == MixState.EMPTY)
         {
             Debug.Log("Nothing to bottle");
             return;
         }
 
-        bottle.Fill(matchedRecipe.result);
-        Debug.Log($"bottle filled with {matchedRecipe.result.name}");
+        PotionData result;
+        if(resultType == MixState.UNMIXED)
+        {
+            result = unmixedPotion;
+            result.color = AverageIngredientColor;
+        }
+        else
+            result = matchedRecipe.result;
+
+        bottle.Fill(result);
+        Debug.Log($"bottle filled with {result.name}");
 
         ClearCauldron();
     }
@@ -165,5 +202,18 @@ public class Cauldron : MonoBehaviour
         matchedRecipe = null;
         mixingRenderer.enabled = false;
         resultType = MixState.EMPTY;
+    }
+
+    public Color AverageIngredientColor
+    {
+        get
+        {
+            Color totalColor = new Color(0,0,0);
+            foreach(IngredientData iData in ingredients)
+            {
+                totalColor += iData.potionAffectColor;
+            }
+            return totalColor /= ingredients.Count;
+        }
     }
 }
