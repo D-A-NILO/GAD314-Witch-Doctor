@@ -1,21 +1,22 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System;
 
-public enum TutorialState
+[Serializable]
+public class TutorialSegment
 {
-    GoToSpawnTable,
-    GoToChoppingBoard,
-    GoToCauldron,
-    Complete
+    public MonoTrigger trigger;
+    public string text;
+
 }
 
 public class TutorialManager : MonoBehaviour
 {
-    public static TutorialManager Instance;
+    //public static TutorialManager Instance;
 
     [Header("UI Reference")]
-    public TextMeshProUGUI tutorialText;
+    public TMP_Text tutorialText;
 
     [Header("Typewriter Settings")]
     public float typingSpeed = 0.03f; 
@@ -25,7 +26,9 @@ public class TutorialManager : MonoBehaviour
     public GameObject choppingBoardMarker;
     public GameObject cauldronMarker;
 
-    public TutorialState currentState = TutorialState.GoToSpawnTable;
+    //public TutorialState currentState = TutorialState.GoToSpawnTable;
+    [SerializeField] private TutorialSegment[] segments;
+    private int currentSegment = 0;
 
    
     private Coroutine typingCoroutine;
@@ -34,12 +37,13 @@ public class TutorialManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        //Instance = this;
     }
 
     void Start()
     {
-        UpdateTutorialProgress();
+        //UpdateTutorialProgress();
+        StartTypewriter(segments[currentSegment].text);
     }
 
     void Update()
@@ -51,48 +55,38 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    public void OnPlayerStepOnMarker(TutorialState stepOnState)
+    private bool EOS //end of segments
     {
-       
-        if (currentState == stepOnState)
-        {
-            if (currentState == TutorialState.GoToSpawnTable) currentState = TutorialState.GoToChoppingBoard;
-            else if (currentState == TutorialState.GoToChoppingBoard) currentState = TutorialState.GoToCauldron;
-            else if (currentState == TutorialState.GoToCauldron) currentState = TutorialState.Complete;
-
-            UpdateTutorialProgress();
-        }
+        get => currentSegment + 1 >= segments.Length;
     }
 
-    void UpdateTutorialProgress()
+    public void Continue()
     {
-        
-        if (spawnTableMarker) spawnTableMarker.SetActive(false);
-        if (choppingBoardMarker) choppingBoardMarker.SetActive(false);
-        if (cauldronMarker) cauldronMarker.SetActive(false);
+       
+        if(EOS) return;
 
+        currentSegment++;
+        //unsubscribe current trigger
+        segments[currentSegment].trigger?.RemoveListener(Continue);
+
+        StartTypewriter(segments[currentSegment].text);
         
-        switch (currentState)
+        if(EOS) // if end of tutorial
         {
-            case TutorialState.GoToSpawnTable:
-                if (spawnTableMarker) spawnTableMarker.SetActive(true);
-                StartTypewriter("Welcome to the clinic! Please proceed to the table and press 'E' to pick up your ingredient. (scroll wheel to move closer / further)");
-                break;
-
-            case TutorialState.GoToChoppingBoard:
-                if (choppingBoardMarker) choppingBoardMarker.SetActive(true);
-                StartTypewriter("Great! Now bring the ingredient to the Chopping board or Mortar. Pick up your knife or pestle respectively and hit the ingredient to start processing");
-                break;
-
-            case TutorialState.GoToCauldron:
-                if (cauldronMarker) cauldronMarker.SetActive(true);
-                StartTypewriter("Move your processed item to the Cauldron and use the spoon to mix the potion");
-                break;
-
-            case TutorialState.Complete:
-                StartTypewriter("Bottle it up in a potion and your done!! For the full list of Potions press R. Good luck!");
-                break;
+            HideAfterDelay(10f);
         }
+        else
+        {
+            // subscribe to next trigger
+            segments[currentSegment+1].trigger.AddListener(Continue);
+        }
+
+    }
+
+    private IEnumerator HideAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        tutorialText.transform.parent.gameObject.SetActive(false); // disable text parent
     }
 
     
