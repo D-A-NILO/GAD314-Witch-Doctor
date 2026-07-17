@@ -15,7 +15,9 @@ public class Dialogue : MonoBehaviour
     private int textIndex;
     private bool dialogueActive;
     private bool waitingToFinish;
+    private Coroutine typingCoroutine;
     public System.Action onDialogueEnd;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,18 +29,15 @@ public class Dialogue : MonoBehaviour
         {
             dialogueText = dialogueBox.GetComponentInChildren<TextMeshProUGUI>();
         }
-        dialogueBox.SetActive(false);
+
         dialogueText.text = string.Empty;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (waitingToFinish)
-        {
-            EndDialogue();
-            return;
-        }
+        if (!dialogueActive) return;
+
             
 
         if (Input.GetMouseButtonDown(0))
@@ -57,12 +56,14 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        
+        if (dialogueActive) return;
+
         dialogueActive = true;
         dialogueBox.SetActive(true);
         textIndex = 0;
         dialogueText.text = string.Empty;
-        StartCoroutine(TypeLine());
+
+        typingCoroutine = StartCoroutine(StartTypingNextFrame());
     }
 
     public void NextLine()
@@ -77,7 +78,7 @@ public class Dialogue : MonoBehaviour
         {
             textIndex++;
             dialogueText.text = string.Empty;
-            StartCoroutine(TypeLine());
+            typingCoroutine = StartCoroutine(TypeLine());
         }
         else
         { 
@@ -86,7 +87,11 @@ public class Dialogue : MonoBehaviour
     }
 
     void EndDialogue()
-    { 
+    {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
         dialogueActive = false;
         dialogueBox.SetActive(false);
         dialogueText.text = string.Empty;
@@ -110,7 +115,24 @@ public class Dialogue : MonoBehaviour
         foreach (char c in lines[textIndex].ToCharArray())
         {
             dialogueText.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSeconds( 1f / textSpeed);
         }
+
+
+        if (textIndex >= lines.Length - 1)
+        {
+            yield return new WaitForSeconds(0.5f);
+            EndDialogue();
+        }
+        typingCoroutine = null;
     }
+
+    IEnumerator StartTypingNextFrame()
+    {
+        yield return null;
+
+        typingCoroutine = StartCoroutine(TypeLine());
+    }
+
+    public bool IsDialogueActive => dialogueActive;
 }

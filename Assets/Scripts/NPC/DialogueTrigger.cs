@@ -14,6 +14,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     }
     public virtual void OnInteract(PlayerInteract playerInteract)
     {
+        if (dialogue.IsDialogueActive)
+        {
+            Debug.Log("Dialogue already active");
+            return;
+        } 
         dialogue.StartDialogue();
         interactText.text.SetActive(false);
     }
