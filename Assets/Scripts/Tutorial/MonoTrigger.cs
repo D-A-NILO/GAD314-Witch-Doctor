@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class MonoTrigger : MonoBehaviour
+public class MonoTrigger : MonoBehaviour
 {
-    [SerializeField] private UnityEvent OnTriggered;
-    private List<Action> listeners;
+    public UnityEvent OnTriggered;
+    public List<Action> listeners;
 
     public void Trigger()
     {
-        foreach(Action action in listeners)
+        if(listeners == null)
         {
-            action?.Invoke();
+            Debug.Log("listeners uninitialised");
+            return;
         }
+
+        for(int i = 0; i < listeners.Count; i++)
+        {
+            listeners[i]?.Invoke();
+        }
+        Debug.Log(name +" triggered");
         OnTriggered?.Invoke();
     }
 
     public void AddListener(Action listener)
     {
+        if(listeners == null) listeners = new();
+
         if(listeners.Contains(listener))
         {
             Debug.Log($"Listener is already Subscribed, ignoring");

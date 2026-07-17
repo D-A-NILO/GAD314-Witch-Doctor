@@ -2,11 +2,13 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 [Serializable]
 public class TutorialSegment
 {
     public MonoTrigger trigger;
+    [HideInInspector] public UnityEvent executeOnSegment;
     public string text;
 
 }
@@ -21,15 +23,12 @@ public class TutorialManager : MonoBehaviour
     [Header("Typewriter Settings")]
     public float typingSpeed = 0.03f; 
 
-    [Header("Visual Markers")]
-    public GameObject spawnTableMarker;
-    public GameObject choppingBoardMarker;
-    public GameObject cauldronMarker;
 
     //public TutorialState currentState = TutorialState.GoToSpawnTable;
     [SerializeField] private TutorialSegment[] segments;
     private int currentSegment = 0;
 
+    public bool orderTriggerEvents = true;
    
     private Coroutine typingCoroutine;
     private string currentTargetText = "";
@@ -42,8 +41,18 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
+        if(orderTriggerEvents)
+        {
+            foreach(TutorialSegment segment in segments)
+            {
+                if(segment.trigger == null) continue;
+                segment.executeOnSegment = segment.trigger.OnTriggered;
+                segment.trigger.OnTriggered = new();
+            }
+        }
         //UpdateTutorialProgress();
-        StartTypewriter(segments[currentSegment].text);
+        currentSegment = -1;
+        Continue();
     }
 
     void Update()
@@ -68,6 +77,7 @@ public class TutorialManager : MonoBehaviour
         currentSegment++;
         //unsubscribe current trigger
         segments[currentSegment].trigger?.RemoveListener(Continue);
+        segments[currentSegment].executeOnSegment?.Invoke();
 
         StartTypewriter(segments[currentSegment].text);
         
@@ -129,5 +139,13 @@ public class TutorialManager : MonoBehaviour
 
         tutorialText.text = currentTargetText;
         isTyping = false;
+    }
+
+    public void DeleteAllIngredients()
+    {
+        foreach(Ingredient ingredient in FindObjectsByType<Ingredient>(FindObjectsSortMode.None))
+        {
+            Destroy(ingredient.gameObject);
+        }
     }
 }

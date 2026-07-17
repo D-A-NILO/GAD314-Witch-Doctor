@@ -29,7 +29,7 @@ public class ShopUI : MonoBehaviour
 
     void Awake()
     {
-        panel.SetActive(false);
+        //panel.SetActive(false);
         orderButton.onClick.AddListener(PlaceOrder);
         closeButton.onClick.AddListener(Close);
         PopulateCatalogue();

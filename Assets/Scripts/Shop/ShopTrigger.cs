@@ -4,7 +4,7 @@ public class ShopTrigger : MonoBehaviour, IInteractable
 {
     [SerializeField] private ShopUI shopUI;
 
-    public void OnInteract(PlayerInteract interactor)
+    public virtual void OnInteract(PlayerInteract interactor)
     {
         PlayerController controller = interactor.GetComponent<PlayerController>();
         if (controller == null)

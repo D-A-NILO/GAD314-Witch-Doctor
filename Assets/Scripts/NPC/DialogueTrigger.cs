@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         Debug.Log($"is dialogue assigned: {dialogue}");
     }
-    public void OnInteract(PlayerInteract playerInteract)
+    public virtual void OnInteract(PlayerInteract playerInteract)
     {
         dialogue.StartDialogue();
         interactText.text.SetActive(false);

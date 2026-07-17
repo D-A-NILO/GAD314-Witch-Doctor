@@ -13,7 +13,7 @@ public class Cauldron : MonoBehaviour
     [SerializeField] Color failedColorOverride = Color.black;
     [Tooltip("When enabled will use average color, otherwise will use potionData Color")]
     [SerializeField] bool useAverageColor = true;
-    [SerializeField] private  List<IngredientData> ingredients = new List<IngredientData>();
+    [SerializeField] protected  List<IngredientData> ingredients = new List<IngredientData>();
     [SerializeField] private  Renderer mixingRenderer;
     
 
@@ -23,7 +23,7 @@ public class Cauldron : MonoBehaviour
     private bool isCrafted = false;
     private Recipe matchedRecipe;
 
-    private MixState resultType = MixState.EMPTY;
+    protected MixState resultType = MixState.EMPTY;
 
     void Start()
     {
@@ -55,8 +55,12 @@ public class Cauldron : MonoBehaviour
         Debug.Log("somthing entered but nothing happened");
     }
 
-    public void AddIngredient(Ingredient ingredient)
+    private Ingredient lastIngredient; // stops double hitboxes from triggering
+    public virtual void AddIngredient(Ingredient ingredient)
     {
+        if(ingredient == lastIngredient) return;
+        lastIngredient = ingredient;
+        
         ingredients.Add(ingredient.data);
         PlayerInteract interactor = ingredient.GetComponent<Grabbable>().GetHoldingInteractor();
         if(interactor)
@@ -85,7 +89,7 @@ public class Cauldron : MonoBehaviour
         }
     }
 
-    private void CraftRecipe(Recipe recipeToCraft)
+    protected virtual void CraftRecipe(Recipe recipeToCraft)
     {
         //generate average ingredient color...
 
@@ -166,7 +170,7 @@ public class Cauldron : MonoBehaviour
         return true;
     }
 
-    public void TryFillBottle(Bottle bottle)
+    public virtual void TryFillBottle(Bottle bottle)
     {
         if(bottle.PotionData != null) // already filled
         {

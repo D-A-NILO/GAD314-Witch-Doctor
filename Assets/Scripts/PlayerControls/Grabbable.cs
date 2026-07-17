@@ -24,7 +24,7 @@ public class Grabbable : MonoBehaviour, IInteractable
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void OnInteract(PlayerInteract interactor) // on grab...
+    public virtual void OnInteract(PlayerInteract interactor) // on grab...
     {
         if(TryGetComponent(out Ingredient ingredient))
             ingredient.heldInTable?.RemoveHeldIngredient();
