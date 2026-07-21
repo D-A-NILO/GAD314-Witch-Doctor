@@ -43,7 +43,12 @@ public class ItemHoldDistancer : MonoBehaviour
     {
         float delta = context.ReadValue<Vector2>().y;
 
-        holdDistance = Mathf.Clamp(holdDistance + delta * scrollSpeed, holdDistanceMin, holdDistanceMax);
+        SetDistance(Mathf.Clamp(holdDistance + delta * scrollSpeed, holdDistanceMin, holdDistanceMax));
+    }
+
+    public void SetDistance(float distance)
+    {
+        holdDistance = distance;
         updateholdPos();
     }
 

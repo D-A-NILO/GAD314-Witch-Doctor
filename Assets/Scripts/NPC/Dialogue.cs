@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public NPCIllness illness;
     public float textSpeed;
+    public float textHoldTime = 2f;
 
     public NPCMovement npcMovement;
 
@@ -121,7 +122,7 @@ public class Dialogue : MonoBehaviour
 
         if (textIndex >= lines.Length - 1)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(textHoldTime);
             EndDialogue();
         }
         typingCoroutine = null;

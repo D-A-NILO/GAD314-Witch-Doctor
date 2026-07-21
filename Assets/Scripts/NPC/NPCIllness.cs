@@ -17,12 +17,15 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Dialogue dialogue;
     public NPCMovement npcMove;
     private NPCSpawner spawner;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        AssignRandomIllness();
+        if(currentIllness == null)
+            AssignRandomIllness();
+        else
+            SetIllness(currentIllness);
     }
 
     // Update is called once per frame
@@ -36,7 +39,14 @@ public class NPCIllness : MonoBehaviour
         if (illnesses.Length == 0)
             return;
 
-        currentIllness = illnesses[Random.Range(0, illnesses.Length)];
+        IllnessData newIllness = illnesses[Random.Range(0, illnesses.Length)];
+
+        SetIllness(newIllness);
+    }
+    
+    public void SetIllness(IllnessData illness)
+    {
+        currentIllness = illness;
 
         dialogue.SetDialogueSets(currentIllness.initialDialogue);
 
@@ -48,7 +58,7 @@ public class NPCIllness : MonoBehaviour
         if(isDead || isCured)
             return;
 
-        interactText.text.SetActive(false);
+        interactText?.text?.SetActive(false);
 
         if (bottle.PotionData == currentIllness.curePotion)
         {
@@ -90,7 +100,7 @@ public class NPCIllness : MonoBehaviour
         dialogue.onDialogueEnd += () =>
         {
             Destroy(gameObject);
-            spawner.RemoveNPC(gameObject);
+            spawner?.RemoveNPC(gameObject);
         };
 
         dialogue.SetDialogueSets(currentIllness.curedDialogue);
@@ -116,6 +126,7 @@ public class NPCIllness : MonoBehaviour
     public void SetDialogue(Dialogue dialogueRef)
     {
         dialogue = dialogueRef;
+        dialogue.illness = this;
     }
 
     public void SetSpawner(NPCSpawner npcSpawner)

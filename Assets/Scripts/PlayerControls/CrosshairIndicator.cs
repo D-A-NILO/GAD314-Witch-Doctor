@@ -24,7 +24,7 @@ public class CrosshairIndicator : MonoBehaviour
 
     void Awake()
     {
-       InitStatusDict();
+        InitStatusDict();
         SetIndicatorStatus(0);
     }
 
@@ -46,7 +46,10 @@ public class CrosshairIndicator : MonoBehaviour
         if(statusIndex >= statusArray.Length || statusIndex < 0)
         {
             Debug.Log("Cannot Set indicator Status Index: " + statusIndex + "\nDoes not exist");
+            return;
         }
+        
+        SetIndicatorDisplay(statusArray[statusIndex].displayColor, statusArray[statusIndex].displaySprite);
     }
 
     private void SetIndicatorDisplay(Color color, Sprite sprite)

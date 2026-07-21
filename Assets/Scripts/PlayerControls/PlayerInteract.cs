@@ -12,6 +12,7 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] LayerMask includeLayers = int.MaxValue;
     public ItemHolder itemHolder;
+    private ItemHoldDistancer distancer;
 
     //private IInteractable[] interactables;
     
@@ -25,6 +26,7 @@ public class PlayerInteract : MonoBehaviour
         interactActionRef.action.performed += OnInteractPressed;
 
         indicator = GetComponent<CrosshairIndicator>();
+        distancer = GetComponent<ItemHoldDistancer>();
 
 
     }
@@ -56,7 +58,9 @@ public class PlayerInteract : MonoBehaviour
         }
         holdingInteractible = interactable;
         
+        
         itemHolder.GrabRB(rb, (interactable as Grabbable).lockRotation);
+        distancer.SetDistance(Vector3.Distance(interactorSource.position, rb.position));
         indicator.SetIndicatorStatus("Holding");
     }
 

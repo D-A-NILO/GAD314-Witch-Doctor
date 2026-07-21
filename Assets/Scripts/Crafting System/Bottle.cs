@@ -63,7 +63,8 @@ public class Bottle : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out NPCIllness npc))
         {
-            npc.GivePotion(this);
+            if(npc.enabled)
+                npc.GivePotion(this);
         }
     }
 }
