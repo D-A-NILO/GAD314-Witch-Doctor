@@ -64,7 +64,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ingredient
   data: {fileID: 11400000, guid: 8bb40b22b4077f213b533591f0fa28cd, type: 2}
-  craftInteractionsRequired: 0
   heldInTable: {fileID: 0}
 --- !u!65 &3790419616445003036
 BoxCollider:

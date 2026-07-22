@@ -33,6 +33,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = paused;
 
+        Time.timeScale = paused ? 0f : 1f;
+        Debug.Log($"time scale: {Time.timeScale}");
+
         if(paused)
         {
             OnPauseAction?.Invoke();
@@ -45,6 +48,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
+        Time.timeScale = 1f;
+        Debug.Log($"time scale: {Time.timeScale}");
         Application.Quit();
     }
 

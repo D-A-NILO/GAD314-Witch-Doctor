@@ -9,6 +9,7 @@ public class PlayerInteract : MonoBehaviour
     public Transform interactorSource;
     public float interactRange;
     public InputActionReference interactActionRef;
+    public InputActionReference openActionRef;
 
     [SerializeField] LayerMask includeLayers = int.MaxValue;
     public ItemHolder itemHolder;
@@ -25,6 +26,9 @@ public class PlayerInteract : MonoBehaviour
         interactActionRef.action.Enable();
         interactActionRef.action.performed += OnInteractPressed;
 
+        openActionRef.action.Enable();
+        openActionRef.action.performed += OnOpenPressed;
+
         indicator = GetComponent<CrosshairIndicator>();
         distancer = GetComponent<ItemHoldDistancer>();
 
@@ -33,6 +37,7 @@ public class PlayerInteract : MonoBehaviour
     private void OnDisable()
     {
         interactActionRef.action.performed -= OnInteractPressed;
+        openActionRef.action.performed -= OnOpenPressed;
     }
 
     private void OnInteractPressed(InputAction.CallbackContext cxt)
@@ -100,6 +105,17 @@ public class PlayerInteract : MonoBehaviour
         
 
         visibleInteractible = newInteractible;  
+    }
+
+    private void OnOpenPressed(InputAction.CallbackContext cxt)
+    {
+        if (holdingInteractible is IngredientPackage package)
+        {
+            package.Open();
+            holdingInteractible = null;
+            itemHolder.ReleaseHeldRB();
+            indicator.SetIndicatorStatus("None");
+        }
     }
 
     public Grabbable GetHeldItem()
