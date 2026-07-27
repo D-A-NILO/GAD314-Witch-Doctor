@@ -16,6 +16,7 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  coinReward: 30
   initialDialogue:
   - my skin feels like a cactus, its so prickly
   curedDialogue:

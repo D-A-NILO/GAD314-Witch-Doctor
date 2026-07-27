@@ -16,6 +16,7 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  coinReward: 40
   initialDialogue:
   - help my belly feels is on fire
   curedDialogue:

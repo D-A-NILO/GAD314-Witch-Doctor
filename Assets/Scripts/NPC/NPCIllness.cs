@@ -17,6 +17,10 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Dialogue dialogue;
     public NPCMovement npcMove;
     private NPCSpawner spawner;
+
+    [SerializeField] private CoinBag coinBagPrefab;
+    [SerializeField] private Transform coinDropPoint;
+    [SerializeField] private float coinDropDistance = 1f;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -93,9 +97,11 @@ public class NPCIllness : MonoBehaviour
     }
 
     private void CurePatient()
-    { 
+    {
         isCured = true;
         Debug.Log($"{gameObject.name} has been cured");
+
+        DropCoinBag();
 
         dialogue.onDialogueEnd += () =>
         {
@@ -105,6 +111,21 @@ public class NPCIllness : MonoBehaviour
 
         dialogue.SetDialogueSets(currentIllness.curedDialogue);
         dialogue.StartDialogue();
+    }
+
+    private void DropCoinBag()
+    {
+        if (coinBagPrefab == null)
+        {
+            Debug.LogWarning("no coinBagPrefab assigned");
+            return;
+        }
+
+        Vector3 dropPosition = coinDropPoint != null
+            ? coinDropPoint.position : transform.position + transform.forward * coinDropDistance;
+
+        CoinBag coinBag = Instantiate(coinBagPrefab, dropPosition, transform.rotation);
+        coinBag.SetValue(currentIllness.coinReward);
     }
 
     private void KillPatient()
