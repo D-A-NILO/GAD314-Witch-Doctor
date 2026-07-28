@@ -17,7 +17,7 @@ public class ItemHolder : MonoBehaviour
     private float oldholdLDamp;
     private float oldholdADamp;
     private bool lockRotation;
-    private Vector2 holdOffset;
+    private Vector3 holdOffset;
     public bool IsHoldingItem()
     {
         return holdingRB != null;
@@ -35,7 +35,7 @@ public class ItemHolder : MonoBehaviour
         //rb.useGravity = false;
 
         lockRotation = lockRot;
-        holdOffset = Vector2.zero;
+        holdOffset = Vector3.zero;
     }
 
     public Rigidbody ReleaseHeldRB()
@@ -58,12 +58,12 @@ public class ItemHolder : MonoBehaviour
         if (playerCam.FreezeCam)
         {
             Vector2 delta = playerCam.MouseDelta * itemMoveSens;
-            holdOffset += delta;
-            holdOffset = Vector2.ClampMagnitude(holdOffset, maxOffset);
+            holdOffset += new Vector3(delta.x, delta.y, 0f);
+            holdOffset = Vector3.ClampMagnitude(holdOffset, maxOffset);
         }
         else
         {
-            holdOffset = Vector2.zero;
+            holdOffset = Vector3.zero;
         }
     }
 
@@ -72,7 +72,7 @@ public class ItemHolder : MonoBehaviour
         //physics move to current pos
         if(holdingRB == null) return;
 
-        Vector3 targetPos = transform.position + playerCam.transform.right * holdOffset.x + playerCam.transform.up * holdOffset.y;  
+        Vector3 targetPos = transform.position + transform.right * holdOffset.x + transform.up * holdOffset.y;  
 
 
         Vector3 currentPos = holdingRB.position;
