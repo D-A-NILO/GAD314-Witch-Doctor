@@ -14,7 +14,7 @@ public class IngredientPackage : Grabbable
     }
 
 
-    public void Open()
+    public virtual void Open()
     {
         if (isOpen || contents == null) return;
         isOpen = true;

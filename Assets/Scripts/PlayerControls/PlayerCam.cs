@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,9 +14,13 @@ public class PlayerCam : MonoBehaviour
 
     public Vector2 MouseDelta { get; private set; }
     public bool FreezeCam { get; private set; }
+
+    private CinemachineCamera vCam;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        vCam = GetComponent<CinemachineCamera>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         lookAct = InputSystem.actions.FindAction("Look");
@@ -48,5 +53,10 @@ public class PlayerCam : MonoBehaviour
     public void SetSesitivity(float value)
     {
         mouseSens = value;
+    }
+
+    public void SetFOV(float value)
+    {
+        vCam.Lens.FieldOfView = value;
     }
 }

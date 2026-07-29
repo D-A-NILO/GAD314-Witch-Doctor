@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4717742090315510086}
   - component: {fileID: 2148768865200965770}
   - component: {fileID: 8470589218501372917}
-  - component: {fileID: 1089936720012250328}
+  - component: {fileID: 3028683876593202440}
   - component: {fileID: 8427957348229718277}
   m_Layer: 0
-  m_Name: Package
+  m_Name: Package_Tutorial
   m_TagString: Pickupable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1089936720012250328
+--- !u!114 &3028683876593202440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +123,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8237509925130500110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33da37ab9c8bd404daea4fa7d707610b, type: 3}
+  m_Script: {fileID: 11500000, guid: ee4bef629857a244fa7110a8d505c666, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IngredientPackage
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialPackage
   displayName: Package
-  lockRotation: 1
+  lockRotation: 0
   scatterRadius: 1
+  tutorialTrigger: {fileID: 0}
 --- !u!54 &8427957348229718277
 Rigidbody:
   m_ObjectHideFlags: 0

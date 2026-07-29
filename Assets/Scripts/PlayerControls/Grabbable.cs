@@ -20,7 +20,7 @@ public class Grabbable : MonoBehaviour, IInteractable
     private Rigidbody rb;
     private PlayerInteract holder;
 
-    void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
     }

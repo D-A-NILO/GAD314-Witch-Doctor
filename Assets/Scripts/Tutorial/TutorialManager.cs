@@ -96,6 +96,7 @@ public class TutorialManager : MonoBehaviour
     private IEnumerator HideAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        Debug.Log("Tutorial hidden");
         tutorialText.transform.parent.gameObject.SetActive(false); // disable text parent
     }
 
