@@ -7,10 +7,11 @@ public class ItemHolder : MonoBehaviour
     [SerializeField] private float rotationLockFactor = 0.1f;
     [SerializeField] private float holdLinearDamp = 1;
     [SerializeField] private float holdAngularDamp = 1;
+    [SerializeField] private float holdDamping = 10f;
+    [SerializeField] private PhysicsMaterial holdSlip;
     [SerializeField] private float gravityCounter = 1f;
     [SerializeField] private float itemMoveSens = 0.01f;
     [SerializeField] private PlayerCam playerCam;
-    [SerializeField] private float holdDamping = 10f;
     [SerializeField] private Vector2 freeMouseMax = Vector2.one;
     [SerializeField] private Vector2 freeMouseMin = -Vector2.one;
     [SerializeField] private CrosshairIndicator crosshair;
@@ -20,6 +21,7 @@ public class ItemHolder : MonoBehaviour
     private Rigidbody holdingRB;
     private float oldholdLDamp;
     private float oldholdADamp;
+    private PhysicsMaterial oldPhysicsMat;
     private bool lockRotation;
     public Vector2 cursorScreenPos {get; private set;}
     public bool IsHoldingItem()
@@ -37,6 +39,10 @@ public class ItemHolder : MonoBehaviour
         rb.linearDamping = holdLinearDamp;
         rb.angularDamping = holdAngularDamp;
         //rb.useGravity = false;
+        Collider col = holdingRB.GetComponent<Collider>();
+        oldPhysicsMat = col.material;
+        col.material = holdSlip;
+
 
         lockRotation = lockRot;
     }
@@ -49,7 +55,11 @@ public class ItemHolder : MonoBehaviour
         //update values
         rb.linearDamping = oldholdLDamp;
         rb.angularDamping = oldholdADamp;
-        rb.useGravity = true;
+
+        foreach (var col in rb.GetComponents<Collider>())
+        {
+            col.material = oldPhysicsMat;
+        }
 
         return rb;
     }

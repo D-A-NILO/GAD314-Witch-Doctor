@@ -336,6 +336,7 @@ MonoBehaviour:
   interactRange: 2.5
   interactActionRef: {fileID: 1781555164194001046, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
   openActionRef: {fileID: 8933674500475674464, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
+  interactTogglesHold: 0
   includeLayers:
     serializedVersion: 2
     m_Bits: 55
@@ -560,10 +561,11 @@ MonoBehaviour:
   rotationLockFactor: 10
   holdLinearDamp: 5
   holdAngularDamp: 3
+  holdDamping: 10
+  holdSlip: {fileID: 13400000, guid: 4c4494d450f73b36796c837f8a7211a6, type: 2}
   gravityCounter: 7
   itemMoveSens: 0.05
   playerCam: {fileID: 8779340673235870213}
-  holdDamping: 10
   freeMouseMax: {x: 0.9, y: 0.8}
   freeMouseMin: {x: -0.9, y: -0.8}
   crosshair: {fileID: 270178319818259726}
