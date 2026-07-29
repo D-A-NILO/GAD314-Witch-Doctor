@@ -1,17 +1,16 @@
 using System.Collections.Generic;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public class IngredientPackage : Grabbable
 {
     [SerializeField] private float scatterRadius = 1f;
 
-    private Dictionary<IngredientData, int> contents;
+    private Dictionary<ShopItemData, int> contents;
     private bool isOpen;
 
-    public void Initialize(Dictionary<IngredientData, int> order)
+    public void Initialize(Dictionary<ShopItemData, int> order)
     {
-        contents = new Dictionary<IngredientData, int>(order);
+        contents = new Dictionary<ShopItemData, int>(order);
     }
 
 
@@ -20,7 +19,7 @@ public class IngredientPackage : Grabbable
         if (isOpen || contents == null) return;
         isOpen = true;
 
-        foreach (KeyValuePair<IngredientData, int> entry in contents)
+        foreach (KeyValuePair<ShopItemData, int> entry in contents)
         {
             if (entry.Key.worldPickupPrefab == null)
             {
