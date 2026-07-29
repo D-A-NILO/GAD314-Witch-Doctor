@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MortarPestle
   holdPoint: {fileID: 8676583727849640770}
   removeCooldownTime: 1
-  requiredUtensil: {fileID: 4752015919802879402}
+  requiredUtensil: 1
   defaultIfNull: {fileID: 8846824592928337372, guid: 3484ff5c2363a9712ab5421721ec34e9, type: 3}
   defaultCraftRequirement: 6
 --- !u!65 &3352677066731124456
@@ -282,17 +282,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9458ed97ce6a514fbca24c9414a4968, type: 3}
---- !u!114 &4752015919802879402 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4236585657412723762, guid: d9458ed97ce6a514fbca24c9414a4968, type: 3}
-  m_PrefabInstance: {fileID: 8879389243215161752}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad4bf2980b4c4a3dbc44c8284389fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CraftingUtensil
 --- !u!4 &7833612729898180616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1697707795610896784, guid: d9458ed97ce6a514fbca24c9414a4968, type: 3}

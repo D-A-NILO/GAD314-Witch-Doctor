@@ -58,4 +58,11 @@ public class CrosshairIndicator : MonoBehaviour
         if(sprite != null)
             crosshair.sprite = sprite;
     }
+
+    public void SetPositionFromNormal(Vector2 pos)
+    {
+        Vector2 res = ((RectTransform)crosshair.canvas.transform).sizeDelta;
+        //Debug.Log(res);
+        crosshair.transform.localPosition = new Vector2(pos.x * res.x * 0.5f, pos.y * res.y * 0.5f);
+    }
 }

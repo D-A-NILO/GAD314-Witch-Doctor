@@ -1,16 +1,13 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CraftingUtensil : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+        public UtensilType type;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public enum UtensilType
+{
+    KNIFE,
+    PESTLE,
 }

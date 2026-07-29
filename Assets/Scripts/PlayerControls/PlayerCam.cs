@@ -15,7 +15,37 @@ public class PlayerCam : MonoBehaviour
     public Vector2 MouseDelta { get; private set; }
     public bool FreezeCam { get; private set; }
 
+    [SerializeField] private InputAction freezeCamAction;
+
+    
+    void OnEnable()
+    {
+        freezeCamAction.Enable();
+        freezeCamAction.performed += onCamFreeze;
+        freezeCamAction.canceled += OnCamUnfreeze;
+    }
+
+    void Osable()
+    {
+        freezeCamAction.Disable();
+        freezeCamAction.performed -= onCamFreeze;
+        freezeCamAction.canceled -= OnCamUnfreeze;
+    }
+
     private CinemachineCamera vCam;
+
+    private void onCamFreeze(InputAction.CallbackContext cxt)
+    {
+        FreezeCam = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OnCamUnfreeze(InputAction.CallbackContext cxt)
+    {
+        FreezeCam = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,13 +62,13 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(FreezeCam) return;
         transform.position = playerOrientation.position;
 
         Vector2 lookValue = lookAct.ReadValue<Vector2>() * Time.deltaTime * mouseSens;
         MouseDelta = lookValue;
 
-        FreezeCam = Mouse.current.rightButton.isPressed;
-        if (FreezeCam) return;
 
 
         yRotation += lookValue.x;

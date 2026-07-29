@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector2 moveValue = moveAct.ReadValue<Vector2>();
         xMove = moveValue.x;
@@ -30,6 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveDirection = playerOrientation.forward * moveValue.y + playerOrientation.right * moveValue.x;
 
-        rb.AddForce(moveDirection * moveSpeed, ForceMode.Force);
+        rb.linearVelocity = moveDirection * moveSpeed;
     }
 }

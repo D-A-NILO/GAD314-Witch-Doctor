@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: liquidRenderer
       value: 
       objectReference: {fileID: 7844797846746738951}
+    - target: {fileID: 6915677553869108054, guid: 5c8335474b5ca0a42bc283063f569e9f, type: 3}
+      propertyPath: liquidRenderer
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7259982919372226000, guid: 5c8335474b5ca0a42bc283063f569e9f, type: 3}
       propertyPath: m_Name
       value: potionBottleVarient1

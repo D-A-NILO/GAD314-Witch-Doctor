@@ -8,7 +8,7 @@ public abstract class CraftingTable : MonoBehaviour
     protected Ingredient heldIngredient;
 
 
-    public CraftingUtensil requiredUtensil;
+    public UtensilType requiredUtensil;
     protected int craftingInteractRequirement = 1;
     int craftingInteractionCount;
 
@@ -55,7 +55,7 @@ public abstract class CraftingTable : MonoBehaviour
 
     public void IngredientInteracted(Ingredient ingredient, CraftingUtensil utensil)
     {
-        if(utensil != requiredUtensil) return;
+        if(utensil.type != requiredUtensil) return;
         if(craftingInteractRequirement <= 0)
         {
             Debug.Log("item has 0 crafting interaction requirment [cannot be crafted]");

@@ -14,7 +14,7 @@ public class ItemHoldDistancer : MonoBehaviour
 
     [SerializeField] private InputAction scrollAction;
 
-    [SerializeField] private Transform holdTransform;
+    [SerializeField] private ItemHolder itemHolder;
 
     void OnEnable()
     {
@@ -54,6 +54,6 @@ public class ItemHoldDistancer : MonoBehaviour
 
     private void updateholdPos()
     {
-        holdTransform.localPosition = forwardAxis * holdDistance;
+        itemHolder.holdDistance = holdDistance;
     }
 }
