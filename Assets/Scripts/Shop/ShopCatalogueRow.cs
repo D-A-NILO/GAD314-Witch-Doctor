@@ -12,18 +12,18 @@ public class ShopCatalogueRow : MonoBehaviour
     [SerializeField] private Button decreaseButton;
     [SerializeField] private Button addToCartButton;
 
-    private IngredientData ingredient;
+    private ShopItemData item;
     private ShopUI shopUI;
     private int quantity = 1;
 
-    public void Setup(IngredientData ingredientData, ShopUI ui)
+    public void Setup(ShopItemData itemData, ShopUI ui)
     {
-        ingredient = ingredientData;
+        item = itemData;
         shopUI = ui;
         quantity = 1;
 
-        nameText.text = ingredient.name;
-        priceText.text = $"{ingredient.pricePerUnit}c";
+        nameText.text = item.name;
+        priceText.text = $"{item.pricePerUnit}c";
         UpdateQuantityText();
 
         increaseButton.onClick.AddListener(Increase);
@@ -50,6 +50,6 @@ public class ShopCatalogueRow : MonoBehaviour
 
     private void AddToCart()
     {
-        shopUI.AddToCart(ingredient, quantity);
+        shopUI.AddToCart(item, quantity);
     }
 }

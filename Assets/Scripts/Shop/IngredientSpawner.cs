@@ -6,7 +6,7 @@ public class IngredientSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private IngredientPackage packagePrefab;
 
-    public void SpawnOrder(Dictionary<IngredientData, int> order)
+    public void SpawnOrder(Dictionary<ShopItemData, int> order)
     {
         if (packagePrefab == null)
         {

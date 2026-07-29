@@ -16,6 +16,7 @@ MonoBehaviour:
   startingSeverity: 50
   cureAmount: 50
   worsenAmount: 50
+  coinReward: 55
   initialDialogue:
   - i feel like my back is bending the wrong way
   curedDialogue:

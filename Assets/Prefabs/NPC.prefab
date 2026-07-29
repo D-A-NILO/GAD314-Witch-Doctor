@@ -431,6 +431,8 @@ MonoBehaviour:
   interactText: {fileID: 5343265034057831125}
   dialogue: {fileID: 0}
   npcMove: {fileID: 2084894023776932516}
+  coinBagPrefab: {fileID: 7963694878991962382, guid: ffd4e4b5dfbe47044a317b22e01a8783, type: 3}
+  coinDropPoint: {fileID: 0}
 --- !u!1 &8639665619260725276
 GameObject:
   m_ObjectHideFlags: 0

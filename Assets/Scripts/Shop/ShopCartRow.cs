@@ -9,13 +9,13 @@ public class ShopCartRow : MonoBehaviour
     [SerializeField] private TMP_Text subtotalText;
     [SerializeField] private Button removeButton;
 
-    public void Setup(IngredientData ingredient, int quantity, ShopUI shopUI)
+    public void Setup(ShopItemData item, int quantity, ShopUI shopUI)
     {
-        nameText.text = ingredient.name;
+        nameText.text = item.name;
         quantityText.text = $"x{quantity}";
-        subtotalText.text = $"{ingredient.pricePerUnit * quantity}c";
+        subtotalText.text = $"{item.pricePerUnit * quantity}c";
 
         removeButton.onClick.RemoveAllListeners();
-        removeButton.onClick.AddListener(() => shopUI.RemoveFromCart(ingredient));
+        removeButton.onClick.AddListener(() => shopUI.RemoveFromCart(item));
     }
 }

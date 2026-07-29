@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShopUI : MonoBehaviour
 {
     [Header("Catalogue")]
-    [SerializeField] private IngredientData[] catalogue;
+    [SerializeField] private ShopItemData[] catalogue;
     [SerializeField] private Transform catalogueContainer;
     [SerializeField] private ShopCatalogueRow catalogueRowPrefab;
 
@@ -24,7 +24,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private IngredientSpawner spawner;
 
-    private readonly Dictionary<IngredientData, int> cart = new();
+    private readonly Dictionary<ShopItemData, int> cart = new();
     private PlayerController playerController;
 
     void Awake()
@@ -49,10 +49,10 @@ public class ShopUI : MonoBehaviour
 
     private void PopulateCatalogue()
     {
-        foreach (IngredientData ingredient in catalogue)
+        foreach (ShopItemData item in catalogue)
         {
             ShopCatalogueRow row = Instantiate(catalogueRowPrefab, catalogueContainer);
-            row.Setup(ingredient, this);
+            row.Setup(item, this);
         }
     }
 
@@ -76,16 +76,16 @@ public class ShopUI : MonoBehaviour
         }
     }
 
-    public void AddToCart(IngredientData ingredient, int quantity)
+    public void AddToCart(ShopItemData item, int quantity)
     {
-        cart.TryGetValue(ingredient, out int existing);
-        cart[ingredient] = existing + quantity;
+        cart.TryGetValue(item, out int existing);
+        cart[item] = existing + quantity;
         RefreshCart();
     }
 
-    public void RemoveFromCart(IngredientData ingredient)
+    public void RemoveFromCart(ShopItemData item)
     {
-        cart.Remove(ingredient);
+        cart.Remove(item);
         RefreshCart();
     }
 
@@ -95,7 +95,7 @@ public class ShopUI : MonoBehaviour
             Destroy(child.gameObject);
 
         totalCost = 0;
-        foreach (KeyValuePair<IngredientData, int> entry in cart)
+        foreach (KeyValuePair<ShopItemData, int> entry in cart)
         {
             ShopCartRow row = Instantiate(cartRowPrefab, cartContainer);
             row.Setup(entry.Key, entry.Value, this);
@@ -118,6 +118,9 @@ public class ShopUI : MonoBehaviour
 
     private void PlaceOrder()
     {
+        if (CurrencyManager.Instance == null || !CurrencyManager.Instance.Spend(totalCost))
+            return;
+
         spawner.SpawnOrder(cart);
         cart.Clear();
         Close();
