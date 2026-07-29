@@ -6,12 +6,13 @@ public abstract class CraftingTable : MonoBehaviour
     public Transform holdPoint;
     [SerializeField] private float removeCooldownTime = 1f;
     protected Ingredient heldIngredient;
-
+    [SerializeField] private ParticleSystem ingredientParticles;
 
     public UtensilType requiredUtensil;
     protected int craftingInteractRequirement = 1;
     int craftingInteractionCount;
 
+    private ParticleSystem ingredientParticlesInstance;
 
     void OnTriggerEnter(Collider other)
     {
@@ -63,6 +64,9 @@ public abstract class CraftingTable : MonoBehaviour
         }
 
         craftingInteractionCount++;
+
+        SpawnParticles();
+
         if(craftingInteractionCount >= craftingInteractRequirement)
         {
             Ingredient craftedItem = CraftIngredient();
@@ -78,4 +82,8 @@ public abstract class CraftingTable : MonoBehaviour
       cooldown -= Time.deltaTime;  
     }
 
+    private void SpawnParticles()
+    { 
+        ingredientParticlesInstance = Instantiate( ingredientParticles, transform.position, transform.rotation );
+    }
 }

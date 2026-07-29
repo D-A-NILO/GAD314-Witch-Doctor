@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class StirringSpoon : MonoBehaviour
 {
-    public Camera playerCamera;
     public float stirSens = 0.2f;
-    private Vector3 lastMousePos;
     private Rigidbody rb;
 
     void Awake()

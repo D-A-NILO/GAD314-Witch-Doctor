@@ -15,11 +15,12 @@ public class Cauldron : MonoBehaviour
     [SerializeField] bool useAverageColor = true;
     [SerializeField] protected  List<IngredientData> ingredients = new List<IngredientData>();
     [SerializeField] private  Renderer mixingRenderer;
-    
+    [SerializeField] private ParticleSystem ingredientParticle;
+    [SerializeField] private ParticleSystem stirringParticle;
 
     private float stirProgress = 0f;
     public float stirRequired = 100f;
-
+    private ParticleSystem ingredientParticleInstance;
     private bool isCrafted = false;
     private Recipe matchedRecipe;
 
@@ -66,6 +67,9 @@ public class Cauldron : MonoBehaviour
         if(interactor)
             interactor.DropItem();
 
+        SpawnParticles();
+        Debug.Log($"spawn particles has been called: {ingredientParticle}");
+
         Destroy(ingredient.gameObject);
 
         resultType = MixState.UNMIXED;
@@ -81,6 +85,7 @@ public class Cauldron : MonoBehaviour
             return;
 
         stirProgress += amount;
+        Instantiate(stirringParticle, transform.position, transform.rotation);
         Debug.Log(stirProgress);
 
         if (stirProgress >= stirRequired)
@@ -219,5 +224,10 @@ public class Cauldron : MonoBehaviour
             }
             return totalColor /= ingredients.Count;
         }
+    }
+
+    private void SpawnParticles()
+    {
+        ingredientParticleInstance = Instantiate(ingredientParticle, transform.position, Quaternion.identity);
     }
 }

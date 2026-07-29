@@ -4996,6 +4996,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7528627830826965302, guid: a4bb7d00f226b724dbb29a7e0331fd49, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8263061421518031927, guid: a4bb7d00f226b724dbb29a7e0331fd49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1155
@@ -5073,6 +5077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialGrinder
   holdPoint: {fileID: 963571508}
   removeCooldownTime: 1
+  ingredientParticles: {fileID: 4103964825603317399, guid: c0e025af092d99f48ab8c0f7f96ff078, type: 3}
   requiredUtensil: 1
   defaultIfNull: {fileID: 8846824592928337372, guid: 3484ff5c2363a9712ab5421721ec34e9, type: 3}
   defaultCraftRequirement: 6
@@ -6220,6 +6225,8 @@ MonoBehaviour:
   useAverageColor: 1
   ingredients: []
   mixingRenderer: {fileID: 1730686232}
+  ingredientParticle: {fileID: 4103964825603317399, guid: 405beefda9ff2cf409ad7e1aaf69d3d0, type: 3}
+  stirringParticle: {fileID: 4103964825603317399, guid: 693bfda40a6171b4899cc801f03281e3, type: 3}
   stirRequired: 100
   requiredIngredientCount: 2
   OnIngredientsAdded:
@@ -9957,6 +9964,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3750567432810515600, guid: 86eb59eabdd9b054ab25e69fc2dfd3eb, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4596540605152479378, guid: 86eb59eabdd9b054ab25e69fc2dfd3eb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.68869346
@@ -10114,6 +10125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialChopper
   holdPoint: {fileID: 2021877982}
   removeCooldownTime: 1
+  ingredientParticles: {fileID: 4103964825603317399, guid: c0e025af092d99f48ab8c0f7f96ff078, type: 3}
   requiredUtensil: 0
   defaultIfNull: {fileID: 8846824592928337372, guid: 3484ff5c2363a9712ab5421721ec34e9, type: 3}
   defaultCraftRequirement: 6
