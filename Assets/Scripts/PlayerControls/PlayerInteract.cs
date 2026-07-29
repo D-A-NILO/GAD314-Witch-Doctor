@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
@@ -10,6 +11,8 @@ public class PlayerInteract : MonoBehaviour
     public float interactRange;
     public InputActionReference interactActionRef;
     public InputActionReference openActionRef;
+    
+    [SerializeField] private bool interactTogglesHold = false;
 
     [SerializeField] LayerMask includeLayers = int.MaxValue;
     public ItemHolder itemHolder;
@@ -25,6 +28,7 @@ public class PlayerInteract : MonoBehaviour
     {
         interactActionRef.action.Enable();
         interactActionRef.action.performed += OnInteractPressed;
+        interactActionRef.action.canceled += OnInteractReleased;
 
         openActionRef.action.Enable();
         openActionRef.action.performed += OnOpenPressed;
@@ -34,6 +38,9 @@ public class PlayerInteract : MonoBehaviour
 
 
     }
+
+    
+
     private void OnDisable()
     {
         interactActionRef.action.performed -= OnInteractPressed;
@@ -47,8 +54,16 @@ public class PlayerInteract : MonoBehaviour
         {   //execute interactible
             visibleInteractible?.OnInteract(this);
         }
-        else if(holdingInteractible != null)
+        else if(holdingInteractible != null && interactTogglesHold)
         { // drop interactible
+            DropItem();
+        }
+    }
+
+    private void OnInteractReleased(InputAction.CallbackContext context)
+    {
+        if(holdingInteractible != null && !interactTogglesHold)
+        {
             DropItem();
         }
     }
@@ -123,6 +138,10 @@ public class PlayerInteract : MonoBehaviour
         return holdingInteractible as Grabbable;
     }
 
+    public void SetHoldToggle(bool value)
+    {
+        interactTogglesHold = value;
+    }
 
 }
 

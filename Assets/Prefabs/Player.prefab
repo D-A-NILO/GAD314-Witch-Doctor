@@ -98,7 +98,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 42.995667
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -129,8 +129,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5031d11dfed2a44afb696fd8bb187d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
-  mouseSens: 15
+  mouseSens: 6
   playerOrientation: {fileID: 8712314769594859987}
+  freezeCamAction:
+    m_Name: Freeze Cam
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c57fa183-a2f1-4a2f-a41f-743f190329c9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: cab40205-0d7f-4410-ae83-3d927dd4c1f0
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Freeze Cam
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 238209f0-df04-48b4-a5d3-2f2ca9108fd7
+      m_Path: <Keyboard>/leftAlt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Freeze Cam
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &7673134068713723219
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +262,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7673134068713723219}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c4494d450f73b36796c837f8a7211a6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -292,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212f28206a9819440aca87074ead84d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 67
+  moveSpeed: 4
   playerOrientation: {fileID: 8712314769594859987}
   playerCamera: {fileID: 0}
 --- !u!114 &7555797927877417153
@@ -310,6 +335,7 @@ MonoBehaviour:
   interactorSource: {fileID: 9194950957295589588}
   interactRange: 2.5
   interactActionRef: {fileID: 1781555164194001046, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
+  openActionRef: {fileID: 8933674500475674464, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
   includeLayers:
     serializedVersion: 2
     m_Bits: 55
@@ -327,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemHoldDistancer
   holdDistanceMin: 1
-  holdDistanceMax: 2.5
+  holdDistanceMax: 3.5
   defaultHoldDistance: 1.5
   forwardAxis: {x: 0, y: 0, z: 1}
   scrollSpeed: 0.1
@@ -348,7 +374,7 @@ MonoBehaviour:
       m_Action: Scroll
       m_Flags: 0
     m_Flags: 0
-  holdTransform: {fileID: 215228922979758848}
+  itemHolder: {fileID: 8269756013633276693}
 --- !u!114 &270178319818259726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   statusArray:
   - name: None
-    displayColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+    displayColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
     displaySprite: {fileID: 21300000, guid: b4748c851c4710cafb82453cf8533985, type: 3}
   - name: Interact
     displayColor: {r: 1, g: 1, b: 1, a: 1}
@@ -530,7 +556,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392e5c4f5753a648797d7e86257cdddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  holdForce: 75
+  holdForce: 50
   rotationLockFactor: 10
   holdLinearDamp: 5
   holdAngularDamp: 3
+  gravityCounter: 7
+  itemMoveSens: 0.05
+  playerCam: {fileID: 8779340673235870213}
+  holdDamping: 10
+  freeMouseMax: {x: 0.9, y: 0.8}
+  freeMouseMin: {x: -0.9, y: -0.8}
+  crosshair: {fileID: 270178319818259726}
+  holdDistance: 0
+  tmpOut: {fileID: 0}
