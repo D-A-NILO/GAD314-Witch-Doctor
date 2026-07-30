@@ -2175,12 +2175,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2139418382673768934, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
+    - {fileID: 5152638082413160815, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3083035911140295006, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1397854135}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7152997914180048027, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 382897679}
     - targetCorrespondingSourceObject: {fileID: 7152997914180048027, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
       insertIndex: -1
       addedObject: {fileID: 382897674}
@@ -2190,9 +2194,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7152997914180048027, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
       insertIndex: -1
       addedObject: {fileID: 382897675}
-    - targetCorrespondingSourceObject: {fileID: 5628338692182200581, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
 --- !u!1 &382897669 stripped
 GameObject:
@@ -2279,6 +2280,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89265d0cc64821646bbf60c8ebea5849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
+--- !u!114 &382897679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382897669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448051bf202145c039675017cd99c4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialDialoguTrigerer
+  dialogue: {fileID: 1171429490}
+  npcMovement: {fileID: 382897678}
+  interactText: {fileID: 2037546357}
+  OnDialogueTriggered: {fileID: 643978554}
 --- !u!1 &406227956
 GameObject:
   m_ObjectHideFlags: 0
