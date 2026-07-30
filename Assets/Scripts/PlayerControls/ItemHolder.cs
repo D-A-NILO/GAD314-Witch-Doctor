@@ -63,8 +63,6 @@ public class ItemHolder : MonoBehaviour
 
         return rb;
     }
-
-    public TMP_Text tmpOut;
     
     private void Update()
     {
@@ -83,7 +81,6 @@ public class ItemHolder : MonoBehaviour
             cursorScreenPos = NormalisedToScreen(nMousePos);
             crosshair.SetPositionFromNormal(nMousePos);
 
-            tmpOut.text = nMousePos + "\n" + cursorScreenPos;
         }
         else
         {

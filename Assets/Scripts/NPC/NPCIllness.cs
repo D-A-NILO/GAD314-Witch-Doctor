@@ -22,10 +22,15 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Transform coinDropPoint;
     [SerializeField] private float coinDropDistance = 1f;
     
+    private NPCIllnessVisuals visuals;
+    
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
+        visuals = GetComponent<NPCIllnessVisuals>();
+
+        visuals?.SetSeverity(illnessSeverity);
+        
         if(currentIllness == null)
             AssignRandomIllness();
         else
@@ -44,7 +49,6 @@ public class NPCIllness : MonoBehaviour
             return;
 
         IllnessData newIllness = illnesses[Random.Range(0, illnesses.Length)];
-
         SetIllness(newIllness);
     }
     
@@ -84,6 +88,7 @@ public class NPCIllness : MonoBehaviour
     private void CheckIllnessState()
     {
         
+        visuals?.SetSeverity(illnessSeverity);
 
         if (illnessSeverity <= 0)
         {
