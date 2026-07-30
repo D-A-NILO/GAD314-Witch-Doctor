@@ -9,11 +9,15 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-      movement = GetComponent<PlayerMovement>();
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        movement = GetComponent<PlayerMovement>();
       interactor = GetComponent<PlayerInteract>();
       itemDistancer = GetComponent<ItemHoldDistancer>();
       cam = GetComponentInChildren<PlayerCam>();
     }
+
 
     public void SetControl(bool enabled)
     {

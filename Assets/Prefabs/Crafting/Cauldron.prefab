@@ -112,6 +112,8 @@ MonoBehaviour:
   useAverageColor: 1
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
+  ingredientParticle: {fileID: 0}
+  stirringParticle: {fileID: 0}
   stirRequired: 100
 --- !u!1 &8989276782278545851
 GameObject:
@@ -179,6 +181,8 @@ MonoBehaviour:
   useAverageColor: 1
   ingredients: []
   mixingRenderer: {fileID: 5174867479657777811}
+  ingredientParticle: {fileID: 4103964825603317399, guid: 405beefda9ff2cf409ad7e1aaf69d3d0, type: 3}
+  stirringParticle: {fileID: 4103964825603317399, guid: 693bfda40a6171b4899cc801f03281e3, type: 3}
   stirRequired: 100
 --- !u!135 &7775604425574975523
 SphereCollider:
