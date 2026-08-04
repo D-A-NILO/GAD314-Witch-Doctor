@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Levitation Bloat
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: 55443ea57d5727be0baa876139e4b997, type: 2}
-  startingSeverity: 50
-  cureAmount: 50
-  worsenAmount: 50
+  startingSeverity: 0.1
+  cureAmount: 1
+  worsenAmount: 0.2
   coinReward: 25
   initialDialogue:
   - i feel like a balloon (high pitch voice)

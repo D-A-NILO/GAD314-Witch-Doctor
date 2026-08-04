@@ -7,7 +7,7 @@ public class NPCIllness : MonoBehaviour
     public IllnessData currentIllness;
 
     [Range(0, 100)]
-    public int illnessSeverity;
+    public float illnessSeverity;
 
     public bool isDead;
     public bool isCured;
@@ -94,7 +94,7 @@ public class NPCIllness : MonoBehaviour
         {
             CurePatient();
         }
-        else if (illnessSeverity >= 100)
+        else if (illnessSeverity >= 1)
         { 
             KillPatient();
         }

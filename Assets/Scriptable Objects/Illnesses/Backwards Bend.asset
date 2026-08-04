@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Backwards Bend
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: a5184362d61e513218d5be9328fae065, type: 2}
-  startingSeverity: 50
-  cureAmount: 50
-  worsenAmount: 50
+  startingSeverity: 0.1
+  cureAmount: 1
+  worsenAmount: 0.2
   coinReward: 55
   initialDialogue:
   - i feel like my back is bending the wrong way
