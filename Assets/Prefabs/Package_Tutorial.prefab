@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialPackage
   displayName: Package
-  lockRotation: 0
+  lockRotation: 1
   scatterRadius: 1
-  tutorialTrigger: {fileID: 0}
+  packageParticle: {fileID: 8869755039885288797, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
 --- !u!54 &8427957348229718277
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,6 +4,9 @@ using UnityEngine;
 public class IngredientPackage : Grabbable
 {
     [SerializeField] private float scatterRadius = 1f;
+    [SerializeField] private GameObject packageParticle;
+
+    private GameObject packageParticleInstance;
 
     private Dictionary<ShopItemData, int> contents;
     private bool isOpen;
@@ -33,8 +36,13 @@ public class IngredientPackage : Grabbable
                 Instantiate(entry.Key.worldPickupPrefab, position, transform.rotation);
             }
         }
-
+        SpawnParticle();
 
         Destroy(gameObject, 0.1f);
+    }
+
+    void SpawnParticle()
+    {
+        packageParticleInstance = Instantiate(packageParticle, transform.position, Quaternion.identity);
     }
 }

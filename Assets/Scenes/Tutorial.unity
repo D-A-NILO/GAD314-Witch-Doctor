@@ -3005,6 +3005,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &581657878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8148241077198416317, guid: e9d86070b589b373593a178a312f3957, type: 3}
+  m_PrefabInstance: {fileID: 1171429488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8514cc23195cab94996d584627fade67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopUI
 --- !u!1 &596999312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +4150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0da4412451749b9ebfe1cb1eea53ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialShopTriggerer
-  shopUI: {fileID: 0}
+  shopUI: {fileID: 581657878}
   OnShopOpened: {fileID: 418223146}
 --- !u!65 &752501017
 BoxCollider:
@@ -10904,6 +10915,63 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &3720087110707624200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.74793
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34159
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.03296
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601107104351204730, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869755039885288797, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
+      propertyPath: m_Name
+      value: PackageParticleEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
 --- !u!4 &5219103922589362744
 Transform:
   m_ObjectHideFlags: 0
@@ -11269,3 +11337,4 @@ SceneRoots:
   - {fileID: 2034683693}
   - {fileID: 1591685972}
   - {fileID: 223235925}
+  - {fileID: 3720087110707624200}

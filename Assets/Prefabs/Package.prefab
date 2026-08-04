@@ -129,6 +129,7 @@ MonoBehaviour:
   displayName: Package
   lockRotation: 1
   scatterRadius: 1
+  packageParticle: {fileID: 8869755039885288797, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
 --- !u!54 &8427957348229718277
 Rigidbody:
   m_ObjectHideFlags: 0
