@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
@@ -23,6 +24,10 @@ public class ShopUI : MonoBehaviour
     [Header("World")]
     [SerializeField] private GameObject panel;
     [SerializeField] private IngredientSpawner spawner;
+
+    [Header("Input")]
+    [Tooltip("Same action asset PauseMenu uses. Disabled while the shop is open so Escape can't open the pause menu underneath it.")]
+    [SerializeField] private InputActionReference pauseAction;
 
     private readonly Dictionary<ShopItemData, int> cart = new();
     private PlayerController playerController;
@@ -47,6 +52,14 @@ public class ShopUI : MonoBehaviour
             CurrencyManager.Instance.OnBalanceChanged -= OnBalanceChanged;
     }
 
+    void Update()
+    {
+        if (panel.activeSelf && Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            Close();
+        }
+    }
+
     private void PopulateCatalogue()
     {
         foreach (ShopItemData item in catalogue)
@@ -60,6 +73,7 @@ public class ShopUI : MonoBehaviour
     {
         playerController = controller;
         panel.SetActive(true);
+        pauseAction?.action?.Disable();
         RefreshBalance();
         RefreshCart();
     }
@@ -67,6 +81,7 @@ public class ShopUI : MonoBehaviour
     public void Close()
     {
         panel.SetActive(false);
+        pauseAction?.action?.Enable();
 
         if (playerController != null)
         {
