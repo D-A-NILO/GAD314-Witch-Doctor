@@ -7,6 +7,8 @@ public abstract class CraftingTable : MonoBehaviour
     [SerializeField] private float removeCooldownTime = 1f;
     protected Ingredient heldIngredient;
     [SerializeField] private ParticleSystem ingredientParticles;
+    [SerializeField] private PlayFromSource playfromSource;
+    [SerializeField] private AudioSO craftSoundEffect;
 
     public UtensilType requiredUtensil;
     protected int craftingInteractRequirement = 1;
@@ -66,6 +68,7 @@ public abstract class CraftingTable : MonoBehaviour
         craftingInteractionCount++;
 
         SpawnParticles();
+        playfromSource.PlayAudio(craftSoundEffect);
 
         if(craftingInteractionCount >= craftingInteractRequirement)
         {
