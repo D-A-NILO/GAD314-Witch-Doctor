@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 8336885557965301843}
   - component: {fileID: 4904455162740987284}
   - component: {fileID: 3799683714295719977}
+  - component: {fileID: 3541501308861936996}
   m_Layer: 0
   m_Name: NPC_Base
   m_TagString: Pickupable
@@ -447,6 +448,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCIllnessVisuals
   illnessRenderers: []
   illnessAnimator: {fileID: 0}
+  particles: {fileID: 0}
+  smoothingDelta: 3
+  smoothingTolerance: 0.002
+--- !u!114 &3541501308861936996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152997914180048027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc7a976d022a6d1db076ad92d2e9827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  expressionRenderer: {fileID: 2712839753469436344}
+  blinkIntervalMinMax: {x: 4, y: 7.5}
+  blinkLength: 0.25
+  yapLengthMinMax: {x: 0.2, y: 0.4}
+  yapping: 0
 --- !u!1 &8639665619260725276
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,6 +610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Base_Rigged
       objectReference: {fileID: 0}
+    - target: {fileID: 7448227643571674446, guid: a4645cb58df36f8ac853f6742ee1a029, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 34c0842ba29c075c6a72eb75bc8edbec, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -597,6 +622,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8556344988263133097}
   m_SourcePrefab: {fileID: 100100000, guid: a4645cb58df36f8ac853f6742ee1a029, type: 3}
+--- !u!137 &2712839753469436344 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7448227643571674446, guid: a4645cb58df36f8ac853f6742ee1a029, type: 3}
+  m_PrefabInstance: {fileID: 4825777380927683830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5004101206305561373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4645cb58df36f8ac853f6742ee1a029, type: 3}

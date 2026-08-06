@@ -408,6 +408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9072461658205240997, guid: f7f4b99fd3090a5cb89c76340e11a423, type: 3}
+      propertyPath: pathFinished
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -427,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 4195333924861888186, guid: 2585cff7796fd19b59275a349c8c6eff, type: 3}
       propertyPath: m_Name
       value: NPC_PricklingPlague
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013443581382819973, guid: 2585cff7796fd19b59275a349c8c6eff, type: 3}
+      propertyPath: pathFinished
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8337702904627221375, guid: 2585cff7796fd19b59275a349c8c6eff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -905,6 +913,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9149141087520671012, guid: 2d7ee74f4c5c71e77bacccdd1a149bad, type: 3}
+      propertyPath: pathFinished
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1022,6 +1034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7988040045414051658, guid: 286859780c0cd505d8f4c03f75f99064, type: 3}
+      propertyPath: pathFinished
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1082,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8933942119991129982, guid: a422e65701fbdc80caae47657fe03914, type: 3}
+      propertyPath: pathFinished
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1141,6 +1161,10 @@ PrefabInstance:
     - target: {fileID: 6239612032880637579, guid: 4816bf5be2a9ea5b9a2d0fe7ca8eb8ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967529146526147953, guid: 4816bf5be2a9ea5b9a2d0fe7ca8eb8ca, type: 3}
+      propertyPath: pathFinished
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1332,6 +1356,10 @@ PrefabInstance:
     - target: {fileID: 2860237705848181154, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
       propertyPath: m_Name
       value: NPC_CrowsCurse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348420365559175069, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
+      propertyPath: pathFinished
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7943279290782041191, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1603,6 +1631,10 @@ PrefabInstance:
     - target: {fileID: 5057357550462037202, guid: 7d4491921e4977c5e9e008d11c4ed526, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073119217452891944, guid: 7d4491921e4977c5e9e008d11c4ed526, type: 3}
+      propertyPath: pathFinished
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2348,6 +2380,10 @@ PrefabInstance:
     - target: {fileID: 715389896924200095, guid: 6c7d9bd647d823be9ac6ebf624791b08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596978470710718309, guid: 6c7d9bd647d823be9ac6ebf624791b08, type: 3}
+      propertyPath: pathFinished
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4638771619166447962, guid: 6c7d9bd647d823be9ac6ebf624791b08, type: 3}
       propertyPath: m_Name
