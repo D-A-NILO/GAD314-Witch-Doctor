@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Chopped Iron Bark
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
-  potionAffectColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
+  pricePerUnit: 0
+  worldPickupPrefab: {fileID: 0}
+  potionAffectColor: {r: 0.5647918, g: 0.65472186, b: 0.7169812, a: 1}
   craftInteractionsRequired: 4
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 0}

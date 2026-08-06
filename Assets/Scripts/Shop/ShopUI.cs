@@ -29,6 +29,11 @@ public class ShopUI : MonoBehaviour
     [Tooltip("Same action asset PauseMenu uses. Disabled while the shop is open so Escape can't open the pause menu underneath it.")]
     [SerializeField] private InputActionReference pauseAction;
 
+    [SerializeField] private PlayFromSource playFromSource;
+    [SerializeField] private AudioSO openShopSFX;
+    [SerializeField] private AudioSO closeShopSFX;
+    [SerializeField] private AudioSO purchaseSFX;
+
     private readonly Dictionary<ShopItemData, int> cart = new();
     private PlayerController playerController;
 
@@ -76,10 +81,13 @@ public class ShopUI : MonoBehaviour
         pauseAction?.action?.Disable();
         RefreshBalance();
         RefreshCart();
+
+        playFromSource.PlayAudio(openShopSFX);
     }
 
     public void Close()
     {
+        playFromSource.PlayAudio(closeShopSFX);
         panel.SetActive(false);
         pauseAction?.action?.Enable();
 
@@ -133,10 +141,13 @@ public class ShopUI : MonoBehaviour
 
     private void PlaceOrder()
     {
+
+        
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.Spend(totalCost))
             return;
-
+        
         spawner.SpawnOrder(cart);
+        playFromSource.PlayAudio(purchaseSFX);
         cart.Clear();
         Close();
     }

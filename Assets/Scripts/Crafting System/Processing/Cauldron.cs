@@ -67,7 +67,7 @@ public class Cauldron : MonoBehaviour
         if(interactor)
             interactor.DropItem();
 
-        SpawnParticles();
+        SpawnIngredientParticles(ingredient);
         Debug.Log($"spawn particles has been called: {ingredientParticle}");
 
         Destroy(ingredient.gameObject);
@@ -85,7 +85,8 @@ public class Cauldron : MonoBehaviour
             return;
 
         stirProgress += amount;
-        Instantiate(stirringParticle, transform.position, transform.rotation);
+        var mainModule = Instantiate(stirringParticle, transform.position, transform.rotation).main;
+        mainModule.startColor = AverageIngredientColor;
         Debug.Log(stirProgress);
 
         if (stirProgress >= stirRequired)
@@ -226,8 +227,10 @@ public class Cauldron : MonoBehaviour
         }
     }
 
-    private void SpawnParticles()
+    private void SpawnIngredientParticles(Ingredient ingredient)
     {
         ingredientParticleInstance = Instantiate(ingredientParticle, transform.position, Quaternion.identity);
+        var MainModule = ingredientParticleInstance.main;
+        MainModule.startColor = ingredient.data.potionAffectColor;
     }
 }

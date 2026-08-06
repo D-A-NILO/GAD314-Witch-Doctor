@@ -7,12 +7,13 @@ public abstract class CraftingTable : MonoBehaviour
     [SerializeField] private float removeCooldownTime = 1f;
     protected Ingredient heldIngredient;
     [SerializeField] private ParticleSystem ingredientParticles;
+    [SerializeField] private PlayFromSource playfromSource;
+    [SerializeField] private AudioSO craftSoundEffect;
 
     public UtensilType requiredUtensil;
     protected int craftingInteractRequirement = 1;
     int craftingInteractionCount;
 
-    private ParticleSystem ingredientParticlesInstance;
 
     void OnTriggerEnter(Collider other)
     {
@@ -66,6 +67,7 @@ public abstract class CraftingTable : MonoBehaviour
         craftingInteractionCount++;
 
         SpawnParticles();
+        playfromSource.PlayAudio(craftSoundEffect);
 
         if(craftingInteractionCount >= craftingInteractRequirement)
         {
@@ -84,6 +86,8 @@ public abstract class CraftingTable : MonoBehaviour
 
     private void SpawnParticles()
     { 
-        ingredientParticlesInstance = Instantiate( ingredientParticles, transform.position, transform.rotation );
+        ParticleSystem ingredientParticlesInstance = Instantiate( ingredientParticles, transform.position, transform.rotation );
+        ParticleSystem.MainModule main = ingredientParticlesInstance.main;
+        main.startColor = heldIngredient.data.potionAffectColor;
     }
 }
