@@ -6,7 +6,7 @@ public class NPCIllness : MonoBehaviour
 
     public IllnessData currentIllness;
 
-    [Range(0, 100)]
+    [Range(0, 1)]
     public float illnessSeverity;
 
     public bool isDead;
@@ -41,6 +41,7 @@ public class NPCIllness : MonoBehaviour
     void Update()
     {
         
+        visuals?.SetSeverity(illnessSeverity);
     }
 
     public void AssignRandomIllness()
@@ -56,7 +57,7 @@ public class NPCIllness : MonoBehaviour
     {
         currentIllness = illness;
 
-        dialogue.SetDialogueSets(currentIllness.initialDialogue);
+        dialogue?.SetDialogueSets(currentIllness.initialDialogue);
 
         illnessSeverity = currentIllness.startingSeverity;
     }
@@ -88,7 +89,6 @@ public class NPCIllness : MonoBehaviour
     private void CheckIllnessState()
     {
         
-        visuals?.SetSeverity(illnessSeverity);
 
         if (illnessSeverity <= 0)
         {
