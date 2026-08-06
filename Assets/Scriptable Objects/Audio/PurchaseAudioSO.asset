@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c9ec1dbc2e23f44487c0cf4534c8cfe, type: 3}
-  m_Name: MortarAudioSO
+  m_Name: PurchaseAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: 415881b16039bb54ca59abc09607d18d, type: 3}
-  - {fileID: 8300000, guid: ff59c9442a0dedf449985cb901a42d83, type: 3}
-  - {fileID: 8300000, guid: b49d0facc46bb4f4a87e16b6240fcf6b, type: 3}
+  - {fileID: 8300000, guid: a95845521f2c19f4690588d189d3662d, type: 3}
   minPitch: 1
   maxPitch: 100

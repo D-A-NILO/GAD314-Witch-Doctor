@@ -24,6 +24,11 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private IngredientSpawner spawner;
 
+    [SerializeField] private PlayFromSource playFromSource;
+    [SerializeField] private AudioSO openShopSFX;
+    [SerializeField] private AudioSO closeShopSFX;
+    [SerializeField] private AudioSO purchaseSFX;
+
     private readonly Dictionary<ShopItemData, int> cart = new();
     private PlayerController playerController;
 
@@ -62,11 +67,16 @@ public class ShopUI : MonoBehaviour
         panel.SetActive(true);
         RefreshBalance();
         RefreshCart();
+
+        playFromSource.PlayAudio(openShopSFX);
     }
 
     public void Close()
     {
+        playFromSource.PlayAudio(closeShopSFX);
         panel.SetActive(false);
+
+        
 
         if (playerController != null)
         {
@@ -118,10 +128,13 @@ public class ShopUI : MonoBehaviour
 
     private void PlaceOrder()
     {
+
+        
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.Spend(totalCost))
             return;
-
+        
         spawner.SpawnOrder(cart);
+        playFromSource.PlayAudio(purchaseSFX);
         cart.Clear();
         Close();
     }
