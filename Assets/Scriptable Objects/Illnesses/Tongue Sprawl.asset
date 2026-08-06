@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Tongue Sprawl
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: d09962be96dfcc2e5934e856cacdfbca, type: 2}
-  startingSeverity: 50
-  cureAmount: 50
-  worsenAmount: 50
+  startingSeverity: 0.1
+  cureAmount: 1
+  worsenAmount: 0.2
   coinReward: 35
   initialDialogue:
   - incoherent noise (my tounge is going all over the place)

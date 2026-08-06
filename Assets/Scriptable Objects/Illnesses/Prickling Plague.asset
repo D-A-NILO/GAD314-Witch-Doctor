@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Prickling Plague
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: c168c9bd53881496d847c38f45dc79ba, type: 2}
-  startingSeverity: 50
-  cureAmount: 50
-  worsenAmount: 50
+  startingSeverity: 0.1
+  cureAmount: 1
+  worsenAmount: 0.2
   coinReward: 30
   initialDialogue:
   - my skin feels like a cactus, its so prickly

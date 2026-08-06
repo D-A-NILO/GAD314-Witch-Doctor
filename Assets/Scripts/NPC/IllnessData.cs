@@ -5,9 +5,9 @@ public class IllnessData : ScriptableObject
 {
     public PotionData curePotion;
 
-    public int startingSeverity = 50;
-    public int cureAmount = 50;
-    public int worsenAmount = 25;
+    public float startingSeverity = 0.1f;
+    public float cureAmount = 1f;
+    public float worsenAmount = 0.2f;
     public int coinReward = 10;
 
     public string[] initialDialogue;
