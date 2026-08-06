@@ -14,7 +14,6 @@ public abstract class CraftingTable : MonoBehaviour
     protected int craftingInteractRequirement = 1;
     int craftingInteractionCount;
 
-    private ParticleSystem ingredientParticlesInstance;
 
     void OnTriggerEnter(Collider other)
     {
@@ -87,6 +86,8 @@ public abstract class CraftingTable : MonoBehaviour
 
     private void SpawnParticles()
     { 
-        ingredientParticlesInstance = Instantiate( ingredientParticles, transform.position, transform.rotation );
+        ParticleSystem ingredientParticlesInstance = Instantiate( ingredientParticles, transform.position, transform.rotation );
+        ParticleSystem.MainModule main = ingredientParticlesInstance.main;
+        main.startColor = heldIngredient.data.potionAffectColor;
     }
 }
