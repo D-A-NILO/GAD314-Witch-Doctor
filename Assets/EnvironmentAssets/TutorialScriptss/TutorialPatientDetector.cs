@@ -14,7 +14,7 @@ public class TutorialPatientDetector : MonoBehaviour
     private NPCIllness illness;
     private TutorialMain tutorialManager;
 
-    private int lastSeverity;
+    private float lastSeverity;
     private bool hasTalked = false;
     private bool isInitialized = false; // Prevents the false alarm!
 
