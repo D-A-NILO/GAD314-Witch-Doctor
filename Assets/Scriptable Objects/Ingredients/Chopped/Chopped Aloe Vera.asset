@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bbbc785090ef344872aa554dfd9058, type: 3}
   m_Name: Chopped Aloe Vera
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
+  pricePerUnit: 0
+  worldPickupPrefab: {fileID: 0}
   potionAffectColor: {r: 0.3479886, g: 0.8679245, b: 0.4948285, a: 1}
+  sprite: {fileID: 21300000, guid: c7a63520977940eccaf44c74ab60744e, type: 3}
   craftInteractionsRequired: 4
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 0}

@@ -25,7 +25,7 @@ public class PlayerCam : MonoBehaviour
         freezeCamAction.canceled += OnCamUnfreeze;
     }
 
-    void Osable()
+    void OnDisable()
     {
         freezeCamAction.Disable();
         freezeCamAction.performed -= onCamFreeze;

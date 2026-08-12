@@ -15,6 +15,7 @@ MonoBehaviour:
   pricePerUnit: 0
   worldPickupPrefab: {fileID: 0}
   potionAffectColor: {r: 0.83137256, g: 0.70238435, b: 0.2941176, a: 1}
+  sprite: {fileID: 21300000, guid: 939b9a9f99ddae449bbaeab7295286da, type: 3}
   craftInteractionsRequired: 4
   choppedPrefab: {fileID: 0}
   crushedPrefab: {fileID: 0}
