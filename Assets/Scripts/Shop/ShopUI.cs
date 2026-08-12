@@ -29,7 +29,9 @@ public class ShopUI : MonoBehaviour
     [Tooltip("Same action asset PauseMenu uses. Disabled while the shop is open so Escape can't open the pause menu underneath it.")]
     [SerializeField] private InputActionReference pauseAction;
 
-    [SerializeField] private PlayFromSource playFromSource;
+
+    [SerializeField] private Animator bookAnimator;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSO openShopSFX;
     [SerializeField] private AudioSO closeShopSFX;
     [SerializeField] private AudioSO purchaseSFX;
@@ -82,12 +84,14 @@ public class ShopUI : MonoBehaviour
         RefreshBalance();
         RefreshCart();
 
-        playFromSource.PlayAudio(openShopSFX);
+        bookAnimator.SetBool("open", true);
+        openShopSFX.PlayFromSource(audioSource);
     }
 
     public void Close()
     {
-        playFromSource.PlayAudio(closeShopSFX);
+        bookAnimator.SetBool("open", false);
+        closeShopSFX.PlayFromSource(audioSource);
         panel.SetActive(false);
         pauseAction?.action?.Enable();
 
@@ -147,7 +151,7 @@ public class ShopUI : MonoBehaviour
             return;
         
         spawner.SpawnOrder(cart);
-        playFromSource.PlayAudio(purchaseSFX);
+        purchaseSFX.PlayGlobal();
         cart.Clear();
         Close();
     }

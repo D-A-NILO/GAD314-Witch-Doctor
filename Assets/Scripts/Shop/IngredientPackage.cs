@@ -5,7 +5,7 @@ public class IngredientPackage : Grabbable
 {
     [SerializeField] private float scatterRadius = 1f;
     [SerializeField] private GameObject packageParticle;
-    [SerializeField] private PlayFromSource playFromSource;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSO packageOpenSoundEffect;
     private GameObject packageParticleInstance;
 
@@ -37,7 +37,7 @@ public class IngredientPackage : Grabbable
                 Instantiate(entry.Key.worldPickupPrefab, position, transform.rotation);
             }
         }
-        playFromSource.PlayAudio(packageOpenSoundEffect);
+        packageOpenSoundEffect.PlayFromSource(audioSource);
         SpawnParticle();
 
         Destroy(gameObject, 0.1f);
