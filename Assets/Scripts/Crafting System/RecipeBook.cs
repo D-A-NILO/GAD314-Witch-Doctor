@@ -30,15 +30,9 @@ public class RecipeBook : MonoBehaviour
         {
             if(recipe.requiredIngredients.Count <= 0) continue;
             
-            TMP_Text recipeTMP = Instantiate(recipeDisplayPrefab, container).GetComponentInChildren<TMP_Text>();
+            RecipeDisplayRow recipeRow = Instantiate(recipeDisplayPrefab, container).GetComponentInChildren<RecipeDisplayRow>();
             
-            string recipetxt = recipe.requiredIngredients[0].name;
-            for(int i = 1; i < recipe.requiredIngredients.Count; i++)
-            {
-                recipetxt += " + " + recipe.requiredIngredients[i].name;
-            }
-            recipetxt += " = " + recipe.result.name;
-            recipeTMP.text = recipetxt;
+            recipeRow.SetRecipe(recipe);
         }
     }
 
@@ -48,8 +42,10 @@ public class RecipeBook : MonoBehaviour
         shown = !shown;
 
         container.gameObject.SetActive(shown);
-        // Cursor.lockState = shown ? CursorLockMode.None : CursorLockMode.Locked;
-        // Cursor.visible = shown;
+        Cursor.lockState = shown ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = shown;
+        //disable camera movement
+        FindAnyObjectByType<PlayerCam>().enabled = !shown;
 
     }
 }
