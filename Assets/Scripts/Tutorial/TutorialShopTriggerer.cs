@@ -1,13 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.Events; 
 public class TutorialShopTriggerer : ShopTrigger
 {
+    [Header("Tutorial Hooks")]
+    public UnityEvent OnShopOpenedEvent; 
 
-    public MonoTrigger OnShopOpened;
     public override void OnInteract(PlayerInteract interactor)
     {
-        base.OnInteract(interactor);
+        base.OnInteract(interactor); 
 
-        OnShopOpened.Trigger();
+        OnShopOpenedEvent?.Invoke(); 
     }
 }
