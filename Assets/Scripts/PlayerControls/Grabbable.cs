@@ -17,6 +17,8 @@ public class Grabbable : MonoBehaviour, IInteractable
         }
     }
     public bool lockRotation = false;
+    [Tooltip("How far below the hold point this object's pivot hangs while held. Leave 0 for normal items; use ~1 for tall objects with their pivot at the bottom (e.g. NPCs) so they're held by the middle.")]
+    public float holdHeightOffset = 0f;
     private Rigidbody rb;
     private PlayerInteract holder;
 
@@ -49,7 +51,7 @@ public class Grabbable : MonoBehaviour, IInteractable
         rb.isKinematic = false;
     }
 
-    public void OnDrop()
+    public virtual void OnDrop()
     {
         holder = null;
         ItemTextManager.SetText("");

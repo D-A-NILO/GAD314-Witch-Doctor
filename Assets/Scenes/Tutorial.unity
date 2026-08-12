@@ -1151,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1159,15 +1159,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1152
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1080.478
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1199,11 +1199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 576
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -540.239
       objectReference: {fileID: 0}
     - target: {fileID: 5945202200283526264, guid: 86a9a4315ebd3bd97ab137d10b09ee2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3337,7 +3337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3345,7 +3345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3353,7 +3353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 590.26294
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3385,11 +3385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 263.77905
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -297.13147
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3405,11 +3405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3417,7 +3417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -426.62103
       objectReference: {fileID: 0}
     - target: {fileID: 7606445224585353450, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_Name
@@ -4733,6 +4733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EssentialsPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1517692964888046447, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1535721545887463648, guid: e9d86070b589b373593a178a312f3957, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5074,66 +5078,21 @@ MonoBehaviour:
   stirringParticle: {fileID: 4103964825603317399, guid: 693bfda40a6171b4899cc801f03281e3, type: 3}
   stirRequired: 100
   requiredIngredientCount: 2
-  OnIngredientsAdded:
+  OnSingleIngredientAdded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1490627988}
-        m_TargetAssemblyTypeName: MonoTrigger, Assembly-CSharp
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnRecipeCrafted:
+      m_Calls: []
+  OnRequiredIngredientsMet:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 752984308}
-        m_TargetAssemblyTypeName: MonoTrigger, Assembly-CSharp
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnPotionFIlled:
+      m_Calls: []
+  OnSuccessfulStir:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 413072718}
-        m_TargetAssemblyTypeName: MonoTrigger, Assembly-CSharp
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnValidPotionFIlled:
+      m_Calls: []
+  OnFailedStir:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1058022457}
-        m_TargetAssemblyTypeName: MonoTrigger, Assembly-CSharp
-        m_MethodName: Trigger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnSuccessfullyBottled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &1217037875 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 7775604425574975523, guid: 332aee67eaa1dde4893d62316c6ef1cb, type: 3}
@@ -5609,7 +5568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5617,7 +5576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5625,7 +5584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 590.26294
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5657,11 +5616,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 427.42096
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -297.13147
       objectReference: {fileID: 0}
     - target: {fileID: 1746971956067227208, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5677,11 +5636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5689,7 +5648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019676231245886220, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -426.62103
       objectReference: {fileID: 0}
     - target: {fileID: 7606445224585353450, guid: 5feb65258b27e7e2aa116719b30520f1, type: 3}
       propertyPath: m_Name
@@ -9559,6 +9518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GrabbableTriggerer
   displayName: 
   lockRotation: 0
+  holdHeightOffset: 0
   trigger: {fileID: 1559525286}
 --- !u!114 &6747742347800769586
 MonoBehaviour:
@@ -9587,7 +9547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialShopTriggerer
   shopUI: {fileID: 164239455}
-  OnShopOpened: {fileID: 418223146}
+  OnShopOpenedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8933681159499228086
 BoxCollider:
   m_ObjectHideFlags: 0

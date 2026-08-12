@@ -19,6 +19,7 @@ public class ItemHolder : MonoBehaviour
     
 
     private Rigidbody holdingRB;
+    private float holdHeightOffset;
     private float oldholdLDamp;
     private float oldholdADamp;
     private PhysicsMaterial oldPhysicsMat;
@@ -32,6 +33,7 @@ public class ItemHolder : MonoBehaviour
     public void GrabRB(Rigidbody rb, bool lockRot)
     {
         holdingRB = rb;
+        holdHeightOffset = rb.TryGetComponent(out Grabbable grabbable) ? grabbable.holdHeightOffset : 0f;
 
         // update values
         oldholdLDamp = rb.linearDamping;
@@ -120,8 +122,9 @@ public class ItemHolder : MonoBehaviour
         //physics move to current pos
 
         Vector3 targetPos = Camera.main.ScreenPointToRay(cursorScreenPos, Camera.MonoOrStereoscopicEye.Mono).GetPoint(holdDistance);
-        Debug.DrawLine(playerCam.transform.position, targetPos);  
-        
+        targetPos += Vector3.down * holdHeightOffset;
+        Debug.DrawLine(playerCam.transform.position, targetPos);
+
         if(holdingRB == null) return;
 
         Vector3 currentPos = holdingRB.position;
