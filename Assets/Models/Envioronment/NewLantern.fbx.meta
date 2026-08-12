@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Models/Book.fbx.meta
-guid: 494cacaa244ee421c8d4e6c8fa6541f2
-========
-guid: 25a92c06b1d59bc46b19e02d53a2931e
->>>>>>>> Greybox:Assets/EnvironmentAssets/EmployeeMonth.fbx.meta
+guid: 32ceac801bcd2c48a8841a16f2aa09b1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []

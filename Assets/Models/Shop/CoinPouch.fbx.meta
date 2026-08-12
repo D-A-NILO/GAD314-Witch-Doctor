@@ -3,11 +3,16 @@ guid: cd43319640e3a919ca7712eed0bea6df
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CoinPouch_Color
+    second: {fileID: 2800000, guid: bd1f0988847c22b86a1610c63b595d2a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
