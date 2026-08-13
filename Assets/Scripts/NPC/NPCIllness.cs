@@ -13,6 +13,7 @@ public class NPCIllness : MonoBehaviour
     public bool isCured;
 
     public Bottle bottle;
+    public float infectionRate = 0.01f;
     public InteractText interactText;
     [SerializeField] private Dialogue dialogue;
     public NPCMovement npcMove;
@@ -46,6 +47,10 @@ public class NPCIllness : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isDead && !isCured)
+            illnessSeverity += infectionRate * Time.deltaTime;
+
+        CheckIllnessState();
         
         visuals?.SetSeverity(illnessSeverity);
     }

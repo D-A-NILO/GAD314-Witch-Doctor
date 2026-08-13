@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 6330440299560913374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000044703478}
-  m_LocalPosition: {x: -1.7999997, y: 1.48, z: -0.32299995}
+  m_LocalPosition: {x: -1.7999997, y: 1.278, z: 7.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7888361517564516150}
   - component: {fileID: 2564389090177849240}
+  - component: {fileID: 3423364428829987496}
   m_Layer: 0
   m_Name: GlobalAudio
   m_TagString: Untagged
@@ -284,6 +285,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7238e081c0684d94084cf2ded414597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  source: {fileID: 0}
+--- !u!82 &3423364428829987496
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378775456700376220}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3694891299540088292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,10 +471,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2740755467093249284, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2921425174928911240, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
@@ -384,18 +479,6 @@ PrefabInstance:
       propertyPath: equipItem
       value: 
       objectReference: {fileID: 4699654608242790195}
-    - target: {fileID: 4960186593857629842, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960186593857629842, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960186593857629842, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5528210593683948737, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -404,6 +487,18 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2972661038753364112}
+    - target: {fileID: 7113958779080047106, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113958779080047106, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113958779080047106, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7613710503697847621, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -416,22 +511,6 @@ PrefabInstance:
       propertyPath: OnUnPauseAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7526904602651878948}
-    - target: {fileID: 8564341766418306810, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.a
-      value: 0.7176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564341766418306810, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564341766418306810, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564341766418306810, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

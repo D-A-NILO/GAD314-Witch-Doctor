@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Levitation Bloat
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: 55443ea57d5727be0baa876139e4b997, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 25

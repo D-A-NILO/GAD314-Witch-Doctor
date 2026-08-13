@@ -12,6 +12,7 @@ public class NPCSpawner : MonoBehaviour
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private int npcAmount = 1;
     [SerializeField] private bool spawnOnStart = true;
+    [SerializeField] private float overrideInfectionTime = 120f;
     public int spawnDelay;
 
     private List<GameObject> spawnedNPCs = new List<GameObject>();
@@ -80,6 +81,9 @@ public class NPCSpawner : MonoBehaviour
         {
             illness.SetDialogue(dialogue);
             illness.SetSpawner(this);
+
+            if(overrideInfectionTime > 0)
+                illness.infectionRate = 1 / overrideInfectionTime;
         }
 
         if (trigger != null)

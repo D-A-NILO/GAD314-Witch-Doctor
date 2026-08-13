@@ -47,5 +47,7 @@ public class RecipeBook : MonoBehaviour
         //disable camera movement
         FindAnyObjectByType<PlayerCam>().enabled = !shown;
 
+        if(!shown) Tooltip.SetActive(false);
+
     }
 }

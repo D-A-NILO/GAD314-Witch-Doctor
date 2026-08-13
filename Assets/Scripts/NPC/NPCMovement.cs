@@ -11,12 +11,8 @@ public class NPCMovement : MonoBehaviour
     public int currentPoint = 0;
     public bool isMoving = true;
     public bool pathFinished = false;
+    public Animator animator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -57,6 +53,7 @@ public class NPCMovement : MonoBehaviour
 
             Debug.Log($"reached current destination point: {currentPoint}");
         }
+        animator.SetBool("moving", isMoving);
     }
 
     public void ContinueToNextPoint()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Phantom Limb
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: 91c6a19302a7eb14d857042908e5c013, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 38

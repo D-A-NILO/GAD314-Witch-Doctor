@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gut Ignition
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: f3fb5ba54ca36f00cb5de5b068a585da, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 40

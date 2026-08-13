@@ -4,6 +4,7 @@ using UnityEngine;
 public class NPC_ExpresionVisuals : MonoBehaviour
 {
     [SerializeField] private Renderer expressionRenderer;
+    [SerializeField] private Expression[] startWithExpresions;
     
     [SerializeField] private Vector2 blinkIntervalMinMax = new Vector2(8f, 14f);
     [SerializeField] private float blinkLength = 0.4f;
@@ -14,7 +15,10 @@ public class NPC_ExpresionVisuals : MonoBehaviour
     {
         StartCoroutine(blinkLoop());
         expressionRenderer.material.SetInt("_Mouth_Open", 0);
-        StartCoroutine(yapLoop());  
+        StartCoroutine(yapLoop()); 
+        
+        if(startWithExpresions.Length > 0)
+            SetExpression(startWithExpresions[Random.Range(0, startWithExpresions.Length)]);
     }
 
     public void SetExpression(Expression expression)
