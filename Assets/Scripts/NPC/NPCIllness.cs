@@ -99,7 +99,7 @@ public class NPCIllness : MonoBehaviour
 
     private void CheckIllnessState()
     {
-        
+        if(isCured || isDead) return;
 
         if (illnessSeverity <= 0)
         {

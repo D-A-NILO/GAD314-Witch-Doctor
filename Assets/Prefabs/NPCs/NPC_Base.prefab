@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 4904455162740987284}
   - component: {fileID: 3799683714295719977}
   - component: {fileID: 3541501308861936996}
+  - component: {fileID: 973304432212582477}
   m_Layer: 0
   m_Name: NPC_Base
   m_TagString: Pickupable
@@ -334,7 +335,7 @@ MonoBehaviour:
   destinationPoints:
   - {fileID: 0}
   moveSpeed: 2
-  stoppingDistance: 0.7
+  stoppingDistance: 0.15
   currentPoint: 0
   isMoving: 0
   pathFinished: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   isDead: 0
   isCured: 0
   bottle: {fileID: 0}
+  infectionRate: 0.01
   interactText: {fileID: 5343265034057831125}
   dialogue: {fileID: 0}
   npcMove: {fileID: 2084894023776932516}
@@ -472,6 +474,19 @@ MonoBehaviour:
   blinkLength: 0.25
   yapLengthMinMax: {x: 0.2, y: 0.4}
   yapping: 0
+--- !u!114 &973304432212582477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152997914180048027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0087eb8afd10e8a179b3654d7f03ad7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  lerpSpeed: 0
 --- !u!1 &8639665619260725276
 GameObject:
   m_ObjectHideFlags: 0
