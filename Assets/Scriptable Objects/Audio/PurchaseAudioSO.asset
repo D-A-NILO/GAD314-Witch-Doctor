@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PurchaseAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: a95845521f2c19f4690588d189d3662d, type: 3}
-  minPitch: 1
-  maxPitch: 100
+  - {fileID: 8300000, guid: 8a658d0f8d873f5438dc7b5736e0a9be, type: 3}
+  minPitch: -3
+  maxPitch: 3

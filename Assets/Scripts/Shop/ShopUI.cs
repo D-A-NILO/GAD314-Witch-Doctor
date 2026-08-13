@@ -28,6 +28,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private AudioSO openShopSFX;
     [SerializeField] private AudioSO closeShopSFX;
     [SerializeField] private AudioSO purchaseSFX;
+    [SerializeField] private ParticleSystem purchaseVFX;
 
     private readonly Dictionary<ShopItemData, int> cart = new();
     private PlayerController playerController;
@@ -63,23 +64,29 @@ public class ShopUI : MonoBehaviour
 
     public void Open(PlayerController controller)
     {
+        
         playerController = controller;
         panel.SetActive(true);
         RefreshBalance();
         RefreshCart();
 
+        Debug.Log("open sound");
         playFromSource.PlayAudio(openShopSFX);
+
     }
 
     public void Close()
     {
+        Debug.Log("close sound");
         playFromSource.PlayAudio(closeShopSFX);
+
         panel.SetActive(false);
 
-        
+
 
         if (playerController != null)
         {
+            
             playerController.SetControl(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -128,13 +135,15 @@ public class ShopUI : MonoBehaviour
 
     private void PlaceOrder()
     {
+       
 
-        
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.Spend(totalCost))
             return;
-        
-        spawner.SpawnOrder(cart);
+
+        Debug.Log("purchase sound");
         playFromSource.PlayAudio(purchaseSFX);
+        spawner.SpawnOrder(cart);
+        Instantiate(purchaseVFX, orderButton.transform.position, Quaternion.identity);
         cart.Clear();
         Close();
     }

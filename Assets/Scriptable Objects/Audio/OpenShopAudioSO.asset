@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OpenShopAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: 6fe02c8d6f7a872468c728fc027d771d, type: 3}
-  minPitch: 1
-  maxPitch: 100
+  - {fileID: 8300000, guid: 9081ed3c7f9039d47ad85f43d965381d, type: 3}
+  minPitch: -3
+  maxPitch: 3

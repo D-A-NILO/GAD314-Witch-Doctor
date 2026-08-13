@@ -33,7 +33,7 @@ public class PlayFromSource : MonoBehaviour
         );
 
         // Play
-        audioSource.Play();
+        audioSource.PlayOneShot(audioSource.clip);
         Debug.Log($"audio was played {gameObject}");
     }
 

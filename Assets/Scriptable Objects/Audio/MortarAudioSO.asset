@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MortarAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: 415881b16039bb54ca59abc09607d18d, type: 3}
-  - {fileID: 8300000, guid: ff59c9442a0dedf449985cb901a42d83, type: 3}
-  - {fileID: 8300000, guid: b49d0facc46bb4f4a87e16b6240fcf6b, type: 3}
-  minPitch: 1
-  maxPitch: 100
+  - {fileID: 8300000, guid: 7ab65f0ce8426db479a432148526e44b, type: 3}
+  - {fileID: 8300000, guid: c4e17e811ad60b642af947b039fb50a2, type: 3}
+  - {fileID: 8300000, guid: 817e14190a416e14daa0f161230b25b8, type: 3}
+  minPitch: -3
+  maxPitch: 3
