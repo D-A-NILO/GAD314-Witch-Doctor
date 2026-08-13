@@ -413,6 +413,8 @@ MonoBehaviour:
   coinBagPrefab: {fileID: 7963694878991962382, guid: ffd4e4b5dfbe47044a317b22e01a8783, type: 3}
   coinDropPoint: {fileID: 0}
   coinDropDistance: 1
+  visuals: {fileID: 0}
+  expresionVisuals: {fileID: 3541501308861936996}
 --- !u!65 &4904455162740987284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -647,7 +649,7 @@ Animator:
   m_GameObject: {fileID: 5636803746173419943}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b67b6f1f709747304be28ea5b595ad71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -5,18 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Asset_Import.unity
-    guid: 74e8f1da5db472f60b98463b3836e1fb
-  - enabled: 0
-    path: Assets/Scenes/NPCTreatment.unity
-    guid: 959cf0ee01b19a44a8ab928f179953bb
-  - enabled: 0
-    path: Assets/Scenes/Tutorial.unity
-    guid: 4a556e3f443c3e345a4f76279d5f72d4
   - enabled: 1
-    path: Assets/Scenes/EnvironmentDesign.unity
-    guid: bfc3134a1a4deb8458ede8bfaa59f5d8
+    path: Assets/Scenes/Main/Game.unity
+    guid: 19870a6df1f7607688a8652dc7ea80ea
+  - enabled: 1
+    path: Assets/Scenes/Main/MainMenu.unity
+    guid: 58d947298d5f83b49b0ea080d5952471
+  - enabled: 1
+    path: Assets/Scenes/Main/NewTutorial.unity
+    guid: a2d136113c4722640a6ec9220f36a36b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
   m_UseUCBPForAssetBundles: 0

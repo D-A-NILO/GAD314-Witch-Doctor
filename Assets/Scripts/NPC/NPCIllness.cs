@@ -22,7 +22,8 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Transform coinDropPoint;
     [SerializeField] private float coinDropDistance = 1f;
     
-    private NPCIllnessVisuals visuals;
+    [HideInInspector] public NPCIllnessVisuals visuals;
+    public NPC_ExpresionVisuals expresionVisuals;
     
 
     void Awake()
@@ -31,6 +32,11 @@ public class NPCIllness : MonoBehaviour
 
         visuals?.SetSeverity(illnessSeverity);
         
+        
+    }
+
+    void Start()
+    {
         if(currentIllness == null)
             AssignRandomIllness();
         else
@@ -57,7 +63,7 @@ public class NPCIllness : MonoBehaviour
     {
         currentIllness = illness;
 
-        dialogue?.SetDialogueSets(currentIllness.initialDialogue);
+        dialogue.SetDialogueSets(currentIllness.initialDialogue);
 
         illnessSeverity = currentIllness.startingSeverity;
     }

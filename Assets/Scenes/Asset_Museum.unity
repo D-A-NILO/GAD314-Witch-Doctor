@@ -241,6 +241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2779521641990229503, guid: c1fdf5ba11ae84640aaf0095759697b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7995531270617081806, guid: c1fdf5ba11ae84640aaf0095759697b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.55745
@@ -539,6 +543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_SlimeConsumption
       objectReference: {fileID: 0}
+    - target: {fileID: 4948649769422097849, guid: f7f4b99fd3090a5cb89c76340e11a423, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5458915860694035807, guid: f7f4b99fd3090a5cb89c76340e11a423, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7606373
@@ -645,6 +653,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337702904627221375, guid: 2585cff7796fd19b59275a349c8c6eff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996412150547002265, guid: 2585cff7796fd19b59275a349c8c6eff, type: 3}
+      propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1115,6 +1127,10 @@ PrefabInstance:
       propertyPath: pathFinished
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2712839753469436344, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3083035911140295006, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.12
@@ -1276,6 +1292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_LevitationBloat
       objectReference: {fileID: 0}
+    - target: {fileID: 5166400802193700408, guid: 2d7ee74f4c5c71e77bacccdd1a149bad, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5250752526094735070, guid: 2d7ee74f4c5c71e77bacccdd1a149bad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.87495756
@@ -1397,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_TongueSprawl
       objectReference: {fileID: 0}
+    - target: {fileID: 6310037210207509590, guid: 286859780c0cd505d8f4c03f75f99064, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6412304376730926256, guid: 286859780c0cd505d8f4c03f75f99064, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.07
@@ -1460,6 +1484,10 @@ PrefabInstance:
     - target: {fileID: 310810650269479233, guid: a422e65701fbdc80caae47657fe03914, type: 3}
       propertyPath: m_Name
       value: NPC_GutIgnition
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805697552159409250, guid: a422e65701fbdc80caae47657fe03914, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610800982599263364, guid: a422e65701fbdc80caae47657fe03914, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1563,6 +1591,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239612032880637579, guid: 4816bf5be2a9ea5b9a2d0fe7ca8eb8ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483876864355636845, guid: 4816bf5be2a9ea5b9a2d0fe7ca8eb8ca, type: 3}
+      propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6967529146526147953, guid: 4816bf5be2a9ea5b9a2d0fe7ca8eb8ca, type: 3}
@@ -1763,6 +1795,10 @@ PrefabInstance:
     - target: {fileID: 6348420365559175069, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
       propertyPath: pathFinished
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7012359567087969409, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7943279290782041191, guid: 8fb0dd8c787e0af3c81007b0c257009d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2033,6 +2069,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5057357550462037202, guid: 7d4491921e4977c5e9e008d11c4ed526, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279206502110661684, guid: 7d4491921e4977c5e9e008d11c4ed526, type: 3}
+      propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8073119217452891944, guid: 7d4491921e4977c5e9e008d11c4ed526, type: 3}
@@ -2801,6 +2841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 750633962}
     m_Modifications:
+    - target: {fileID: 468733765674409081, guid: 6c7d9bd647d823be9ac6ebf624791b08, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 715389896924200095, guid: 6c7d9bd647d823be9ac6ebf624791b08, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.21

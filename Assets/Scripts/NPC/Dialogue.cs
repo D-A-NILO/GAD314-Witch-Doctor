@@ -63,6 +63,7 @@ public class Dialogue : MonoBehaviour
         dialogueBox.SetActive(true);
         textIndex = 0;
         dialogueText.text = string.Empty;
+        illness.expresionVisuals.yapping = true;
 
         typingCoroutine = StartCoroutine(StartTypingNextFrame());
     }
@@ -99,6 +100,7 @@ public class Dialogue : MonoBehaviour
 
         onDialogueEnd?.Invoke();
         onDialogueEnd = null;
+        illness.expresionVisuals.yapping = false;
 
         //if (npcMovement != null)
         { 

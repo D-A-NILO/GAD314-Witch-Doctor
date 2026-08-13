@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 86.2
+  m_fontSize: 87.1
   m_fontSizeBase: 10.17
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2270,7 +2270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27.612701, y: 16}
+  m_AnchoredPosition: {x: -27.61267, y: 16}
   m_SizeDelta: {x: -753.967, y: -491.78}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1895017740
@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   tutorialSceneName: Tutorial
-  playSceneName: 
+  playSceneName: Game
   settingsPanel: {fileID: 1417268714}
   opasityThing: {fileID: 1884162738}
 --- !u!4 &1934753069
