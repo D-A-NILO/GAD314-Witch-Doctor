@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
   - {fileID: 8300000, guid: 8a658d0f8d873f5438dc7b5736e0a9be, type: 3}
+  - {fileID: 8300000, guid: 8a658d0f8d873f5438dc7b5736e0a9be, type: 3}
   minPitch: 1
-  maxPitch: 100
+  maxPitch: 1.1

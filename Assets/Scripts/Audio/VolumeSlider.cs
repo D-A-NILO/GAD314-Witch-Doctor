@@ -5,7 +5,7 @@ using TMPro;
 public class VolumeSlider : MonoBehaviour
 {
     public AudioMixer mixer;
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public TextMeshProUGUI valueText;
     public AudioMixMode mixMode;
 

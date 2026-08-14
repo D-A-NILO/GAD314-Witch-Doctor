@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c9ec1dbc2e23f44487c0cf4534c8cfe, type: 3}
-  m_Name: OpenShopAudioSO
+  m_Name: CoinsAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: 9081ed3c7f9039d47ad85f43d965381d, type: 3}
-  - {fileID: 8300000, guid: 9081ed3c7f9039d47ad85f43d965381d, type: 3}
+  - {fileID: 8300000, guid: 124be16c4d45a3c40baa1c22d26008e3, type: 3}
+  - {fileID: 8300000, guid: 5b1c01076f143e0408e3482647f88231, type: 3}
   minPitch: 1
   maxPitch: 1.1

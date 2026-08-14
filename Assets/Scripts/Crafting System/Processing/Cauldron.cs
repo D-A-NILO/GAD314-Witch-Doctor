@@ -17,6 +17,7 @@ public class Cauldron : MonoBehaviour
     [SerializeField] private  Renderer mixingRenderer;
     [SerializeField] private ParticleSystem ingredientParticle;
     [SerializeField] private ParticleSystem stirringParticle;
+    [SerializeField] private ParticleSystem fillPotionParticle;
 
     private float stirProgress = 0f;
     public float stirRequired = 100f;
@@ -199,6 +200,8 @@ public class Cauldron : MonoBehaviour
             result = matchedRecipe.result;
 
         bottle.Fill(result);
+        var mainModule = Instantiate(fillPotionParticle, transform.position, transform.rotation).main;
+        mainModule.startColor = AverageIngredientColor;
         Debug.Log($"bottle filled with {result.name}");
 
         ClearCauldron();
@@ -233,4 +236,5 @@ public class Cauldron : MonoBehaviour
         var MainModule = ingredientParticleInstance.main;
         MainModule.startColor = ingredient.data.potionAffectColor;
     }
+
 }
