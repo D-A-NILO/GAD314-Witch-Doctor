@@ -22,6 +22,8 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private CoinBag coinBagPrefab;
     [SerializeField] private Transform coinDropPoint;
     [SerializeField] private float coinDropDistance = 1f;
+    [SerializeField] private AudioSO NPCDeathSFX;
+    [SerializeField] private PlayFromSource playFromSource;
     
     [HideInInspector] public NPCIllnessVisuals visuals;
     public NPC_ExpresionVisuals expresionVisuals;
@@ -148,12 +150,14 @@ public class NPCIllness : MonoBehaviour
     {
         isDead = true;
         Debug.Log($"{gameObject.name} is dead");
-        
 
+        
         dialogue.onDialogueEnd = () =>
         {
-            Destroy(gameObject);
+
+            playFromSource.PlayAudio(NPCDeathSFX);
             spawner.RemoveNPC(gameObject);
+            Destroy(gameObject, 1f);
         };
 
         dialogue.SetDialogueSets(currentIllness.deathDialogue);

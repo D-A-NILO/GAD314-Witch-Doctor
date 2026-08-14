@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChoppingAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: b9d8cf3ad6a17a4499e586c7d3a5b0f1, type: 3}
-  - {fileID: 8300000, guid: 56fc0801831aafd4fbb7877555e14e6c, type: 3}
+  - {fileID: 8300000, guid: 6020fdfb016507d4caf4e8936d1c9dcc, type: 3}
+  - {fileID: 8300000, guid: a33896b8024e6a04aae08beca3d788b1, type: 3}
   minPitch: 1
-  maxPitch: 100
+  maxPitch: 1.1
