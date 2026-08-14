@@ -50,7 +50,7 @@ public class Bottle : MonoBehaviour
     {
         potionData = null;
         potionFX.Show(false);
-        grabbable.name = "Empty Bottle";
+        grabbable.DisplayName = "Empty Bottle";
     }
 
     private void OnCollisionEnter(Collision collision)

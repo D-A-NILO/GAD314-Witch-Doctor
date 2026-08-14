@@ -1055,7 +1055,7 @@ MonoBehaviour:
   dialogue: {fileID: 1882759023}
   npcAmount: 1
   spawnOnStart: 0
-  overrideInfectionTime: 120
+  overrideInfectionTime: 3.4028235e+38
   spawnDelay: 0
 --- !u!1001 &415279202
 PrefabInstance:
@@ -7842,7 +7842,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - instructionText: Add the ingredients you need to the cart and place the order.
+  - instructionText: Add any ingredients you want to the cart and place the order.
       Pick up the delivery package, bring it inside and open it by pressing F
     autoAdvance: 0
     delayTime: 0
@@ -7975,7 +7975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515a4538e58615048bf61fba496e0534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialSceneLoader
-  mainGameSceneName: Game
+  mainGameSceneName: MainMenu
   fadeImage: {fileID: 24815096}
   fadeSpeed: 4
 --- !u!1 &1518052805
@@ -10146,6 +10146,34 @@ PrefabInstance:
     - target: {fileID: 481460858584907524, guid: e9d86070b589b373593a178a312f3957, type: 3}
       propertyPath: m_Name
       value: EssentialsPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.278
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000044703478
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412571670092649723, guid: e9d86070b589b373593a178a312f3957, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5305198935201922683, guid: e9d86070b589b373593a178a312f3957, type: 3}
       propertyPath: m_LocalPosition.x

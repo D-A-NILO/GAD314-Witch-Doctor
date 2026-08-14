@@ -2402,7 +2402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b675de08acc8334e813fb59ebe2dc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
-  tutorialSceneName: Tutorial
+  tutorialSceneName: NewTutorial
   playSceneName: Game
   settingsPanel: {fileID: 1417268714}
   opasityThing: {fileID: 1884162738}

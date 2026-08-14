@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour, IMenu
 {
@@ -17,11 +18,11 @@ public class PauseMenu : MonoBehaviour, IMenu
         pauseMenu.SetActive(true);
     }
 
-    public void Quit()
+    public void QuitToScene(string sceneName)
     {
         Time.timeScale = 1f;
         Debug.Log($"time scale: {Time.timeScale}");
-        Application.Quit();
+        SceneManager.LoadScene(sceneName);
     }
 
 }

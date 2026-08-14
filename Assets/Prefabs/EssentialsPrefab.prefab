@@ -143,8 +143,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330440299560913374}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.002594818, y: -0.97918856, z: 0.012544263, w: 0.20254803}
-  m_LocalPosition: {x: -2.5273728, y: 1.605, z: -2.4322548}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000044703478}
+  m_LocalPosition: {x: -1.8000002, y: 1.278, z: 7.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -551,6 +551,18 @@ PrefabInstance:
     - target: {fileID: 2921425174928911240, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
       propertyPath: m_Name
       value: PlayerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175898041361742559, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175898041361742559, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175898041361742559, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 3811625090224146129, guid: ac6748ef3905374bf8b1d2f07718908e, type: 3}
       propertyPath: equipItem

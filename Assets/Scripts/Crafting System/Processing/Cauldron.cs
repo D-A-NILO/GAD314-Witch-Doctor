@@ -73,6 +73,7 @@ public class Cauldron : MonoBehaviour
         Destroy(ingredient.gameObject);
 
         resultType = MixState.UNMIXED;
+        isCrafted = false;
         mixingRenderer.enabled = true; // show mixing if not
         mixingRenderer.material.SetColor("_Color", ingredient.data.potionAffectColor);
 
