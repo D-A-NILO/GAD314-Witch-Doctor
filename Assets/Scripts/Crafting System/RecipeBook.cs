@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RecipeBook : MonoBehaviour
+public class RecipeBook : MonoBehaviour , IMenu
 {
     
     public InputActionReference toggleAction;
@@ -39,15 +39,30 @@ public class RecipeBook : MonoBehaviour
     private bool shown;
     private void ToggleShow(InputAction.CallbackContext context)
     {
-        shown = !shown;
 
-        container.gameObject.SetActive(shown);
-        Cursor.lockState = shown ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = shown;
-        //disable camera movement
-        FindAnyObjectByType<PlayerCam>().enabled = !shown;
+        if(MenuManager.I.IsActiveMenu(this as IMenu))
+        {
+            MenuManager.I.TryHideMenu(this);
+        }else
+        {
+            MenuManager.I.TryShowMenu(this);
+        }
 
-        if(!shown) Tooltip.SetActive(false);
+    }
 
+    public void OnHide()
+    {
+
+        container.gameObject.SetActive(false);
+        Tooltip.SetActive(false);
+        //enable player control
+        FindAnyObjectByType<PlayerController>().SetControl(true);
+    }
+
+    public void OnShow()
+    {
+        container.gameObject.SetActive(true);
+        //disable player control
+        FindAnyObjectByType<PlayerController>().SetControl(false);
     }
 }

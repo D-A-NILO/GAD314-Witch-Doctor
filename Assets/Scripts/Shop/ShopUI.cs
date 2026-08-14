@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class ShopUI : MonoBehaviour
+public class ShopUI : MonoBehaviour , IMenu
 {
     [Header("Catalogue")]
     [SerializeField] private ShopItemData[] catalogue;
@@ -25,9 +25,6 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private IngredientSpawner spawner;
 
-    [Header("Input")]
-    [Tooltip("Same action asset PauseMenu uses. Disabled while the shop is open so Escape can't open the pause menu underneath it.")]
-    [SerializeField] private InputActionReference pauseAction;
 
 
     [SerializeField] private Animator bookAnimator;
@@ -79,28 +76,36 @@ public class ShopUI : MonoBehaviour
     public void Open(PlayerController controller)
     {
         playerController = controller;
-        panel.SetActive(true);
-        pauseAction?.action?.Disable();
+        MenuManager.I.TryShowMenu(this);
+    }
+
+    public void Close()
+    {
+        
+        MenuManager.I.TryHideMenu(this);;
+
+    }
+
+    public void OnShow()
+    {
         RefreshBalance();
         RefreshCart();
 
         bookAnimator.SetBool("open", true);
         openShopSFX.PlayFromSource(audioSource);
+        panel.SetActive(true);
     }
 
-    public void Close()
+    public void OnHide()
     {
         bookAnimator.SetBool("open", false);
         closeShopSFX.PlayFromSource(audioSource);
-        panel.SetActive(false);
-        pauseAction?.action?.Enable();
 
         if (playerController != null)
         {
             playerController.SetControl(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
+        panel.SetActive(false);
     }
 
     public void AddToCart(ShopItemData item, int quantity)
