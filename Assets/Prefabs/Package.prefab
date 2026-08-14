@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1089936720012250328}
   - component: {fileID: 8427957348229718277}
   - component: {fileID: 2818704335080516761}
-  - component: {fileID: 9140657175462724693}
   m_Layer: 0
   m_Name: Package
   m_TagString: Pickupable
@@ -133,7 +132,7 @@ MonoBehaviour:
   lockRotation: 1
   scatterRadius: 1
   packageParticle: {fileID: 8869755039885288797, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
-  playFromSource: {fileID: 9140657175462724693}
+  audioSource: {fileID: 2818704335080516761}
   packageOpenSoundEffect: {fileID: 11400000, guid: b9b4ca7181f59b4499e87b6256c99752, type: 2}
 --- !u!54 &8427957348229718277
 Rigidbody:
@@ -259,19 +258,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9140657175462724693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8237509925130500110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36dd49e36158c74e8da1a95c7a609c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayFromSource
-  audioSource: {fileID: 2818704335080516761}
 --- !u!1001 &98085503369511806
 PrefabInstance:
   m_ObjectHideFlags: 0

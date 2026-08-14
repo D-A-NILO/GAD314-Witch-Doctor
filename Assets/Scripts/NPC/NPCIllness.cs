@@ -23,7 +23,7 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Transform coinDropPoint;
     [SerializeField] private float coinDropDistance = 1f;
     [SerializeField] private AudioSO NPCDeathSFX;
-    [SerializeField] private PlayFromSource playFromSource;
+    [SerializeField] private AudioSource audioSource;
     
     [HideInInspector] public NPCIllnessVisuals visuals;
     public NPC_ExpresionVisuals expresionVisuals;
@@ -150,12 +150,12 @@ public class NPCIllness : MonoBehaviour
     {
         isDead = true;
         Debug.Log($"{gameObject.name} is dead");
+        NPCDeathSFX.PlayFromSource(audioSource);
 
-        
         dialogue.onDialogueEnd = () =>
         {
 
-            playFromSource.PlayAudio(NPCDeathSFX);
+            NPCDeathSFX.PlayFromSource(audioSource);
             spawner.RemoveNPC(gameObject);
             Destroy(gameObject, 1f);
         };

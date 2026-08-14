@@ -416,6 +416,8 @@ MonoBehaviour:
   coinBagPrefab: {fileID: 7963694878991962382, guid: ffd4e4b5dfbe47044a317b22e01a8783, type: 3}
   coinDropPoint: {fileID: 0}
   coinDropDistance: 1
+  NPCDeathSFX: {fileID: 11400000, guid: 863c37c2442208b4aa1b0b5e00bf63d9, type: 2}
+  audioSource: {fileID: 6568273643018548144, guid: 63f67dc1001593947b5d5ce6dee7ae51, type: 3}
   visuals: {fileID: 0}
   expresionVisuals: {fileID: 3541501308861936996}
 --- !u!65 &4904455162740987284

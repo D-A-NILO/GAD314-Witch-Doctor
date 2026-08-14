@@ -83,7 +83,7 @@ public class ShopUI : MonoBehaviour , IMenu
         RefreshCart();
 
         Debug.Log("open sound");
-        playFromSource.PlayAudio(openShopSFX);
+        openShopSFX.PlayFromSource(audioSource);
 
         MenuManager.I.TryShowMenu(this);
     }
@@ -91,7 +91,7 @@ public class ShopUI : MonoBehaviour , IMenu
     public void Close()
     {
         Debug.Log("close sound");
-        playFromSource.PlayAudio(closeShopSFX);
+        closeShopSFX.PlayFromSource(audioSource);
 
         panel.SetActive(false);
 
@@ -172,7 +172,7 @@ public class ShopUI : MonoBehaviour , IMenu
             return;
 
         Debug.Log("purchase sound");
-        playFromSource.PlayAudio(purchaseSFX);
+        purchaseSFX.PlayFromSource(audioSource);
         spawner.SpawnOrder(cart);
         Instantiate(purchaseVFX, orderButton.transform.position, Quaternion.identity);
         

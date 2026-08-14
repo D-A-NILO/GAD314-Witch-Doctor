@@ -133,7 +133,7 @@ MonoBehaviour:
   lockRotation: 1
   scatterRadius: 1
   packageParticle: {fileID: 8869755039885288797, guid: 823ecdcbe17374b4ea256f9ea7578bad, type: 3}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8543482752398497723}
   packageOpenSoundEffect: {fileID: 11400000, guid: b9b4ca7181f59b4499e87b6256c99752, type: 2}
 --- !u!54 &4013000315657832666
 Rigidbody:

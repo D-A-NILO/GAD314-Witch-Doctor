@@ -3,7 +3,7 @@ using UnityEngine;
 public class CoinBag : Grabbable
 {
     [SerializeField] private int value = 10;
-    [SerializeField] private PlayFromSource playFromSource;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSO coinSFX;
 
     public int Value => value;
@@ -16,6 +16,6 @@ public class CoinBag : Grabbable
     public override void OnInteract(PlayerInteract playerInteract) 
     {
         base.OnInteract(playerInteract);
-        playFromSource.PlayAudio(coinSFX);
+        coinSFX.PlayFromSource(audioSource);
     }
 }
