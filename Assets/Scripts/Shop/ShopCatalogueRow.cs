@@ -11,6 +11,9 @@ public class ShopCatalogueRow : MonoBehaviour
     [SerializeField] private Button increaseButton;
     [SerializeField] private Button decreaseButton;
     [SerializeField] private Button addToCartButton;
+    [SerializeField] private ParticleSystem buttonParticleFX;
+    [SerializeField] private ParticleSystem increaseButtonParticleFX;
+    [SerializeField] private ParticleSystem decreaseButtonParticleFX;
 
     private ShopItemData item;
     private ShopUI shopUI;
@@ -35,12 +38,14 @@ public class ShopCatalogueRow : MonoBehaviour
     {
         quantity++;
         UpdateQuantityText();
+        Instantiate(increaseButtonParticleFX, increaseButton.transform.position, Quaternion.identity);
     }
 
     private void Decrease()
     {
         quantity = Mathf.Max(1, quantity - 1);
         UpdateQuantityText();
+        Instantiate(decreaseButtonParticleFX, decreaseButton.transform.position, Quaternion.identity);
     }
 
     private void UpdateQuantityText()
@@ -51,5 +56,6 @@ public class ShopCatalogueRow : MonoBehaviour
     private void AddToCart()
     {
         shopUI.AddToCart(item, quantity);
+        Instantiate(buttonParticleFX, addToCartButton.transform.position, Quaternion.identity);
     }
 }

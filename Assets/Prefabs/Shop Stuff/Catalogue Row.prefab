@@ -675,6 +675,9 @@ MonoBehaviour:
   increaseButton: {fileID: 9006002255537125102}
   decreaseButton: {fileID: 1276638693276809170}
   addToCartButton: {fileID: 4029601135756411257}
+  buttonParticleFX: {fileID: 6066379864059306188, guid: ec079881df27a114e8595bc5a7615115, type: 3}
+  increaseButtonParticleFX: {fileID: 6215581316028507072, guid: 564ed151a553b654cbaf50208827bb88, type: 3}
+  decreaseButtonParticleFX: {fileID: 4303202295228257652, guid: ab409c40a51ce14488969b73aadec78e, type: 3}
 --- !u!1 &3459980035259387944
 GameObject:
   m_ObjectHideFlags: 0

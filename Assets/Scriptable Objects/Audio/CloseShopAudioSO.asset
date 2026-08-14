@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CloseShopAudioSO
   m_EditorClassIdentifier: Assembly-CSharp::AudioSO
   soundEffects:
-  - {fileID: 8300000, guid: bcb594e3999ca1d498d4dad91871aebb, type: 3}
+  - {fileID: 8300000, guid: c51aa1f64e9a3834db1836efbd2180d6, type: 3}
+  - {fileID: 8300000, guid: c51aa1f64e9a3834db1836efbd2180d6, type: 3}
   minPitch: 1
-  maxPitch: 100
+  maxPitch: 1.1
