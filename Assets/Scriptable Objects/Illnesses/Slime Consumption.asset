@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slime Consumption
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: c52140499c02161f4bab2eae1173a0ff, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 47

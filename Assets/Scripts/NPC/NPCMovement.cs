@@ -6,18 +6,19 @@ public class NPCMovement : MonoBehaviour
 {
     public Transform[] destinationPoints;
     public float moveSpeed;
-    public float stoppingDistance = 0.1f;
+    public float stoppingDistance = 0.05f;
 
     public int currentPoint = 0;
     public bool isMoving = true;
     public bool pathFinished = false;
+    public Animator animator;
+    private NPCLookAtPlayer lookAtPlayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
+        if(TryGetComponent(out lookAtPlayer))
+            lookAtPlayer.enabled = false;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +35,9 @@ public class NPCMovement : MonoBehaviour
             Debug.Log("NPC has finished all destination points");
             isMoving = false;
             pathFinished = true;
+
+            animator.SetBool("moving", false);
+            if(lookAtPlayer != null) lookAtPlayer.enabled = true;
             return;
         }
 
@@ -41,22 +45,17 @@ public class NPCMovement : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
-        Vector3 direction = transform.position - target.position;
-        direction.y = 0;
-
-        if (direction.sqrMagnitude > 0.001f)
-        { 
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
-        }
+        transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
 
         if (Vector3.Distance(transform.position, target.position) <= stoppingDistance)
         {
             transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
-            isMoving = false;
+            //isMoving = false;
 
             Debug.Log($"reached current destination point: {currentPoint}");
+            ContinueToNextPoint();
         }
+        animator.SetBool("moving", isMoving);
     }
 
     public void ContinueToNextPoint()
@@ -64,7 +63,6 @@ public class NPCMovement : MonoBehaviour
         if (pathFinished)
             return;
 
-        currentPoint++;
 
         if (currentPoint >= destinationPoints.Length)
         {
@@ -72,6 +70,8 @@ public class NPCMovement : MonoBehaviour
             Debug.Log("NPC finished all waypoints.");
             return;
         }
+
+        currentPoint++;
 
         isMoving = true;
     }

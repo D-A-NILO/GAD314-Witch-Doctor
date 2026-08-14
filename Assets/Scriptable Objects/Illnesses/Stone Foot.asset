@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone Foot
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: e5c482b4a9a47b3b287797c43a37562e, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 22

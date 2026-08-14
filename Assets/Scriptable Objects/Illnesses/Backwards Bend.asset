@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Backwards Bend
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: a5184362d61e513218d5be9328fae065, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 55

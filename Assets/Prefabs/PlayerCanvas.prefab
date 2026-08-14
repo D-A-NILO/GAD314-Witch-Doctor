@@ -3497,7 +3497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4144,7 +4144,8 @@ MonoBehaviour:
   panel: {fileID: 4476438047029946822}
   spawner: {fileID: 0}
   pauseAction: {fileID: 7727032971491509709, guid: 9c7b576a538f1a246960eb94689420d1, type: 3}
-  playFromSource: {fileID: 0}
+  bookAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
   openShopSFX: {fileID: 0}
   closeShopSFX: {fileID: 0}
   purchaseSFX: {fileID: 0}
@@ -5598,7 +5599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cool Tooltip
+  m_text: Crushed Ginger Root
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5625,8 +5626,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.65
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 21.04
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -5642,9 +5643,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 5
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -7338,6 +7339,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8152805708076025716}
     m_Modifications:
+    - target: {fileID: 522033713997118959, guid: 84e126d1fc5ec7b70b6d66e116886d70, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 522033713997118959, guid: 84e126d1fc5ec7b70b6d66e116886d70, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 522033713997118959, guid: 84e126d1fc5ec7b70b6d66e116886d70, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5580862296799253967, guid: 84e126d1fc5ec7b70b6d66e116886d70, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

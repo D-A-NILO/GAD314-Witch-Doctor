@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01f0429412de8abb96dd84e9fa22780, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01f0429412de8abb96dd84e9fa22780, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.01484
+      value: -0.0147
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01f0429412de8abb96dd84e9fa22780, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00031
+      value: -0.0003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01f0429412de8abb96dd84e9fa22780, type: 3}
       propertyPath: m_LocalRotation.w
@@ -112,10 +112,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2084894023776932516, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
-      propertyPath: pathFinished
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3083035911140295006, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.07
@@ -172,10 +168,6 @@ PrefabInstance:
       propertyPath: currentIllness
       value: 
       objectReference: {fileID: 11400000, guid: 6281164976cf48f37ac1ef71723ed462, type: 2}
-    - target: {fileID: 8556344988263133097, guid: 80f363e3d27051f43b8dc383ce52f173, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8d764451b280bfe3b803fb6d30176c68, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

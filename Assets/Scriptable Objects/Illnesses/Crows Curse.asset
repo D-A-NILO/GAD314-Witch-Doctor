@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crows Curse
   m_EditorClassIdentifier: Assembly-CSharp::IllnessData
   curePotion: {fileID: 11400000, guid: 84ac2b4da3740285aac164b3ff6d7181, type: 2}
-  startingSeverity: 0.1
+  startingSeverity: 0.01
   cureAmount: 1
   worsenAmount: 0.2
   coinReward: 35

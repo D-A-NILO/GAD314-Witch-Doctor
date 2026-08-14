@@ -20,7 +20,7 @@ public class NPCIllnessVisuals : MonoBehaviour
         if(Mathf.Abs(currentSeverity - targetSeverity) <= smoothingTolerance) return;
 
         currentSeverity = Mathf.Lerp(currentSeverity, targetSeverity, smoothingDelta * Time.deltaTime);
-
+        currentSeverity = Mathf.Clamp01(currentSeverity);
 
         if(illnessRenderers.Length > 0)
             foreach (var renderer in illnessRenderers)

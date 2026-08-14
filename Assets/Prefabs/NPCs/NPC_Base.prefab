@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 4904455162740987284}
   - component: {fileID: 3799683714295719977}
   - component: {fileID: 3541501308861936996}
+  - component: {fileID: 973304432212582477}
   m_Layer: 0
   m_Name: NPC_Base
   m_TagString: Pickupable
@@ -334,10 +335,11 @@ MonoBehaviour:
   destinationPoints:
   - {fileID: 0}
   moveSpeed: 2
-  stoppingDistance: 0.7
+  stoppingDistance: 0.15
   currentPoint: 0
   isMoving: 0
   pathFinished: 0
+  animator: {fileID: 8556344988263133097}
 --- !u!54 &1858468216851591905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -407,12 +409,15 @@ MonoBehaviour:
   isDead: 0
   isCured: 0
   bottle: {fileID: 0}
+  infectionRate: 0.01
   interactText: {fileID: 5343265034057831125}
   dialogue: {fileID: 0}
   npcMove: {fileID: 2084894023776932516}
   coinBagPrefab: {fileID: 7963694878991962382, guid: ffd4e4b5dfbe47044a317b22e01a8783, type: 3}
   coinDropPoint: {fileID: 0}
   coinDropDistance: 1
+  visuals: {fileID: 0}
+  expresionVisuals: {fileID: 3541501308861936996}
 --- !u!65 &4904455162740987284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -464,10 +469,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   expressionRenderer: {fileID: 2712839753469436344}
+  startWithExpresions: 0000000001000000020000000300000008000000
   blinkIntervalMinMax: {x: 4, y: 7.5}
   blinkLength: 0.25
   yapLengthMinMax: {x: 0.2, y: 0.4}
   yapping: 0
+--- !u!114 &973304432212582477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152997914180048027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0087eb8afd10e8a179b3654d7f03ad7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  lerpSpeed: 0
 --- !u!1 &8639665619260725276
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +666,7 @@ Animator:
   m_GameObject: {fileID: 5636803746173419943}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b67b6f1f709747304be28ea5b595ad71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

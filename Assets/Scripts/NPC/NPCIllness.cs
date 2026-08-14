@@ -13,6 +13,7 @@ public class NPCIllness : MonoBehaviour
     public bool isCured;
 
     public Bottle bottle;
+    public float infectionRate = 0.01f;
     public InteractText interactText;
     [SerializeField] private Dialogue dialogue;
     public NPCMovement npcMove;
@@ -22,7 +23,8 @@ public class NPCIllness : MonoBehaviour
     [SerializeField] private Transform coinDropPoint;
     [SerializeField] private float coinDropDistance = 1f;
     
-    private NPCIllnessVisuals visuals;
+    [HideInInspector] public NPCIllnessVisuals visuals;
+    public NPC_ExpresionVisuals expresionVisuals;
     
 
     void Awake()
@@ -31,6 +33,11 @@ public class NPCIllness : MonoBehaviour
 
         visuals?.SetSeverity(illnessSeverity);
         
+        
+    }
+
+    void Start()
+    {
         if(currentIllness == null)
             AssignRandomIllness();
         else
@@ -40,6 +47,10 @@ public class NPCIllness : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isDead && !isCured)
+            illnessSeverity += infectionRate * Time.deltaTime;
+
+        CheckIllnessState();
         
         visuals?.SetSeverity(illnessSeverity);
     }
@@ -57,7 +68,7 @@ public class NPCIllness : MonoBehaviour
     {
         currentIllness = illness;
 
-        dialogue?.SetDialogueSets(currentIllness.initialDialogue);
+        dialogue.SetDialogueSets(currentIllness.initialDialogue);
 
         illnessSeverity = currentIllness.startingSeverity;
     }
@@ -88,7 +99,7 @@ public class NPCIllness : MonoBehaviour
 
     private void CheckIllnessState()
     {
-        
+        if(isCured || isDead) return;
 
         if (illnessSeverity <= 0)
         {
