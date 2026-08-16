@@ -947,6 +947,7 @@ MonoBehaviour:
   mixingRenderer: {fileID: 1217037873}
   ingredientParticle: {fileID: 4103964825603317399, guid: c0e025af092d99f48ab8c0f7f96ff078, type: 3}
   stirringParticle: {fileID: 4103964825603317399, guid: 693bfda40a6171b4899cc801f03281e3, type: 3}
+  fillPotionParticle: {fileID: 4103964825603317399, guid: 405beefda9ff2cf409ad7e1aaf69d3d0, type: 3}
   stirRequired: 100
   requiredIngredientCount: 2
   OnSingleIngredientAdded:
@@ -7656,7 +7657,7 @@ MonoBehaviour:
   - instructionText: 'Welcome to your first day as a witch doctah. Here you will
       learn how to process ingredients and make different cures for your patient. '
     autoAdvance: 1
-    delayTime: 7
+    delayTime: 5
     OnStepStart:
       m_PersistentCalls:
         m_Calls: []
@@ -7899,8 +7900,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - instructionText: Check the recipe book, brew the exact cure they need, and hand
-      them the potion in a bottle. Don't make a mistake!
+  - instructionText: Press R to open the recipe book, brew the exact cure they need,
+      and hand them the potion in a bottle. Don't make a mistake!
     autoAdvance: 0
     delayTime: 0
     OnStepStart:
