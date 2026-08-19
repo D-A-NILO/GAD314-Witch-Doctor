@@ -17,7 +17,7 @@ public class ShopUI : MonoBehaviour , IMenu
     [SerializeField] private TMP_Text totalText;
     [SerializeField] private TMP_Text balanceText;
     [SerializeField] private Button orderButton;
-    [SerializeField] private Button closeButton;
+    // [SerializeField] private Button closeButton;
     [SerializeField] private int totalCost;
     
 
@@ -40,8 +40,8 @@ public class ShopUI : MonoBehaviour , IMenu
     void Awake()
     {
         //panel.SetActive(false);
-        orderButton.onClick.AddListener(PlaceOrder);
-        closeButton.onClick.AddListener(Close);
+        // orderButton.onClick.AddListener(PlaceOrder);
+        // closeButton.onClick.AddListener(Close);
         PopulateCatalogue();
     }
 
@@ -164,7 +164,7 @@ public class ShopUI : MonoBehaviour , IMenu
         balanceText.text = $"Coin: {newBalance}c";
     }
 
-    private void PlaceOrder()
+    public void PlaceOrder()
     {
        
 
@@ -173,7 +173,7 @@ public class ShopUI : MonoBehaviour , IMenu
 
         Debug.Log("purchase sound");
         purchaseSFX.PlayFromSource(audioSource);
-        spawner.SpawnOrder(cart);
+        //spawner.SpawnOrder(cart);
         Instantiate(purchaseVFX, orderButton.transform.position, Quaternion.identity);
         
         spawner.SpawnOrder(cart);

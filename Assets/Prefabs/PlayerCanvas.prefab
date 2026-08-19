@@ -4528,7 +4528,6 @@ MonoBehaviour:
   totalText: {fileID: 3421068054117212511}
   balanceText: {fileID: 7285232347849336187}
   orderButton: {fileID: 8468988932497953186}
-  closeButton: {fileID: 3781002513048816244}
   totalCost: 0
   panel: {fileID: 4476438047029946822}
   spawner: {fileID: 0}
@@ -7022,7 +7021,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3640621882168027026}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4779086771775134809}
+        m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8254398464507759121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,7 +8085,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4854865798169701548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4779086771775134809}
+        m_TargetAssemblyTypeName: ShopUI, Assembly-CSharp
+        m_MethodName: PlaceOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8859651094686778256
 GameObject:
   m_ObjectHideFlags: 0
